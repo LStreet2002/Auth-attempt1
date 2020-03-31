@@ -14,8 +14,8 @@ form {
    
     background-image:url(/dandy.jpg);
    
-    background-size:64.2vw;
-    height:43vw;
+    background-size:138%;
+    height:22rem;
     display:grid;
     grid-template-rows:1fr 6fr 2fr 1fr;
   grid-template-columns: 1fr;
@@ -60,7 +60,7 @@ form {
 }
 .firebaseui-id-submit.firebaseui-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{
     grid-area:login;
-    margin-left:2rem;
+    margin-left:2vw;
    
 }
 .firebaseui-card-footer {
@@ -73,9 +73,9 @@ form {
 
 .mdl-button--raised.mdl-button--colored {
     background-color:#EE3124;
-  font-size:1.2rem;
-    width:16vw;
-    height:5vw;
+  font-size:4.5vw;
+    width:24vw;
+    height:9vw;
     font-family: 'Roboto', sans-serif;
 }
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
