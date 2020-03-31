@@ -10,17 +10,80 @@
     width:35vw;
     margin-bottom:8vw;
 }
-.firebaseui-container {
+form {
    
     background-image:url(/dandy.jpg);
    
-    background-size:54vw;
+    background-size:64.2vw;
+    height:43vw;
+    display:grid;
+    grid-template-rows:1fr 6fr 2fr 1fr;
+  grid-template-columns: 1fr;
+    grid-template-areas:
+    "head"
+    "formt"
+    "button"
+    "bottom"
+    
 
 }
+.firebaseui-card-header {
+   
+    grid-area:head;
+}
+.firebaseui-card-content {
+    margin-left:4vw;
+    grid-area:formt;
+}
+.firebaseui-card-actions {
+    grid-area:button;
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "login"
+    "forgot"
+    
+}
+.firebaseui-form-links {
+    display:flex;
+    justify-content:center;
+}
+.firebaseui-form-actions {
+    display:flex;
+    justify-content:center;
+}
+.firebaseui-link.firebaseui-id-secondary-link{
+  margin-left:2rem;
+  color:black;
+   
+}
+.firebaseui-id-submit.firebaseui-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{
+    grid-area:login;
+    margin-left:2rem;
+   
+}
+.firebaseui-card-footer {
+    grid-area:botom;
+}
+
+
+
+
+
 .mdl-button--raised.mdl-button--colored {
     background-color:#EE3124;
-    margin-right:10.7vw;
-    width:10vw;
+  font-size:1.2rem;
+    width:16vw;
+    height:5vw;
+    font-family: 'Roboto', sans-serif;
+}
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+    font-size:1.5rem;
+    margin-top:-1rem;
+} 
+.firebaseui-title {
+    display:none;
 }
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label{
     color:black;
@@ -28,4 +91,10 @@
 .firebaseui-textfield.mdl-textfield .firebaseui-input{
     background-color:white;
     border:solid black 2px;
+    height:2rem;
+    font-size:1.2rem;
+}
+
+.firebaseui-tos.firebaseui-tospp-full-message {
+    display:none;
 }
