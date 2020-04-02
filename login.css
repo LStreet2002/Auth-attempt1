@@ -7,15 +7,15 @@
 }
 .cnon {
     margin-top:6vw;
-    width:35vw;
+    width:20rem;
     margin-bottom:8vw;
 }
 form {
    
     background-image:url(/dandy.jpg);
    
-    background-size:138%;
-    height:22rem;
+    background-size:60rem;
+    height:30rem;
     display:grid;
     grid-template-rows:1fr 6fr 2fr 1fr;
   grid-template-columns: 1fr;
@@ -23,10 +23,10 @@ form {
     "head"
     "formt"
     "button"
-    "bottom"
-    
-
+    "bottom";
+    box-shadow:0 18px 16px 0 rgba(0,0,0,0.35),0 6px 20px 0 rgba(0,0,0,0.35)
 }
+
 .firebaseui-card-header {
    
     grid-area:head;
@@ -60,22 +60,31 @@ form {
 }
 .firebaseui-id-submit.firebaseui-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored{
     grid-area:login;
-    margin-left:2vw;
+    
+    margin-left:2rem;
    
 }
 .firebaseui-card-footer {
     grid-area:botom;
 }
 
-
+#create {
+    margin-top:-2rem;
+    font-size:2rem;
+display:flex;
+    justify-content:center;
+    color:rgb(138, 138, 243);
+    margin-bottom:-0.1rem;
+    text-decoration: none;
+}
 
 
 
 .mdl-button--raised.mdl-button--colored {
     background-color:#EE3124;
-  font-size:4.5vw;
-    width:24vw;
-    height:9vw;
+  font-size:2rem;
+    width:13rem;
+    height:4rem;
     font-family: 'Roboto', sans-serif;
 }
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
