@@ -16,8 +16,8 @@
     display:flex;
     justify-content:center;
     align-content:center;
-    
-  
+
+
 }
 .logo {
     width:15rem;
@@ -37,7 +37,7 @@
     align-content:center;
     height:2rem;
     margin-top:1rem;
-    
+
 }
 .password2 {
     grid-area:password2;
