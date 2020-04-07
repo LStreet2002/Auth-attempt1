@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+#loginlog {
+    width:20rem;
+    display:flex;
+    justify-content:center;
+    margin:auto;
+}
+#login-holder {
+    display:grid;
+    grid-template-rows:2fr 2fr 2fr 2fr 1fr;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "email"
+    "password"
+    "login"
+    "create"
+    "forgot";
+    background-image:url("/pic/dandy.jpg");
+    width:20rem;
+    margin:auto;
+}
+#email-input {
+grid-area:email;
+margin-left:5rem;
+
+}
+#password-input {
+    grid-area:password;
+    margin:auto;
+}
+#Login{
+    width:8rem;
+    margin:auto;
+    grid-area:login;
+}
+#create {
+    width:8rem;
+    margin:auto;
+    grid-area:create;
+    text-decoration: none;
+
+}
+#forgot {
+    grid-area:forgot;
+    margin:auto;
+    text-decoration: none;
+}
