@@ -2,33 +2,50 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  <link type="text/css" rel="stylesheet" href="login.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-  <!-- TODO: Add SDKs for Firebase products that you want to
-        use https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
 
-
+  <link rel="stylesheet" href="css/login.css/">
 
   <title>Document</title>
 </head>
 
 <body>
-  <div class="logo"><img class="cnon" src="/2000px-canon-logo.png"></div>
-  <a href="create.html" id="create">CREATE ACCOUNT</a>
-  <div id="firebaseui-auth-container">
-  </div>
-  <div id="loader">Loading...</div>
-  <script src="fireBase.js"></script>
-  <script src="login.js"></script>
+  <img alt="logo">
+  <a href="create.html">Create Account</a>
+  <form id="login-holder">
+    <div class="email-input">
+      <input type="email" id="login-email" required />
+    </div>
+    <div class="passoword-input">
+      <input type="password" id="login-password" required />
+    </div>
+    <button id="Login">Login</button>
+    <a href="password.html" id="reset">forgotten your password?</a>
+
+  </form>
+
+
+
+
+
+
+
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.13.2/firebase-app.js"></script>
+
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.13.2/firebase-auth.js"></script>
+  <script src="/__/firebase/7.13.2/firebase-firestore.js"></script>
+
+
+  <script src="js/fireBase.js"></script>
+  <script src="js/login.js"></script>
+
 </body>
 
 </html>
