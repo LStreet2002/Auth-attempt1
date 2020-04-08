@@ -2,12 +2,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 #loginlog {
-    width:20rem;
+    width:24rem;
+    
     display:flex;
     justify-content:center;
     margin:auto;
 }
 #login-holder {
+    margin-top:2rem;
     display:grid;
     grid-template-rows:2fr 2fr 2fr 2fr 1fr;
     grid-template-columns:1fr;
@@ -17,29 +19,61 @@ body {
     "login"
     "create"
     "forgot";
-    background-image:url("/pic/dandy.jpg");
-    width:20rem;
-    margin:auto;
+    background-image:url("/pic/dandyop.png");
+    background-size:22rem;
+    width:22rem;
+    margin-left:auto;
+    margin-right:auto;
+    height:30rem;
 }
 #email-input {
+   
 grid-area:email;
-margin-left:5rem;
-
 }
+.Tittle {
+    font-size:1.4rem;
+    margin-left:2.1rem;
+    margin-top:2rem;
+}
+#login-email {
+
+    border:solid 1px black;
+    height:2.3rem;
+    font-size:1.4rem;
+    margin-left:2.1rem;
+  
+}
+
+#login-password {
+    border:solid 1px black;
+    height:2.3rem;
+    font-size:1.4rem;
+    margin-left:2.1rem;
+}
+
 #password-input {
     grid-area:password;
     margin:auto;
 }
+
 #Login{
     width:8rem;
     margin:auto;
     grid-area:login;
+    background-color:red;
+    border:none;
+    padding-top:0.6rem;
+    padding-bottom:0.6rem;
+    color:white;
+    font-size:1.7rem;
 }
 #create {
-    width:8rem;
-    margin:auto;
+    text-align:center;
     grid-area:create;
     text-decoration: none;
+    font-size:2rem;
+    color:#006590;
+    margin-top:2rem;
 
 }
 #forgot {
