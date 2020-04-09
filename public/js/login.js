@@ -12,4 +12,19 @@
             window.location.replace("main.html");
         });
     })
-})(); 
+})();
+
+function rese() {
+    var logi = document.querySelector("#login-holder")
+    logi.style.display = "none";
+    var hol = document.querySelector(".hol")
+    hol.style.display = "grid"
+}
+function main() {
+    var logi = document.querySelector("#login-holder")
+    logi.style.display = "grid";
+    var hol = document.querySelector(".hol")
+    hol.style.display = "none"
+
+}
+

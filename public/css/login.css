@@ -81,3 +81,63 @@ grid-area:email;
     margin:auto;
     text-decoration: none;
 }
+.hol {
+    grid-template-columns:1fr;
+    grid-template-rows:1fr 2.2fr 2.2fr 1fr 1.4fr ;
+    grid-template-areas:
+    "back"
+    "text"
+    "input"
+    "reset"
+    ".";
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2rem;
+    background-image:url("/pic/dandyop.png");
+    background-size:22rem;
+    width:22rem;
+    height:30rem;
+}
+#return {
+grid-area:back;
+background-color:red;
+width:6rem;
+height:3rem;
+padding:none;
+border:none;
+margin-left:0.1rem;
+}
+.backarrow {
+    width:3rem;
+    margin:auto;
+}
+#instru {
+    grid-area:text;
+    font-size:1.3rem;
+    text-align:left;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2rem;
+    margin-left:2.1rem;
+}
+#reset-password {
+grid-area:input;
+border:solid 1px black;
+    height:2.3rem;
+    font-size:1.4rem;
+    margin-left:2.1rem;
+    margin-right:auto;
+}
+#send {
+grid-area:reset;
+background-color:red;
+
+color:white;
+font-size:1.7rem;
+border:none;
+padding-top:0.6rem;
+padding-bottom:0.6rem;
+padding-left:0.8rem;
+padding-right:0.8rem;
+margin:auto;
+}
