@@ -1,0 +1,71 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#signup-holder {
+        margin-top:2rem;
+        display:grid;
+        grid-template-rows:  2fr 2fr 2fr 2fr 1fr;
+        grid-template-columns:1fr;
+        grid-template-areas:
+        "username"
+        "email"
+        "password"
+        "create"
+        "return";
+        background-image:url("/pic/dandyop.png");
+        background-size:22rem;
+        width:22rem;
+        margin-left:auto;
+        margin-right:auto;
+        height:30rem;
+}
+#userfi {
+    grid-area:username;
+}
+#emailfi {
+    grid-area:email;
+}
+#passfi {
+    grid-area:password;
+}
+#button1 {
+    grid-area:create;
+    width:8rem;
+    margin:auto;
+    background-color:red;
+    border:none;
+    padding-top:0.6rem;
+    padding-bottom:0.6rem;
+    color:white;
+    font-size:1.7rem;
+}
+#loginlog {
+    width:24rem;
+    
+    display:flex;
+    justify-content:center;
+    margin:auto;
+}
+.sign-field {
+    border:solid 1px black;
+    height:2.3rem;
+    font-size:1.4rem;
+    margin-left:2.1rem;
+    width:18rem;
+}
+.Tittle {
+    font-size:1.4rem;
+    margin-left:2.1rem;
+    margin-top:2rem;
+    margin-bottom:none;
+    font-family: 'Roboto', sans-serif;
+}
+#return {
+    text-align:center;
+    text-decoration: none;
+    font-size:2rem;
+    color:#006590;
+    font-family:'Roboto', sans-serif;;
+    grid-area:return;
+}
