@@ -46,7 +46,7 @@
 
 /* Add a color to the active/current link */
 .navbar a.active {
-    background-color: red;
+    background-color: #F10F0F;
     color: white;
 }
 /* Position the image container (needed to position the left and right arrows) */
@@ -131,3 +131,9 @@
   .demo:hover {
     opacity: 1;
   }
+
+  
+  
+  
+  
+  

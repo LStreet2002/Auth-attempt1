@@ -60,7 +60,7 @@ grid-area:email;
     width:8rem;
     margin:auto;
     grid-area:login;
-    background-color:red;
+    background-color:#F10F0F;
     border:none;
     padding-top:0.6rem;
     padding-bottom:0.6rem;
@@ -100,7 +100,7 @@ grid-area:email;
 }
 #return {
 grid-area:back;
-background-color:red;
+background-color:#F10F0F;
 width:6rem;
 height:3rem;
 padding:none;
@@ -130,7 +130,7 @@ border:solid 1px black;
 }
 #send {
 grid-area:reset;
-background-color:red;
+background-color:#F10F0F;
 
 color:white;
 font-size:1.7rem;
