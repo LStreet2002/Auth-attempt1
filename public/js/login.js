@@ -1,3 +1,4 @@
+
 (function () {// login
     const loginHolder = document.querySelector("#login-holder");
     loginHolder.addEventListener("submit", (e) => {
@@ -26,5 +27,20 @@ function main() {
     var hol = document.querySelector(".hol")
     hol.style.display = "none"
 
+}
+function sendEmail() {
+    var resetBox = document.querySelector(".hol");
+
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "authsender@gmail.com",
+        Password: "computingcomrades",
+        To: resetBox["reset-password"].value,
+        From: "authsender@gmail.com",
+        Subject: "Your password",
+        Body: "Your password is",
+    }).then(
+        message => alert("mail sent successfully")
+    );
 }
 
