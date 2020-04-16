@@ -1,14 +1,14 @@
 
-(function () {// login
+(function () {
     const loginHolder = document.querySelector("#login-holder");
     loginHolder.addEventListener("submit", (e) => {
-        e.preventDefault();
+        e.preventDefault(); //enter button
 
-        // fields
+
         const email = loginHolder["login-email"].value;
         const password = loginHolder["login-password"].value;
 
-        // login
+        // firebase login
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
             window.location.replace("main.html");
         });
@@ -19,28 +19,27 @@ function rese() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "none";
     var hol = document.querySelector(".hol")
-    hol.style.display = "grid"
+    hol.style.display = "grid" // switch to change password
 }
 function main() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "grid";
     var hol = document.querySelector(".hol")
-    hol.style.display = "none"
+    hol.style.display = "none" // switch to main
 
 }
-function sendEmail() {
-    var resetBox = document.querySelector(".hol");
+(function () {// reset email
+    const reset = document.querySelector(".hol");
+    reset.addEventListener("submit", (e) => {
+        e.preventDefault();//enter button
 
-    Email.send({
-        Host: "smtp.gmail.com",
-        Username: "authsender@gmail.com",
-        Password: "computingcomrades",
-        To: resetBox["reset-password"].value,
-        From: "authsender@gmail.com",
-        Subject: "Your password",
-        Body: "Your password is",
-    }).then(
-        message => alert("mail sent successfully")
-    );
-}
+        const email = reset["reset-password"].value;
+
+        //send 
+        auth.sendPasswordResetEmail(email).then(function () {
+            alert("E-mail sent");
+        }).catch(error => alert(error.message));
+    })
+})();
+
 
