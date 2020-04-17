@@ -8,6 +8,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" type="text/css" href="css/createx.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 
@@ -28,18 +29,35 @@
       <h5 class="Tittle">Password</h5>
       <input type="password" id="login-password" required />
     </div>
-    <button id="Login">LOGIN</button>
+    <button type="button " id="Login">LOGIN</button>
 
-    <a id="create" href="createx.html">CREATE ACCOUNT</a>
+    <a id="create" onclick=account()>CREATE ACCOUNT</a>
     <a onclick=rese() id="forgot">Forgotten your password?</a>
   </form>
 
   <form class="hol" style="display:none">
-    <button onclick=main() id="return" type="button"><img class="backarrow" src="pic/back-arrow.png"></button>
+    <button onclick=main() id="return1" type="button"><img class="backarrow" src="pic/back-arrow.png"></button>
     <p id="instru">Enter your email into the box below to receive an email reminder of your password.</p>
     <input type="email" id="reset-password" required />
     <button id="send">SEND</button>
 
+  </form>
+
+  <form id="signup-holder" style="display:none">
+    <div id="userfi">
+      <h5 class="Tittle">Username</h5>
+      <input type="displayname" class="sign-field" id="signup-username" required />
+    </div>
+    <div id="emailfi">
+      <h5 class="Tittle">Email</h5>
+      <input type="email" class="sign-field" id="signup-email" required />
+    </div>
+    <div id="passfi">
+      <h5 class="Tittle">Password</h5>
+      <input type="password" class="sign-field" id="signup-password" required />
+    </div>
+    <button id="button1">Sign up</button>
+    <a id="return2" onclick=main()>Return</a>
   </form>
 
 

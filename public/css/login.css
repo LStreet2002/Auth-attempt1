@@ -41,6 +41,7 @@ grid-area:email;
     height:2.3rem;
     font-size:1.4rem;
     margin-left:2.1rem;
+    width:18rem;
   
 }
 
@@ -49,6 +50,7 @@ grid-area:email;
     height:2.3rem;
     font-size:1.4rem;
     margin-left:2.1rem;
+    width:18rem;
 }
 
 #password-input {
@@ -98,7 +100,7 @@ grid-area:email;
     width:22rem;
     height:30rem;
 }
-#return {
+#return1 {
 grid-area:back;
 background-color:#F10F0F;
 width:6rem;
@@ -127,6 +129,7 @@ border:solid 1px black;
     font-size:1.4rem;
     margin-left:2.1rem;
     margin-right:auto;
+    width:18rem;
 }
 #send {
 grid-area:reset;
