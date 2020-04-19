@@ -17,19 +17,21 @@
     })
 })();
 
+// switch to change password
 function rese() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "none";
     var hol = document.querySelector(".hol")
-    hol.style.display = "grid" // switch to change password
+    hol.style.display = "grid" 
     var res = document.querySelector("#signup-holder")
     res.style.display = "none"
 }
+// switch to main
 function main() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "grid";
     var hol = document.querySelector(".hol")
-    hol.style.display = "none" // switch to main
+    hol.style.display = "none" 
     var res = document.querySelector("#signup-holder")
     res.style.display = "none"
     document.querySelector("#send").style.backgroundColor = "#F10F0F"
@@ -37,11 +39,12 @@ function main() {
     document.getElementById("reset-password").value = ""
 
 }
+// switch to create account
 function account() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "none";
     var hol = document.querySelector(".hol")
-    hol.style.display = "none" // switch to main
+    hol.style.display = "none" 
     var res = document.querySelector("#signup-holder")
     res.style.display = "grid"
 }

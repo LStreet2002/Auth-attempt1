@@ -80,3 +80,17 @@ function settings() {
   document.querySelector("#setting").style.display = "block"
   document.querySelector("#settings").style.backgroundColor = "#F10F0F"
 }
+function upscreen() {
+  document.querySelector(".navbar").style.display = "none"
+  document.querySelector("#picture").style.display = "none"
+  document.querySelector("#upload").style.display = "grid"
+  document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#downscreen").style.display = ""
+}
+function downscreen() {
+  document.querySelector(".navbar").style.display = "block"
+  document.querySelector("#picture").style.display = "block"
+  document.querySelector("#upload").style.display = "none"
+  document.querySelector("#upscreen").style.display = ""
+  document.querySelector("#downscreen").style.display = "none"
+}

@@ -131,9 +131,38 @@
   .demo:hover {
     opacity: 1;
   }
-
-  
-  
-  
+.back {
+  background-color:#F10F0F;
+  width:6.7rem;
+  height:3rem;
+}
+#upborder {
+  border:solid 1px black;
+  height:28rem;
+  width:28rem;
+  margin:auto;
+}
+#uploader {
+  height:4rem;
+  border-radius:0.8rem;
+  width:12rem;
+  background-color: #F10F0F;
+  border:none;
+  margin:auto;
+  margin-top:2rem;
+}
+#returnphoto {
+  width:5.4rem;
+  height:3.1rem;
+  margin-left:1.0rem;
+  transform: rotate(180deg);
+}
+#uploa {
+  transform: rotate(90deg);
+  width:3rem;
+  height:9rem;
+  margin-left:auto;
+  margin-top:-2.7rem;
+}
   
   
