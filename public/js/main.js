@@ -101,7 +101,7 @@ var chooser = document.getElementById("chooser");
 // Listen for file selection
 chooser.addEventListener("change", function (e) {
   // Get file
-  var file = e.target.files[0];
+  file = e.target.files[0];
 
   console.log(file.name)
 
@@ -112,22 +112,21 @@ chooser.addEventListener("change", function (e) {
   output.onload = function () {
     URL.revokeObjectURL(output.src) // free memory
   }
-  // Create a storage refd
-  var storageRef = firebase
-    .storage()
-    .ref("/pic" + file.name);
-  // Upload file
-  var task = storageRef.put(file)
+
 
 
 });
 
-function upload(s) {
-  var fil = s;
-  console.log(fil.name)
+function upload() {
+  // Create a storage refd
+  var storageRef = firebase
+    .storage()
+    .ref("pic/" + file.name);
+  // Upload file
+  var task = storageRef.put(file)
 
-
-}
+  downscreen()
+};
 
 //pictures/storage
 

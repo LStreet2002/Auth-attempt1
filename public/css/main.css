@@ -24,6 +24,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index:100;
 }
 
 /* Style the links inside the navigation bar */
@@ -165,11 +166,18 @@
   margin-top:-2.7rem;
 }
 #preview {
-  margin-left:5.6rem;
+ 
   width:17rem;
+  height:17rem;
 }
 #chooser {
-  margin-left:6.6rem;
+  margin-left:7.1rem;
 }
-  
+#previewholder {
+  background-color:rgb(163, 162, 162);
+  width:17rem;
+  height:17rem;
+  margin-left:5.6rem;
+  margin-top:2rem;
+}
   
