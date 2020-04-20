@@ -94,7 +94,40 @@ function downscreen() {
   document.querySelector("#upscreen").style.display = ""
   document.querySelector("#downscreen").style.display = "none"
 }
+//upload 
+var uploader = document.getElementById("uploader");
+var chooser = document.getElementById("chooser");
+
+// Listen for file selection
+chooser.addEventListener("change", function (e) {
+  // Get file
+  var file = e.target.files[0];
+
+  console.log(file.name)
+
+
+
+  var output = document.getElementById('preview');
+  preview.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = function () {
+    URL.revokeObjectURL(output.src) // free memory
+  }
+  // Create a storage refd
+  var storageRef = firebase
+    .storage()
+    .ref("/pic" + file.name);
+  // Upload file
+  var task = storageRef.put(file)
+
+
+});
+
+function upload(s) {
+  var fil = s;
+  console.log(fil.name)
+
+
+}
 
 //pictures/storage
-var storageRef = firebase.storage().ref();
-var imagesRef = storageRef.child('pic');
+

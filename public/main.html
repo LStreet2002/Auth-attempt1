@@ -13,6 +13,7 @@
 
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <title>Home</title>
 </head>
 
@@ -36,7 +37,7 @@
     <a href="#home" id="home" style="background-color:rgb(241, 15, 15)" onclick=picture()><img id="cicon"
         style="width: 3rem;height:3.4rem" src="pic/camera.png"></a>
     <a href="#prizes" id="prizes" onclick=prizes()><img id="picon" style="width: 3.2rem;height:3.4rem;"
-        src="pic/trophy.png"></a>
+        src="pic/Trophy.png"></a>
     <a href="#activities" id="activities" onclick=activity()><img id="aicon" style="width: 1.8rem;height:3.4rem"
         src="pic/feet.png"></a>
     <a href="#settings" id="settings" onclick=settings()><img id="sicon" style="width: 3rem;height:3.4rem;"
@@ -119,8 +120,8 @@
   <!--End of pitcures page-->
   <div id="upload" style="display:none;">
     <div id="upborder">
-      <div><img></div>
-      <button id="chooser">Choose</button>
+      <div><img id="preview"></div>
+      <input input type="file" value="upload" id="chooser"></input>
     </div>
     <button id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
 
