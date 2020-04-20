@@ -94,3 +94,7 @@ function downscreen() {
   document.querySelector("#upscreen").style.display = ""
   document.querySelector("#downscreen").style.display = "none"
 }
+
+//pictures/storage
+var storageRef = firebase.storage().ref();
+var imagesRef = storageRef.child('pic');
