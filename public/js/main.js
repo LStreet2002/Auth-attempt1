@@ -128,5 +128,41 @@ function upload() {
   downscreen()
 };
 
+
 //pictures/storage
+function caroos() {
+
+
+  var storage = firebase.storage();
+  var pathReference = storage.ref('/pic');
+
+
+
+  var gree = pathReference.list()
+
+
+
+  console.log(gree)
+
+
+  for (i = 0; i < gree.length; i++) {
+
+    var carhol = document.createElement("div")
+    carhol.class = "mySlides"
+
+    var carimg = document.createElement("img")
+    carimg.classList.add("carosimg", i)
+
+
+    carimg.src = url //firebase storage files somehow put in an array;
+
+    carhol.appendChild(carimg)
+
+    document.querySelector("#fullslides").appendChild(carhol)
+
+
+    i++
+
+  };
+}
 
