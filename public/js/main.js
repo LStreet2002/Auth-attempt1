@@ -127,6 +127,8 @@ function downscreen() {
   document.querySelector(".nav-wrapper").style.backgroundColor = "white"
   document.querySelector(".logoa").style.display = "block"
   document.querySelector(".reversea").style.display = "none"
+  document.querySelector("#uploader").style.backgroundColor = "grey"
+  document.querySelector("#preview").src = "" // free memory
 }
 //upload 
 var uploader = document.getElementById("uploader");
@@ -147,7 +149,7 @@ chooser.addEventListener("change", function (e) {
     URL.revokeObjectURL(output.src) // free memory
   }
 
-
+  document.querySelector("#uploader").style.backgroundColor = "#F10F0F"
 
 });
 
@@ -158,6 +160,8 @@ function upload() {
     .ref("pic/" + file.name);
   // Upload file
   var task = storageRef.put(file)
+
+  document.querySelector("#uploader").style.backgroundColor = "grey"
 
   downscreen()
 };
