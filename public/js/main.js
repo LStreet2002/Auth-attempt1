@@ -8,6 +8,34 @@ firebase.auth().onAuthStateChanged(function (user) {
 function logOut() {
   firebase.auth().signOut();
 }
+//pictures/storage
+document.addEventListener("DOMContentLoaded", function caroos() {
+
+
+  var storage = firebase.storage();
+  var pathReference = storage.ref('pic/');
+
+  var gree = pathReference.list()
+
+
+  for (i = 0; i < 4; i++) {
+
+    storageRef = firebase.storage().ref("pic/firefly.jpg").getDownloadURL().then(function (url) {
+      var carhol = document.createElement("div")
+      carhol.classList.add("mySlides")
+
+      var carimg = document.createElement("img")
+      carimg.classList.add("carosimg", i)
+      carimg.src = url
+      carhol.appendChild(carimg)
+
+      document.querySelector("#fullslides").appendChild(carhol)
+      console.log("tur")
+
+    });
+
+  };
+});
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -37,8 +65,7 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
+
 }
 
 //switching tabs
