@@ -41,9 +41,9 @@
     font-size:1.7rem;
 }
 #loginlog {
-    width:24rem;
+    width:22rem;
     
-    display:flex;
+    display:block;
     justify-content:center;
     margin:auto;
 }
