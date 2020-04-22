@@ -22,7 +22,7 @@ function rese() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "none";
     var hol = document.querySelector(".hol")
-    hol.style.display = "grid" 
+    hol.style.display = "grid"
     var res = document.querySelector("#signup-holder")
     res.style.display = "none"
 }
@@ -31,7 +31,7 @@ function main() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "grid";
     var hol = document.querySelector(".hol")
-    hol.style.display = "none" 
+    hol.style.display = "none"
     var res = document.querySelector("#signup-holder")
     res.style.display = "none"
     document.querySelector("#send").style.backgroundColor = "#F10F0F"
@@ -44,7 +44,7 @@ function account() {
     var logi = document.querySelector("#login-holder")
     logi.style.display = "none";
     var hol = document.querySelector(".hol")
-    hol.style.display = "none" 
+    hol.style.display = "none"
     var res = document.querySelector("#signup-holder")
     res.style.display = "grid"
 }
@@ -57,8 +57,7 @@ function account() {
 
         //send 
         auth.sendPasswordResetEmail(email).then(function () {
-            document.querySelector("#send").style.backgroundColor = "#77FF00"
-            document.querySelector("#send").innerText = "SENT";
+            main()
         }).catch(error => alert(error.message));
     })
 })();

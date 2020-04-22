@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function caroos() {
       carhol.appendChild(carimg)
 
       document.querySelector("#fullslides").appendChild(carhol)
-      console.log("tur")
+
 
     });
 
@@ -114,14 +114,19 @@ function upscreen() {
   document.querySelector("#picture").style.display = "none"
   document.querySelector("#upload").style.display = "grid"
   document.querySelector("#upscreen").style.display = "none"
-  document.querySelector("#downscreen").style.display = ""
+  document.querySelector(".nav-wrapper").style.backgroundColor = "red"
+  document.querySelector(".logoa").style.display = "none"
+  document.querySelector(".reversea").style.display = "inline"
+
 }
 function downscreen() {
   document.querySelector(".navbar").style.display = "block"
   document.querySelector("#picture").style.display = "block"
   document.querySelector("#upload").style.display = "none"
   document.querySelector("#upscreen").style.display = ""
-  document.querySelector("#downscreen").style.display = "none"
+  document.querySelector(".nav-wrapper").style.backgroundColor = "white"
+  document.querySelector(".logoa").style.display = "block"
+  document.querySelector(".reversea").style.display = "none"
 }
 //upload 
 var uploader = document.getElementById("uploader");
