@@ -144,20 +144,29 @@ grid-area:addition;
 
 
 #upborder {
-  
-  height: 28rem;
-  width: 28rem;
+  border:solid 1px black;
+  height: 80vw;
+  width: 80vw;
   margin: auto;
+  display:grid;
+  grid-template-columns:0.5fr 5fr 0.5fr;
+grid-template-rows:3fr 1fr;
+grid-template-areas:
+" . preview . "
+". up .";
+margin-top:5rem;
+
 }
 
 #uploader {
-  height: 4rem;
+  height: 10vw;
   border-radius: 0.8rem;
-  width: 12rem;
+  width: 30vw;
   background-color:grey;
   border: none;
-  margin: auto;
+  margin:auto;
   margin-top: 1.4rem;
+  grid-area:up;
 }
 .reversea {
   display:grid;
@@ -180,28 +189,30 @@ grid-area:addition;
 
 #uploa {
   transform: rotate(90deg);
-  width: 3rem;
-  height: 9rem;
+  width: 9vw;
+  height: 30vw;
   margin-left: auto;
-  margin-top: -2.7rem;
+  margin-top:-10.6vw;
 }
 
 #preview {
 
-  width: 17rem;
-  height: 17rem;
+  width: 50vw;
+  height: 50vw;
 }
 
 #chooser {
-  margin-left: 7.1rem;
+ 
 }
+
 
 #previewholder {
   background-color: rgb(163, 162, 162);
-  width: 17rem;
-  height: 17rem;
-  margin-left: 5.6rem;
+  width: 50vw;
+  height: 50vw;
   margin-top: 2rem;
+  grid-area:preview;
+  margin:auto;
 }
 
 
@@ -212,4 +223,10 @@ grid-area:addition;
 #upscreen {
   grid-area:upscreen;
   width:2.4rem;
+}
+.uploy {
+  margin-top:1rem;
+}
+input[type=file]{ 
+  color:transparent;
 }
