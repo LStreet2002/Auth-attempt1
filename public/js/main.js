@@ -128,7 +128,9 @@ function downscreen() {
   document.querySelector(".logoa").style.display = "grid"
   document.querySelector(".reversea").style.display = "none"
   document.querySelector("#uploader").style.backgroundColor = "grey"
-  document.querySelector("#preview").src = "" // free memory
+  document.querySelector("#preview").removeAttribute("src") // free memory
+
+
 }
 //upload 
 var uploader = document.getElementById("uploader");
@@ -143,11 +145,12 @@ chooser.addEventListener("change", function (e) {
 
 
 
-  var output = document.getElementById('preview');
+  output = document.getElementById('preview');
   preview.src = URL.createObjectURL(event.target.files[0]);
   output.onload = function () {
     URL.revokeObjectURL(output.src) // free memory
   }
+
 
   document.querySelector("#uploader").style.backgroundColor = "#F10F0F"
 
@@ -161,9 +164,23 @@ function upload() {
   // Upload file
   var task = storageRef.put(file)
 
+
   document.querySelector("#uploader").style.backgroundColor = "grey"
 
+  document.querySelector("#preview").removeAttribute("src") // free memory
+
+  db.collection("pic").add({
+    src: "gs://canon-1auth.appspot.com/pic/" + file.name
+  })
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+
   downscreen()
+
 };
 
 
