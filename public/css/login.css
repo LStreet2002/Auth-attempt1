@@ -98,11 +98,11 @@ body {
         ".";
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     background-image: url("/pic/dandyop.png");
-    background-size: 22rem;
-    width: 22rem;
-    height: 30rem;
+    background-size: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
 }
 
 #return1 {
@@ -122,22 +122,22 @@ body {
 
 #instru {
     grid-area: text;
-    font-size: 1.3rem;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 6vw;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-top: 2rem;
-    margin-left: 2.1rem;
+
 }
 
 #reset-password {
     grid-area: input;
     border: solid 1px black;
     height: 2.3rem;
-    font-size: 1.4rem;
-    margin-left: 2.1rem;
-    margin-right: auto;
-    width: 18rem;
+    font-size: 5vw;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
 }
 
 #send {
@@ -145,7 +145,7 @@ body {
     background-color: #F10F0F;
 
     color: white;
-    font-size: 1.7rem;
+    font-size: 10vw;
     border: none;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
