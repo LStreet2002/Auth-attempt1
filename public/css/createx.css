@@ -14,11 +14,11 @@
         "create"
         "return";
     background-image: url("/pic/dandyop.png");
-    background-size: 22rem;
-    width: 22rem;
+    background-size: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 30rem;
+    height: 100%;
+    background-repeat: no-repeat;
 }
 
 #userfi {
@@ -42,7 +42,7 @@
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     color: white;
-    font-size: 1.7rem;
+    font-size: 7vw;
 }
 
 #loginlog {
@@ -57,23 +57,24 @@
 .sign-field {
     border: solid 1px black;
     height: 2.3rem;
-    font-size: 1.4rem;
-    margin-left: 2.1rem;
-    width: 18rem;
+    font-size: 5vw;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
 }
 
 .Tittle {
-    font-size: 1.4rem;
+    font-size: 7vw;
     margin-left: 1rem;
     margin-top: 2rem;
-    margin-bottom: none;
+    margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
 }
 
 #return2 {
     text-align: center;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 6vw;
     color: #006590;
     font-family: 'Roboto', sans-serif;
     ;
