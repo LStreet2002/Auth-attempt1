@@ -125,7 +125,7 @@ function downscreen() {
   document.querySelector("#upload").style.display = "none"
   document.querySelector("#upscreen").style.display = ""
   document.querySelector(".nav-wrapper").style.backgroundColor = "white"
-  document.querySelector(".logoa").style.display = "block"
+  document.querySelector(".logoa").style.display = "grid"
   document.querySelector(".reversea").style.display = "none"
   document.querySelector("#uploader").style.backgroundColor = "grey"
   document.querySelector("#preview").src = "" // free memory
