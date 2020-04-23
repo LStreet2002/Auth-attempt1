@@ -21,7 +21,8 @@
   <nav>
     <div class="nav-wrapper">
       <div class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-        <a id="upscreen"><img class="uploy"onclick=upscreen() src="pic/upload.png" style="width:2.4rem;margin-left:44.8%;;"> </a>
+        <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"
+            style="width:2.4rem;margin-left:44.8%;;"> </a>
       </div>
       <a class="reversea" style="display:none;">
         <img onclick=downscreen() id="reverse" src="pic/chevron.png">
@@ -76,10 +77,11 @@
   <!--End of pitcures page-->
   <div id="upload" style="display:none;">
     <div id="upborder">
-      <div id="previewholder"><img id="preview"></div>
-      <input input type="file" value="upload" id="chooser"></input>
+      <div id="previewholder"><img id="preview">
+        <input input type="file" value="upload" id="chooser"></input></div>
+
+      <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
     </div>
-    <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
 
   </div>
 

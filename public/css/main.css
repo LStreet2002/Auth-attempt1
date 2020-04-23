@@ -144,10 +144,18 @@ grid-area:addition;
 
 
 #upborder {
-  
+  border:solid 1px black;
   height: 28rem;
   width: 28rem;
   margin: auto;
+  display:grid;
+  grid-template-columns:0.5fr 5fr 0.5fr;
+grid-template-rows:3fr 1fr;
+grid-template-areas:
+" . preview . "
+". up .";
+margin-top:5rem;
+
 }
 
 #uploader {
@@ -156,8 +164,9 @@ grid-area:addition;
   width: 12rem;
   background-color:grey;
   border: none;
-  margin: auto;
+  margin:auto;
   margin-top: 1.4rem;
+  grid-area:up;
 }
 .reversea {
   display:grid;
@@ -193,15 +202,17 @@ grid-area:addition;
 }
 
 #chooser {
-  margin-left: 7.1rem;
+ 
 }
+
 
 #previewholder {
   background-color: rgb(163, 162, 162);
   width: 17rem;
   height: 17rem;
-  margin-left: 5.6rem;
   margin-top: 2rem;
+  grid-area:preview;
+  margin:auto;
 }
 
 
@@ -212,4 +223,10 @@ grid-area:addition;
 #upscreen {
   grid-area:upscreen;
   width:2.4rem;
+}
+.uploy {
+  margin-top:1rem;
+}
+input[type=file]{ 
+  color:transparent;
 }
