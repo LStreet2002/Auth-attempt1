@@ -8,34 +8,52 @@ firebase.auth().onAuthStateChanged(function (user) {
 function logOut() {
   firebase.auth().signOut();
 }
-//pictures/storage
-document.addEventListener("DOMContentLoaded", function caroos() {
+//--------------------------------------------------------------------------------
+//This is the carousel------------------------------------------------------------
+//--------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function test() {
+  pic = [];
+  db.collection("pic").where("type", "==", "picture")
+    .onSnapshot(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        pic.push(doc.data().src);
+      });
 
 
-  var storage = firebase.storage();
-  var pathReference = storage.ref('pic/');
 
-  var gree = pathReference.list()
+      for (i = 0; i < pic.length; i++) {
+        console.log(pic[i])
 
+        //putting things into carousel 
+        var storage = firebase.storage();
+        var pathReference = storage.ref('pic/' + pic[i]);
 
-  for (i = 0; i < 4; i++) {
-
-    storageRef = firebase.storage().ref("pic/firefly.jpg").getDownloadURL().then(function (url) {
-      var carhol = document.createElement("div")
-      carhol.classList.add("mySlides")
-
-      var carimg = document.createElement("img")
-      carimg.classList.add("carosimg", i)
-      carimg.src = url
-      carhol.appendChild(carimg)
-
-      document.querySelector("#fullslides").appendChild(carhol)
+        storageRef.child('pic/' + pic[i]).getDownloadURL().then(function (url) {
+          console.log(url)
+          console.log("url gained")
 
 
-    });
+          var carhol = document.createElement("div")
+          carhol.classList.add("mySlides")
 
-  };
+          console.log("slides made")
+
+          var carimg = document.createElement("img")
+          carimg.classList.add("carosimg", i)
+          carimg.src = url
+          console.log("url added")
+          carhol.appendChild(carimg)
+
+          document.querySelector("#fullslides").appendChild(carhol);
+          console.log("carousel!")
+        })
+      };
+    })
+
 });
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -52,8 +70,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
-  console.log(slides)
+  var slides = document.getElementsByClassName("mySlides")
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
   if (n > slides.length) { slideIndex = 1 }
@@ -136,6 +153,11 @@ function downscreen() {
 var uploader = document.getElementById("uploader");
 var chooser = document.getElementById("chooser");
 
+
+
+
+
+
 // Listen for file selection
 chooser.addEventListener("change", function (e) {
   // Get file
@@ -143,18 +165,20 @@ chooser.addEventListener("change", function (e) {
 
   console.log(file.name)
 
-
-
   output = document.getElementById('preview');
   preview.src = URL.createObjectURL(event.target.files[0]);
   output.onload = function () {
     URL.revokeObjectURL(output.src) // free memory
   }
 
-
   document.querySelector("#uploader").style.backgroundColor = "#F10F0F"
 
 });
+
+
+
+
+
 
 function upload() {
   // Create a storage refd
@@ -170,7 +194,8 @@ function upload() {
   document.querySelector("#preview").removeAttribute("src") // free memory
 
   db.collection("pic").add({
-    src: "gs://canon-1auth.appspot.com/pic/" + file.name
+    src: file.name,
+    type: "picture"
   })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -182,6 +207,9 @@ function upload() {
   downscreen()
 
 };
+
+
+
 
 
 
