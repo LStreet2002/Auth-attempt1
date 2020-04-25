@@ -62,6 +62,8 @@ grid-area:addition;
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
+  width:100vw !important;
+  height:90vw
 }
 
 /* Hide the images by default */
@@ -227,6 +229,9 @@ margin-top:5rem;
 }
 .uploy {
   margin-top:1rem;
+  margin-left:auto;
+  margin-right:auto;
+  width:2.4rem;
 }
 input[type=file]{ 
   color:transparent;
@@ -234,6 +239,55 @@ input[type=file]{
 
 .carosimg {
   height:70vw;
-  width:70;
+  height:80vw;
   background-color:grey;
+}
+#picture {
+  width:100vw;
+}
+#fullslides {
+  height:80vw;
+}
+.setting-box {
+  border-bottom:1px solid black;
+  height:17vw;
+    position: relative;
+
+}
+#setgrid {
+  
+  grid-template-rows:5fr 5fr 5fr 5fr 5fr 5fr;
+  grid-template-columns:1fr;
+  grid-template-areas:
+  "set1"
+  "set2"
+  "set3"
+  "set4"
+  "set5"
+  "set6";
+  height:100vh;
+}
+#set1 {
+  grid-area:set1;
+}
+#set2 {
+  grid-area:set2;
+}
+#set3 {
+  grid-area:set3;
+}
+#set4 {
+  grid-area:set4;
+}
+#set5 {
+  grid-area:set5;
+}
+#set6 {
+  grid-area:set6;
+}
+#setting {
+  height:100vh;
+}
+.sethead {
+  font-size:7.5vw;
 }

@@ -95,6 +95,8 @@ function picture() {
   document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
+  document.querySelector(".nav-wrapper").style.backgroundColor = "white"
+  document.querySelector("#upscreen").style.display = "block"
 }
 function activity() {
   document.querySelector("#picture").style.display = "none"
@@ -105,6 +107,8 @@ function activity() {
   document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
+  document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0, 191, 0, 0.7)"
+  document.querySelector("#upscreen").style.display = "none"
 }
 function prizes() {
   document.querySelector("#picture").style.display = "none"
@@ -115,6 +119,8 @@ function prizes() {
   document.querySelector("#prizes").style.backgroundColor = "#F10F0F"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
+  document.querySelector(".nav-wrapper").style.backgroundColor = "#B82525"
+  document.querySelector("#upscreen").style.display = "none"
 }
 function settings() {
   document.querySelector("#picture").style.display = "none"
@@ -125,6 +131,8 @@ function settings() {
   document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "block"
   document.querySelector("#settings").style.backgroundColor = "#F10F0F"
+  document.querySelector(".nav-wrapper").style.backgroundColor = "#4588A9"
+  document.querySelector("#upscreen").style.display = "none"
 }
 function upscreen() {
   document.querySelector(".navbar").style.display = "none"
