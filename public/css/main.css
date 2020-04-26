@@ -19,13 +19,16 @@ grid-area:addition;
 }
 
 .nav-wrapper {
+  
+
+}
+#topper {
   background-color: white;
   display:grid;
   grid-template-columns:5fr 5fr;
   grid-template-rows:1fr;
   grid-template-areas:
   "addition addition"
-
 }
 
 
@@ -250,22 +253,12 @@ input[type=file]{
 }
 .setting-box {
   border-bottom:1px solid black;
-  height:17vw;
-    position: relative;
-
 }
 #setgrid {
+  display:block;
+  overflow:scroll;
+  height:28rem;
   
-  grid-template-rows:5fr 5fr 5fr 5fr 5fr 5fr;
-  grid-template-columns:1fr;
-  grid-template-areas:
-  "set1"
-  "set2"
-  "set3"
-  "set4"
-  "set5"
-  "set6";
-  height:100vh;
 }
 #set1 {
   grid-area:set1;
@@ -285,9 +278,19 @@ input[type=file]{
 #set6 {
   grid-area:set6;
 }
-#setting {
-  height:100vh;
-}
+
 .sethead {
+  margin-left: 2rem;
   font-size:7.5vw;
+  margin-top:3vh;
+  margin-bottom:3vh;
+  color:black;
 }
+.setext {
+  margin-left: 2rem;
+  font-size:3.75vw;
+  color:rgb(99, 97, 97);
+  margin-top:3vh;
+  margin-bottom:3vh;
+}
+

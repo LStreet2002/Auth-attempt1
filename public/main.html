@@ -17,24 +17,28 @@
   <title>Home</title>
 </head>
 
+
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <div class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-        <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
+  <div class="navbar-fixed">
+    <nav>
+      <div id="topper" class="nav-wrapper">
+        <div class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
+        </div>
+        <a class="reversea" style="display:none;">
+          <img onclick=downscreen() id="reverse" src="pic/chevron.png">
       </div>
-      <a class="reversea" style="display:none;">
-        <img onclick=downscreen() id="reverse" src="pic/chevron.png">
-    </div>
-    </a>
+      </a>
 
 
 
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-    </ul>
-    </div>
+      </ul>
+  </div>
   </nav>
+  </div>
+
   <div class="navbar">
     <a href="#home" id="home"
       style="border-bottom:2px solid red; border-left: 1px solid grey; border-right:0.5px solid grey;"
@@ -87,7 +91,9 @@
 
 
 
-  <div id="activity" style="display:none"></div>
+  <div id="activity" style="display:none">
+
+  </div>
 
   <!--End of Activity page-->
 
@@ -95,27 +101,97 @@
 
   <!--End of Prize page-->
 
+  <!----------------setting sidenavs----------->
   <div id="setting" style="display:none">
     <div id="setgrid">
-      <div id="set1" class="setting-box">
-        <h3 class="sethead">Customisation</h3>
-      </div>
+      <a href="#" data-target="slide-1" class="sidenav-trigger show-on-large">
+        <div class="setting-box">
+          <h3 class="sethead">Customisation</h3>
+          <p class="setext">Themes,Background</p>
+      </a>
+
+
+      <ul id="slide-1" class="sidenav">
+        <li>
+          <p>Customisation</p>
+        </li>
+
+      </ul>
+    </div>
+
+    <a href="#" data-target="slide-2" class="sidenav-trigger show-on-large">
       <div id="set2" class="setting-box">
         <h3 class="sethead">Account</h3>
-      </div>
-      <div id="set3" class="setting-box">
-        <h3 class="sethead">Preferences</h3>
-      </div>
-      <div id="set4" class="setting-box">
-        <h3 class="sethead">Notifications</h3>
-      </div>
-      <div id="set5" class="setting-box">
-        <h3 class="sethead">Help</h3>
-      </div>
-      <div id="set6" class="setting-box">
-        <h3 class="sethead">More information</h3>
-      </div>
-    </div>
+        <p class="setext">Password,Profile Picture</p>
+    </a>
+
+    <ul id="slide-2" class="sidenav">
+      <li>
+
+      </li>
+      <p>Account</p>
+    </ul>
+  </div>
+  <a href="#" data-target="slide-3" class="sidenav-trigger show-on-large">
+    <div id="set3" class="setting-box">
+      <h3 class="sethead">Preferences</h3>
+      <p class="setext">Prize claiming</p>
+  </a>
+
+
+  <ul id="slide-3" class="sidenav">
+    <li>
+
+    </li>
+    <p>Preferences</p>
+  </ul>
+  </div>
+
+  <a href="#" data-target="slide-4" class="sidenav-trigger show-on-large">
+    <div id="set4" class="setting-box">
+      <h3 class="sethead">Notifications</h3>
+      <p class="setext">New activity</p>
+  </a>
+
+  <ul id="slide-4" class="sidenav">
+    <li>
+
+    </li>
+    <p>Notifications</p>
+  </ul>
+
+  </div>
+
+  <a href="#" data-target="slide-5" class="sidenav-trigger show-on-large">
+    <div id="set5" class="setting-box">
+      <h3 class="sethead">Help</h3>
+      <p class="setext">How to use the app</p>
+  </a>
+
+  <ul id="slide-5" class="sidenav">
+    <li>
+
+    </li>
+    <p>Help</p>
+  </ul>
+
+  </div>
+
+  <a href="#" data-target="slide-6" class="sidenav-trigger show-on-large">
+    <div id="set6" class="setting-box">
+      <h3 class="sethead">More information</h3>
+      <p class="setext">Canon Website</p>
+  </a>
+
+  <ul id="slide-6" class="sidenav">
+    <li>
+
+    </li>
+    <p>More information</p>
+  </ul>
+  </div>
+  <!----------------setting sidenavs----------->
+  </div>
 
   </div>
 

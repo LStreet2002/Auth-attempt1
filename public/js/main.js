@@ -22,33 +22,28 @@ document.addEventListener("DOMContentLoaded", function test() {
 
 
       for (i = 0; i < pic.length; i++) {
-        console.log(pic[i])
-
         //putting things into carousel 
         var storage = firebase.storage();
         var pathReference = storage.ref('pic/' + pic[i]);
 
         storageRef.child('pic/' + pic[i]).getDownloadURL().then(function (url) {
-          console.log(url)
-          console.log("url gained")
 
 
           var carhol = document.createElement("div")
           carhol.classList.add("mySlides")
 
-          console.log("slides made")
 
           var carimg = document.createElement("img")
           carimg.classList.add("carosimg", i)
           carimg.src = url
-          console.log("url added")
           carhol.appendChild(carimg)
 
           document.querySelector("#fullslides").appendChild(carhol);
-          console.log("carousel!")
         })
       };
     })
+
+
 
 });
 //--------------------------------------------------------------------------------
@@ -215,6 +210,18 @@ function upload() {
   downscreen()
 
 };
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
 
 
 
