@@ -1,81 +1,81 @@
 * {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 #signup-holder {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "username"
-    "email"
-    "password"
-    "create"
-    "return";
-  background-image: url("/pic/dandyop.png");
-  background-size: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  background-repeat: no-repeat;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "username"
+        "email"
+        "password"
+        "create"
+        "return";
+    background-image: url("/pic/dandyop.png");
+    background-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    background-repeat: no-repeat;
 }
 
 #userfi {
-  grid-area: username;
+    grid-area: username;
 }
 
 #emailfi {
-  grid-area: email;
+    grid-area: email;
 }
 
 #passfi {
-  grid-area: password;
+    grid-area: password;
 }
 
 #button1 {
-  grid-area: create;
-  width: 8rem;
-  margin: auto;
-  background-color: #f10f0f;
-  border: none;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-  color: white;
-  font-size: 7vw;
+    grid-area: create;
+    width: 8rem;
+    margin: auto;
+    background-color: #f10f0f;
+    border: none;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    color: white;
+    font-size: 7vw;
 }
 
 #loginlog {
-  width: 100%;
-  height: auto;
-  display: block;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sign-field {
-  border: solid 1px black;
-  height: 2.3rem;
-  font-size: 5vw;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  width: 90%;
+    border: solid 1px black;
+    height: 2.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
+    font-size: 5vw;
 }
 
 .Tittle {
-  font-size: 8vw;
-  margin-left: 1rem;
-  margin-top: 2rem;
-  margin-bottom: none;
-  font-family: "Roboto", sans-serif;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 8vw;
 }
 
 #return2 {
-  text-align: center;
-  text-decoration: none;
-  font-size: 6vw;
-  color: #006590;
-  font-family: "Roboto", sans-serif;
-  grid-area: return;
+    text-align: center;
+    text-decoration: none;
+    color: #006590;
+    font-family: "Roboto", sans-serif;
+    grid-area: return;
+    font-size: 6vw;
 }
