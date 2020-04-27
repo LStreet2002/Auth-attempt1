@@ -1,155 +1,149 @@
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-
 #login-holder {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "email"
-        "password"
-        "login"
-        "create"
-        "forgot";
-    background-image: url("/pic/dandyop.png");
-    background-size: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    height: 100%;
-    background-repeat: no-repeat;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "email"
+    "password"
+    "login"
+    "create"
+    "forgot";
+  background-image: url("/pic/dandyop.png");
+  background-size: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
 #email-input {
-
-    grid-area: email;
+  grid-area: email;
 }
 
 .Tittle {
-    font-size: 1.4rem;
-    margin-left: 2.1rem;
-    margin-top: 2rem;
+  font-size: 1.4rem;
+  margin-left: 2.1rem;
+  margin-top: 2rem;
 }
 
 #login-email {
-
-    border: solid 1px black;
-    height: 2.3rem;
-    font-size: 5vw;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 90%;
-
+  border: solid 1px black;
+  height: 2.3rem;
+  font-size: 5vw;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 90%;
 }
 
 #login-password {
-    border: solid 1px black;
-    height: 2.3rem;
-    font-size: 5vw;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 90%;
+  border: solid 1px black;
+  height: 2.3rem;
+  font-size: 5vw;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 90%;
 }
 
 #password-input {
-    grid-area: password;
-    margin: auto;
+  grid-area: password;
+  margin: auto;
 }
 
 #Login {
-    width: 8rem;
-    margin: auto;
-    grid-area: login;
-    background-color: #F10F0F;
-    border: none;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    color: white;
-    font-size: 7vw;
+  width: 8rem;
+  margin: auto;
+  grid-area: login;
+  background-color: #f10f0f;
+  border: none;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  color: white;
+  font-size: 7vw;
 }
 
 #create {
-    text-align: center;
-    grid-area: create;
-    text-decoration: none;
-    font-size: 9vw;
-    color: #006590;
-    margin-top: 2rem;
-
+  text-align: center;
+  grid-area: create;
+  text-decoration: none;
+  font-size: 9vw;
+  color: #006590;
+  margin-top: 2rem;
 }
 
 #forgot {
-    grid-area: forgot;
-    margin: auto;
-    text-decoration: none;
-    font-size: 4.5vw;
+  grid-area: forgot;
+  margin: auto;
+  text-decoration: none;
+  font-size: 4.5vw;
 }
 
 .hol {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2.2fr 2.2fr 1fr 1.4fr;
-    grid-template-areas:
-        "back"
-        "text"
-        "input"
-        "reset"
-        ".";
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    background-image: url("/pic/dandyop.png");
-    background-size: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2.2fr 2.2fr 1fr 1.4fr;
+  grid-template-areas:
+    "back"
+    "text"
+    "input"
+    "reset"
+    ".";
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  background-image: url("/pic/dandyop.png");
+  background-size: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
 #return1 {
-    grid-area: back;
-    background-color: #F10F0F;
-    width: 6rem;
-    height: 3rem;
-    padding: none;
-    border: none;
-    margin-left: 0.1rem;
+  grid-area: back;
+  background-color: #f10f0f;
+  width: 6rem;
+  height: 3rem;
+  padding: none;
+  border: none;
+  margin-left: 0.1rem;
 }
 
 .backarrow {
-    width: 3rem;
-    margin: auto;
+  width: 3rem;
+  margin: auto;
 }
 
 #instru {
-    grid-area: text;
-    font-size: 6vw;
-    text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 2rem;
-
+  grid-area: text;
+  font-size: 6vw;
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
 }
 
 #reset-password {
-    grid-area: input;
-    border: solid 1px black;
-    height: 2.3rem;
-    font-size: 5vw;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 90%;
+  grid-area: input;
+  border: solid 1px black;
+  height: 2.3rem;
+  font-size: 5vw;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 90%;
 }
 
 #send {
-    grid-area: reset;
-    background-color: #F10F0F;
+  grid-area: reset;
+  background-color: #f10f0f;
 
-    color: white;
-    font-size: 10vw;
-    border: none;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    margin: auto;
+  color: white;
+  font-size: 10vw;
+  border: none;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin: auto;
 }
