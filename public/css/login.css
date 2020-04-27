@@ -25,28 +25,22 @@ body {
     grid-area: email;
 }
 
-.Tittle {
-    font-size: 1.4rem;
-    margin-left: 2.1rem;
-    margin-top: 2rem;
-}
-
 #login-email {
     border: solid 1px black;
     height: 2.3rem;
-    font-size: 5vw;
     margin-left: 1rem;
     margin-right: 1rem;
     width: 90%;
+    font-size: 5vw;
 }
 
 #login-password {
     border: solid 1px black;
     height: 2.3rem;
-    font-size: 5vw;
     margin-left: 1rem;
     margin-right: 1rem;
     width: 90%;
+    font-size: 5vw;
 }
 
 #password-input {
@@ -70,9 +64,9 @@ body {
     text-align: center;
     grid-area: create;
     text-decoration: none;
-    font-size: 9vw;
     color: #006590;
     margin-top: 2rem;
+    font-size: 9vw;
 }
 
 #forgot {
@@ -117,27 +111,26 @@ body {
 
 #instru {
     grid-area: text;
-    font-size: 6vw;
     text-align: center;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2rem;
+    font-size: 6vw;
 }
 
 #reset-password {
     grid-area: input;
     border: solid 1px black;
     height: 2.3rem;
-    font-size: 5vw;
     margin-left: 1rem;
     margin-right: 1rem;
     width: 90%;
+    font-size: 5vw;
 }
 
 #send {
     grid-area: reset;
     background-color: #f10f0f;
-
     color: white;
     font-size: 10vw;
     border: none;
