@@ -83,49 +83,33 @@ function showSlides(n) {
 //switching tabs
 function picture() {
   document.querySelector("#picture").style.display = "block"
-  document.querySelector("#home").style.backgroundColor = "#F10F0F"
   document.querySelector("#activity").style.display = "none"
-  document.querySelector("#activities").style.backgroundColor = "#5B5B5B"
   document.querySelector("#prize").style.display = "none"
-  document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
   document.querySelector(".nav-wrapper").style.backgroundColor = "white"
   document.querySelector("#upscreen").style.display = "block"
 }
 function activity() {
   document.querySelector("#picture").style.display = "none"
-  document.querySelector("#home").style.backgroundColor = "#5B5B5B"
   document.querySelector("#activity").style.display = "block"
-  document.querySelector("#activities").style.backgroundColor = "#F10F0F"
   document.querySelector("#prize").style.display = "none"
-  document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
   document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0, 191, 0, 0.7)"
   document.querySelector("#upscreen").style.display = "none"
 }
 function prizes() {
   document.querySelector("#picture").style.display = "none"
-  document.querySelector("#home").style.backgroundColor = "#5B5B5B"
   document.querySelector("#activity").style.display = "none"
-  document.querySelector("#activities").style.backgroundColor = "#5B5B5B"
   document.querySelector("#prize").style.display = "block"
-  document.querySelector("#prizes").style.backgroundColor = "#F10F0F"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector("#settings").style.backgroundColor = "#5B5B5B"
   document.querySelector(".nav-wrapper").style.backgroundColor = "#B82525"
   document.querySelector("#upscreen").style.display = "none"
 }
 function settings() {
   document.querySelector("#picture").style.display = "none"
-  document.querySelector("#home").style.backgroundColor = "#5B5B5B"
   document.querySelector("#activity").style.display = "none"
-  document.querySelector("#activities").style.backgroundColor = "#5B5B5B"
   document.querySelector("#prize").style.display = "none"
-  document.querySelector("#prizes").style.backgroundColor = "#5B5B5B"
   document.querySelector("#setting").style.display = "block"
-  document.querySelector("#settings").style.backgroundColor = "#F10F0F"
   document.querySelector(".nav-wrapper").style.backgroundColor = "#4588A9"
   document.querySelector("#upscreen").style.display = "none"
 }
