@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 #signup-holder {
@@ -37,7 +37,7 @@
     grid-area: create;
     width: 8rem;
     margin: auto;
-    background-color: #F10F0F;
+    background-color: #f10f0f;
     border: none;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
@@ -67,8 +67,8 @@
     font-size: 8vw;
     margin-left: 1rem;
     margin-top: 2rem;
-    margin-bottom: none;
-    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 #return2 {
@@ -76,7 +76,6 @@
     text-decoration: none;
     font-size: 6vw;
     color: #006590;
-    font-family: 'Roboto', sans-serif;
-    ;
+    font-family: "Roboto", sans-serif;
     grid-area: return;
 }
