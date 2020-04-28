@@ -299,12 +299,110 @@ input[type=file]{
 }
 .setcirc {
  border-radius:20rem;
- height:3rem;
- width:3rem;
- border:solid 1px black;
+ height:2.6rem;
+ width:2.6rem;
+ margin:auto;
 }
-#set{
-  
+#setheme{
+display:grid;
+grid-template-columns:1fr 2fr 3fr 2fr 1fr;
+grid-template-rows: 1fr 2fr 1fr;
+grid-template-areas:
+". Theme Theme Theme ."
+". light . dark ."
+". ltext . dtext .";
+}
+#themetop {
+  grid-area:Theme;
+  margin:auto;
+  font-size:2rem;
+}
+#light {
+  grid-area:light;
+  border:solid 1px black;
+  background-color:white;
+
+}
+#dark {
+  grid-area:dark;
+  border:solid 1px white;
+  background-color:black;
+}
+#ltext {
+  grid-area:ltext;
+  margin:auto;
+}
+#dtext {
+  grid-area:dtext;
+  margin:auto;
 }
 
 
+
+.setcolor {
+  border:solid black 1px;
+  height:2.8rem;
+  width:2.8rem;
+  border-radius:2rem;
+  margin:auto;
+}
+#setbar {
+  display:grid;
+  grid-template-rows:1fr 1fr 1fr 1fr 0.3fr 1fr;
+  grid-template-columns:0.4fr 1fr 1fr 1fr 1fr 0.4fr;
+  grid-template-areas:
+  ". colorhead colorhead colorhead colorhead ."
+  ". colorpage colorpage colorpage colorpage ."
+  ". colortheme colortheme colortheme colortheme ."
+  ". colorr colorb colorg colorw ."
+  ". . . . . ."
+  ". colorpu colory coloro colorpi .";
+}
+#colorhead {
+  grid-area:colorhead;
+  margin:auto;
+  font-size:2rem;
+}
+#colorpage {
+  grid-area:colorpage;
+  margin:auto;
+  border:solid 1px black;
+  width:9rem;
+  height:2rem;
+}
+#colortheme {
+  grid-area:colortheme;
+  margin:auto;
+}
+#colorr {
+  grid-area:colorr;
+  background-color:#F10F0F;
+}
+#colorb {
+  grid-area:colorb;
+  background-color:#4588A9 ;
+}
+#colorg {
+  grid-area:colorg;
+  background-color:rgba(0, 191, 0, 0.7) ;
+}
+#colorw {
+  grid-area:colorw;
+  background-color:white;
+}
+#colorpu {
+  grid-area:colorpu;
+  background-color:#DC06A0;
+}
+#colory {
+  grid-area:colory;
+  background-color:#EAEE18;
+}
+#coloro {
+  grid-area:coloro;
+  background-color:#F77C0A;
+}
+#colorpi {
+  grid-area:colorpi;
+  background-color:#FF76B8;
+}
