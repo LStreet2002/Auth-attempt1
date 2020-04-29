@@ -131,9 +131,8 @@
           <div id="colory" class="setcolor"></div>
           <div id="coloro" class="setcolor"></div>
           <div id="colorpi" class="setcolor"></div>
-
         </div>
-        <a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
+        <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
 
       </ul>
     </div>
@@ -141,72 +140,80 @@
     <a href="#" data-target="slide-2" class="sidenav-trigger show-on-large">
       <div id="set2" class="setting-box">
         <h3 class="sethead">Account</h3>
-        <p class="setext">Password,Profile Picture</p>
+        <p class="setext">Password</p>
     </a>
 
     <ul id="slide-2" class="sidenav">
-      <li>
+      <div id="setreset">
+        <p id="resethead">Reset Password</p>
+        <div id="setconfirm">Reset</div>
 
-      </li>
-      <p>Account</p>
+      </div>
+      <div id="setpicture">
+        <p id="setpicturehead">Profile Picture</p>
+        <div id="profdiv"><img id="previewprofile">
+          <input input type="file" value="upload" id="profchoose"></input></div>
+        <div id="profconfirm">
+          <p id="profset">SET</p>
+        </div>
+
+      </div>
+
+      <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
     </ul>
   </div>
+
+
+
   <a href="#" data-target="slide-3" class="sidenav-trigger show-on-large">
-    <div id="set3" class="setting-box">
-      <h3 class="sethead">Preferences</h3>
-      <p class="setext">Prize claiming</p>
-  </a>
-
-
-  <ul id="slide-3" class="sidenav">
-    <li>
-
-    </li>
-    <p>Preferences</p>
-  </ul>
-  </div>
-
-  <a href="#" data-target="slide-4" class="sidenav-trigger show-on-large">
-    <div id="set4" class="setting-box">
-      <h3 class="sethead">Notifications</h3>
-      <p class="setext">New activity</p>
-  </a>
-
-  <ul id="slide-4" class="sidenav">
-    <li>
-
-    </li>
-    <p>Notifications</p>
-  </ul>
-
-  </div>
-
-  <a href="#" data-target="slide-5" class="sidenav-trigger show-on-large">
     <div id="set5" class="setting-box">
       <h3 class="sethead">Help</h3>
       <p class="setext">How to use the app</p>
   </a>
 
-  <ul id="slide-5" class="sidenav">
-    <li>
+  <ul id="slide-3" class="sidenav">
+    <div class="sethdiv">
+      <p id="sethelp">Help</p>
+      <p class="sethhead">Photos</p>
+      <p class="sethhtext">The main page allows you to scroll through all uploaded images, getting newer as you scroll
+        left,
+        and older as you scroll right. You can upload your own images from the upload page.</p>
+      <p class="sethhead">Activity</p>
+      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When the
+        claim button next to
+        activity is clicked,
+        your location will be checked to ensure you have completed the activity.</p>
+      <p class="sethhead">Prizes</p>
+      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When the
+        claim button next to.
+        Every activity you compltete will award you points. These points will can be used to claim prizes. These prizes
+        will be given to you by</p>
 
-    </li>
-    <p>Help</p>
+    </div>
+
+
   </ul>
 
   </div>
 
-  <a href="#" data-target="slide-6" class="sidenav-trigger show-on-large">
+  <a href="#" data-target="slide-4" class="sidenav-trigger show-on-large">
     <div id="set6" class="setting-box">
       <h3 class="sethead">More information</h3>
       <p class="setext">Canon Website</p>
   </a>
 
-  <ul id="slide-6" class="sidenav">
-    <li>
+  <ul id="slide-4" class="sidenav">
+    <div>
+      <p id="setmorehead">More information</p>
 
-    </li>
-    <p>More information</p>
+      <p class="setmtext">For information on canon products visit <a
+          href="https://global.canon/en/">https://global.canon/en/</a></p>
+
+      <p class="setmtext">This app uses firebase storage for your files.
+        <a href="http://firebase.google.com/">http://firebase.google.com/</a>
+      </p>
+    </div>
+
   </ul>
   </div>
   <!----------------setting sidenavs----------->

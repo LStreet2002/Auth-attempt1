@@ -347,7 +347,7 @@ grid-template-areas:
 }
 #setbar {
   display:grid;
-  grid-template-rows:1fr 1fr 1fr 1fr 0.3fr 1fr;
+  grid-template-rows:1fr 1fr 1fr 1fr 0.3fr 1fr 1fr;
   grid-template-columns:0.4fr 1fr 1fr 1fr 1fr 0.4fr;
   grid-template-areas:
   ". colorhead colorhead colorhead colorhead ."
@@ -355,7 +355,8 @@ grid-template-areas:
   ". colortheme colortheme colortheme colortheme ."
   ". colorr colorb colorg colorw ."
   ". . . . . ."
-  ". colorpu colory coloro colorpi .";
+  ". colorpu colory coloro colorpi ."
+  ". retu retu retu retu .";
 }
 #colorhead {
   grid-area:colorhead;
@@ -372,6 +373,7 @@ grid-template-areas:
 #colortheme {
   grid-area:colortheme;
   margin:auto;
+  font-size:2rem;
 }
 #colorr {
   grid-area:colorr;
@@ -404,4 +406,107 @@ grid-template-areas:
 #colorpi {
   grid-area:colorpi;
   background-color:#FF76B8;
+}
+.setclose {
+  grid-area:retu;
+  margin:auto;
+  margin-top:7rem;
+  font-size:1.4rem;
+  color:black;
+}
+
+#setreset {
+  display:grid;
+grid-template-columns:0.4fr 1.5fr 0.5fr 0.4fr;
+grid-template-rows:1fr 1fr 1.5fr 1fr;
+grid-template-areas:
+". . . ."
+". resethead resethead ."
+". resetext resetext ."
+". setconfirm setconfirm .";
+}
+#resethead {
+  font-size:2rem;
+  margin:auto;
+  grid-area:resethead;
+}
+#resetext {
+grid-area:resetext;
+}
+#setinput {
+grid-area:setinput;
+}
+#setconfirm {
+  grid-area:setconfirm;
+  background-color:#F10F0F;
+  height:2rem;
+  width:9rem;
+  color:white;
+  margin:auto;
+  display:flex;
+  align-content:center;
+  justify-content:center;
+}
+
+#setpicture {
+  display:grid;
+  grid-template-rows:1fr 3fr 1fr;
+  grid-template-columns:0.4fr 3fr 0.4fr;
+  grid-template-areas:
+  ". setpicturehead ."
+  ". previewprofile ."
+  ". profconfirm .";
+
+}
+#profdiv {
+  grid-area:previewprofile;
+  
+}
+
+#previewprofile {
+  height:10rem;
+  width:10rem;
+  margin-left:4.5rem;
+}
+#profconfirm {
+  background-color:#4588A9;
+  margin:auto;
+  width:4rem;
+  grid-area:profconfirm;
+  color:white;
+  padding:1rem;
+}
+#setpicturehead {
+  font-size:2rem;
+  margin:auto;
+  grid-area:setpicturehead;
+}
+#profchoose {
+}
+#profset {
+  margin:auto;
+}
+.sethhead {
+  font-size:2rem;
+  margin-bottom:1rem;
+  margin-left:8rem;
+}
+.sethhtext {
+  font:1.2rem;
+  text-align:center;
+}
+.sethhdiv {
+  display:flex;
+  justify-content:center;
+}
+#sethelp {
+  font-size:2.3rem;
+  margin-left:9rem;
+}
+#setmorehead {
+  font-size:2rem;
+}
+.setmtext {
+  font-size:1.4rem;
+  text-decoration:none;
 }
