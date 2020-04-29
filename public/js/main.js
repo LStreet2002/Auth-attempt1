@@ -88,6 +88,10 @@ function picture() {
   document.querySelector("#setting").style.display = "none"
   document.querySelector(".nav-wrapper").style.backgroundColor = "white"
   document.querySelector("#upscreen").style.display = "block"
+  document.querySelector("#home").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#prizes").style.borderBottom = ""
+  document.querySelector("#activities").style.borderBottom = ""
+  document.querySelector("#settings").style.borderBottom = ""
 }
 function activity() {
   document.querySelector("#picture").style.display = "none"
@@ -96,6 +100,10 @@ function activity() {
   document.querySelector("#setting").style.display = "none"
   document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0, 191, 0, 0.7)"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#home").style.borderBottom = ""
+  document.querySelector("#prizes").style.borderBottom = ""
+  document.querySelector("#activities").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#settings").style.borderBottom = ""
 }
 function prizes() {
   document.querySelector("#picture").style.display = "none"
@@ -104,6 +112,10 @@ function prizes() {
   document.querySelector("#setting").style.display = "none"
   document.querySelector(".nav-wrapper").style.backgroundColor = "#B82525"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#home").style.borderBottom = ""
+  document.querySelector("#prizes").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#activities").style.borderBottom = ""
+  document.querySelector("#settings").style.borderBottom = ""
 }
 function settings() {
   document.querySelector("#picture").style.display = "none"
@@ -112,6 +124,10 @@ function settings() {
   document.querySelector("#setting").style.display = "block"
   document.querySelector(".nav-wrapper").style.backgroundColor = "#4588A9"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#home").style.borderBottom = ""
+  document.querySelector("#prizes").style.borderBottom = ""
+  document.querySelector("#activities").style.borderBottom = ""
+  document.querySelector("#settings").style.borderBottom = "2px solid #FF0000"
 }
 function upscreen() {
   document.querySelector(".navbar").style.display = "none"

@@ -2,6 +2,7 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+
 .logoa {
   display:grid;
   grid-template-columns:2fr 4fr 2fr;
@@ -35,7 +36,7 @@ grid-area:addition;
 
 /* Place the navbar at the bottom of the page, and make it stick */
 .navbar {
-  background-color: #333;
+  background-color: white;
   overflow: hidden;
   position: fixed;
   bottom: 0;
