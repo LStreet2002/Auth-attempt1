@@ -10,9 +10,9 @@ function logOut() {
 }
 
 function userstuff() {
-
-
   var user = firebase.auth().currentUser;
+
+
 
   var docRef = db.collection("users").doc(user.email);
 
@@ -242,6 +242,21 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.sidenav');
   var instances = M.Sidenav.init(elems);
 });
+
+function settingreset() {
+  var user = firebase.auth().currentUser;
+
+  var emailAddress = user.email;
+
+  auth.sendPasswordResetEmail(emailAddress).then(function () {
+    // Email sent.
+  }).catch(function (error) {
+    // An error happened.
+  });
+
+}
+
+
 
 
 

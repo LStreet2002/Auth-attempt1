@@ -68,9 +68,9 @@ function account() {
         e.preventDefault();
 
         // get user info
-        const userName = signForm['signup-username'].value;
-        const email = signForm['signup-email'].value;
-        const password = signForm['signup-password'].value;
+        const userName = signForm['signup-username'].value.toLowerCase();
+        const email = signForm['signup-email'].value.toLowerCase();
+        const password = signForm['signup-password'].value.toLowerCase();
 
 
         // sign up the user
