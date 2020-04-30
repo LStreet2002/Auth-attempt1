@@ -258,7 +258,7 @@ input[type=file]{
 #setgrid {
   display:block;
   overflow:scroll;
-  height:28rem;
+  height:150vw;
   
 }
 #set1 {
@@ -296,11 +296,12 @@ input[type=file]{
 }
 .sidenav {
   border:1px solid black;
+  width:90vw !important;
 }
 .setcirc {
  border-radius:20rem;
- height:2.6rem;
- width:2.6rem;
+ height:2.8rem;
+ width:2.8rem;
  margin:auto;
 }
 #setheme{
@@ -418,12 +419,11 @@ grid-template-areas:
 
 #setreset {
   display:grid;
-grid-template-columns:0.4fr 1.5fr 0.5fr 0.4fr;
-grid-template-rows:1fr 1fr 1.5fr 1fr;
+grid-template-columns:0.4fr 2fr 0.5fr 0.4fr;
+grid-template-rows:1fr 0.2fr 1.5fr;
 grid-template-areas:
 ". . . ."
 ". resethead resethead ."
-". resetext resetext ."
 ". setconfirm setconfirm .";
 }
 #resethead {
@@ -467,7 +467,7 @@ grid-area:setinput;
 #previewprofile {
   height:10rem;
   width:10rem;
-  margin-left:4.5rem;
+  margin-left:19vw;
 }
 #profconfirm {
   background-color:#4588A9;
@@ -490,7 +490,7 @@ grid-area:setinput;
 .sethhead {
   font-size:2rem;
   margin-bottom:1rem;
-  margin-left:8rem;
+ text-align:center;
 }
 .sethhtext {
   font:1.2rem;
@@ -502,11 +502,12 @@ grid-area:setinput;
 }
 #sethelp {
   font-size:2.3rem;
-  margin-left:9rem;
+  text-align:center;
   margin-bottom:1rem;
 }
 #setmorehead {
-  font-size:2rem;
+  font-size:2rem
+  ;
 }
 .setmtext {
   font-size:1.4rem;

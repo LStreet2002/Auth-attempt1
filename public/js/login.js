@@ -72,6 +72,7 @@ function account() {
         const email = signForm['signup-email'].value;
         const password = signForm['signup-password'].value;
 
+
         // sign up the user
         auth.createUserWithEmailAndPassword(email, password).then(function (result) {
             return result.user.updateProfile({
@@ -80,6 +81,7 @@ function account() {
         }).then(cred => {
             main()
         });
+
     });
 })();
 
