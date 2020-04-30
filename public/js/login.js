@@ -79,6 +79,16 @@ function account() {
                 displayName: userName
             })
         }).then(cred => {
+            db.collection("users").doc(email).set({
+                Email: email,
+                Username: userName,
+                type: "user",
+                main: "white",
+                activity: "green",
+                prize: "red",
+                setting: "blue",
+                theme: "light"
+            })
             main()
         });
 
