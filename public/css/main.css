@@ -513,3 +513,11 @@ grid-area:setinput;
   font-size:1.4rem;
   text-decoration:none;
 }
+
+.logout {
+  grid-area: retu;
+  margin: auto;
+  margin-top: 200rem;
+  font-size: 1.4rem;
+    color: rgb(202, 0, 0);
+}
