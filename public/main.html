@@ -19,34 +19,9 @@
 
 
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div id="topper" class="nav-wrapper">
-        <div id="picnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-          <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
-        </div>
-        <a class="reversea" style="display:none;">
-          <img onclick=downscreen() id="reverse" src="pic/chevron.png">
-          <div id="actnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-            <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
-          </div>
-          <div id="prinav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-            <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
-          </div>
-          <div id="setnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-
-          </div>
-      </div>
-      </a>
 
 
 
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-      </ul>
-  </div>
-  </nav>
-  </div>
 
   <div class="navbar">
     <a href="#home" id="home"
@@ -61,6 +36,18 @@
   </div>
 
   <div id="picture" style="display:block">
+    <div class="navbar-fixed">
+      <nav>
+        <div id="topper" class="nav-wrapper">
+          <div id="picnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+            <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
+
     <!-- Container for the image gallery -->
     <div class="container">
 
@@ -90,6 +77,13 @@
   </div>
   <!--End of pitcures page-->
   <div id="upload" style="display:none;">
+    <div class="navbar-fixed">
+      <nav id="reversered">
+        <a class="reversea">
+          <img onclick=downscreen() id="reverse" src="pic/chevron.png">
+        </a>
+      </nav>
+    </div>
     <div id="upborder">
       <div id="previewholder"><img id="preview">
         <input input type="file" value="upload" id="chooser"></input></div>
@@ -102,17 +96,44 @@
 
 
   <div id="activity" style="display:none">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div id="actnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          </div>
+        </div>
+      </nav>
+    </div>
 
   </div>
 
   <!--End of Activity page-->
 
-  <div id="prize" style="display:none;"></div>
+  <div id="prize" style="display:none;">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div id="prinav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </div>
 
   <!--End of Prize page-->
 
   <!----------------setting sidenavs----------->
   <div id="setting" style="display:none">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div id="setnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          </div>
+
+        </div>
+      </nav>
+    </div>
     <div id="setgrid">
       <a href="#" data-target="slide-1" class="sidenav-trigger show-on-large">
         <div class="setting-box">
@@ -174,9 +195,7 @@
 
       </div>
 
-      <a class="sidenav-close setclose"    href="#!">Clicking this will close Sidenav</a>
-
-      <a class="logout" onclick=logOut()> Log Out </a>
+      <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
     </ul>
   </div>
 
@@ -192,18 +211,22 @@
     <div class="sethdiv">
       <p id="sethelp">Help</p>
       <p class="sethhead">Photos</p>
-      <p class="sethhtext">The main page allows you to scroll through all uploaded images, getting newer as you scroll
+      <p class="sethhtext">The main page allows you to scroll through all uploaded images, getting newer as you
+        scroll
         left,
         and older as you scroll right. You can upload your own images from the upload page.</p>
       <p class="sethhead">Activity</p>
-      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When the
+      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When
+        the
         claim button next to
         activity is clicked,
         your location will be checked to ensure you have completed the activity.</p>
       <p class="sethhead">Prizes</p>
-      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When the
+      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When
+        the
         claim button next to.
-        Every activity you compltete will award you points. These points will can be used to claim prizes. These prizes
+        Every activity you compltete will award you points. These points will can be used to claim prizes. These
+        prizes
         will be given to you by</p>
 
       <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
@@ -233,10 +256,10 @@
       </p>
       <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
     </div>
-
   </ul>
   </div>
   <!----------------setting sidenavs----------->
+  <a class="logout" onclick=logOut()> Log Out </a>
   </div>
   </div>
 
