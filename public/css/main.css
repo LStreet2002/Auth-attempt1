@@ -380,7 +380,7 @@ grid-template-areas:
 }
 #red {
   grid-area:colorr;
-  background-color:#F10F0F;
+  background-color:#B82525;
 }
 #blue {
   grid-area:colorb;
@@ -388,7 +388,7 @@ grid-template-areas:
 }
 #green {
   grid-area:colorg;
-  background-color:rgba(0, 191, 0, 0.7) ;
+  background-color:rgb(5, 150, 5) ;
 }
 #white {
   grid-area:colorw;

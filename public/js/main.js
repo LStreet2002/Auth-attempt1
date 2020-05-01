@@ -15,22 +15,34 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function userstuff() {
 
-  var user = firebase.auth().currentUser;
-  console.log(user)
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(user)
+      var docRef = db.collection("users").doc(user.email).onSnapshot(function (doc) {
+        console.log("Document data:", doc.data().main);
+        var picnav = document.querySelector("#picnav")
+        picnav.style.backgroundColor = doc.data().main;
 
-  console.log(user)
-  var docRef = db.collection("users").doc(user.email);
+        console.log("Document data:", doc.data().prize);
+        var prinav = document.querySelector("#prinav")
+        prinav.style.backgroundColor = doc.data().prize;
 
-  docRef.get().then(function (doc) {
-    if (doc.exists) {
-      console.log("Document data:", doc.data());
+        console.log("Document data:", doc.data().activity);
+        var actnav = document.querySelector("#actnav")
+        actnav.style.backgroundColor = doc.data().activity;
+
+        console.log("Document data:", doc.data().setting);
+        var setnav = document.querySelector("#setnav")
+        setnav.style.backgroundColor = doc.data().setting;
+      });
+
     } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
+      window.location.replace("index.html");
     }
-  }).catch(function (error) {
-    console.log("Error getting document:", error);
   });
+
+
+
 }
 //--------------------------------------------------------------------------------
 //This is the carousel------------------------------------------------------------
@@ -110,7 +122,6 @@ function picture() {
   document.querySelector("#activity").style.display = "none"
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector(".nav-wrapper").style.backgroundColor = "white"
   document.querySelector("#upscreen").style.display = "block"
   document.querySelector("#home").style.borderBottom = "2px solid #FF0000"
   document.querySelector("#prizes").style.borderBottom = ""
@@ -122,7 +133,6 @@ function activity() {
   document.querySelector("#activity").style.display = "block"
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector(".nav-wrapper").style.backgroundColor = "rgba(0, 191, 0, 0.7)"
   document.querySelector("#upscreen").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
@@ -134,7 +144,6 @@ function prizes() {
   document.querySelector("#activity").style.display = "none"
   document.querySelector("#prize").style.display = "block"
   document.querySelector("#setting").style.display = "none"
-  document.querySelector(".nav-wrapper").style.backgroundColor = "#B82525"
   document.querySelector("#upscreen").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = "2px solid #FF0000"
@@ -146,7 +155,6 @@ function settings() {
   document.querySelector("#activity").style.display = "none"
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "block"
-  document.querySelector(".nav-wrapper").style.backgroundColor = "#4588A9"
   document.querySelector("#upscreen").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
@@ -158,7 +166,6 @@ function upscreen() {
   document.querySelector("#picture").style.display = "none"
   document.querySelector("#upload").style.display = "grid"
   document.querySelector("#upscreen").style.display = "none"
-  document.querySelector(".nav-wrapper").style.backgroundColor = "red"
   document.querySelector(".logoa").style.display = "none"
   document.querySelector(".reversea").style.display = "inline"
 
@@ -168,7 +175,6 @@ function downscreen() {
   document.querySelector("#picture").style.display = "block"
   document.querySelector("#upload").style.display = "none"
   document.querySelector("#upscreen").style.display = ""
-  document.querySelector(".nav-wrapper").style.backgroundColor = "white"
   document.querySelector(".logoa").style.display = "grid"
   document.querySelector(".reversea").style.display = "none"
   document.querySelector("#uploader").style.backgroundColor = "grey"
@@ -260,10 +266,47 @@ function settingreset() {
 }
 
 function markActiveLink(e) {
-  console.log(e.id);
-  var dropvalue = document.querySelector("#colorpage").value;
-  console.log(dropvalue)
+
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(e.id);
+      const colur = window.getComputedStyle(e).backgroundColor
+      console.log(colur)
+      const dropvalue = document.querySelector("#colorpage").value;
+      console.log(dropvalue)
+      var docRef = db.collection("users").doc(user.email)
+
+      switch (dropvalue) {
+        case 'main':
+          return docRef.update({
+            main: colur
+          })
+          break;
+        case 'activity':
+          return docRef.update({
+            activity: colur
+          })
+          break;
+        case 'prize':
+          return docRef.update({
+            prize: colur
+          });
+          break;
+        case 'setting':
+          return docRef.update({
+            setting: colur
+          });
+          break;
+        default:
+          console.log("fail");
+      }
+    }
+  }
+  )
 }
+
+
+
 
 
 
