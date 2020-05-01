@@ -8,12 +8,17 @@ firebase.auth().onAuthStateChanged(function (user) {
 function logOut() {
   firebase.auth().signOut();
 }
+window.addEventListener('DOMContentLoaded', (event) => {
+  userstuff()
+});
+
 
 function userstuff() {
+
   var user = firebase.auth().currentUser;
+  console.log(user)
 
-
-
+  console.log(user)
   var docRef = db.collection("users").doc(user.email);
 
   docRef.get().then(function (doc) {
@@ -26,8 +31,6 @@ function userstuff() {
   }).catch(function (error) {
     console.log("Error getting document:", error);
   });
-
-
 }
 //--------------------------------------------------------------------------------
 //This is the carousel------------------------------------------------------------
@@ -256,6 +259,11 @@ function settingreset() {
 
 }
 
+function markActiveLink(e) {
+  console.log(e.id);
+  var dropvalue = document.querySelector("#colorpage").value;
+  console.log(dropvalue)
+}
 
 
 

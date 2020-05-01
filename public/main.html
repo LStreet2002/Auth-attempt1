@@ -18,15 +18,24 @@
 </head>
 
 
-<body onload=userstuff()>
+<body>
   <div class="navbar-fixed">
     <nav>
       <div id="topper" class="nav-wrapper">
-        <div class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+        <div id="picnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
           <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
         </div>
         <a class="reversea" style="display:none;">
           <img onclick=downscreen() id="reverse" src="pic/chevron.png">
+          <div id="actnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+            <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
+          </div>
+          <div id="prinav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+            <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
+          </div>
+          <div id="setnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+
+          </div>
       </div>
       </a>
 
@@ -122,16 +131,21 @@
         </div>
         <div id="setbar">
           <p id="colorhead">Headers</p>
-          <div id="colorpage"></div>
+          <select id="colorpage" name="Select">
+            <option value="picture">Picture</option>
+            <option value="activity">Activity</option>
+            <option value="prize">Prize</option>
+            <option value="setting">Setting</option>
+          </select>
           <p id="colortheme">Color theme</p>
-          <div id="colorr" class="setcolor"></div>
-          <div id="colorb" class="setcolor"></div>
-          <div id="colorg" class="setcolor"></div>
-          <div id="colorw" class="setcolor"></div>
-          <div id="colorpu" class="setcolor"></div>
-          <div id="colory" class="setcolor"></div>
-          <div id="coloro" class="setcolor"></div>
-          <div id="colorpi" class="setcolor"></div>
+          <div id="red" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="blue" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="green" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="white" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="purple" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="yellow" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="orange" onclick="markActiveLink(this);" class="setcolor"></div>
+          <div id="pink" onclick="markActiveLink(this);" class="setcolor"></div>
         </div>
         <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
 
