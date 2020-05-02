@@ -137,18 +137,18 @@
     <div id="setgrid">
       <a href="#" data-target="slide-1" class="sidenav-trigger show-on-large">
         <div class="setting-box">
-          <h3 class="sethead">Customisation</h3>
-          <p class="setext">Themes,Background</p>
+          <h3 class="sethead themetext">Customisation</h3>
+          <p class="setext themetext">Themes,Background</p>
       </a>
 
 
       <ul id="slide-1" class="sidenav">
         <div id="setheme">
-          <p id="themetop">Theme</p>
-          <div id="light" class="setcirc"></div>
-          <div id="dark" class="setcirc"></div>
-          <p id="ltext">Light</p>
-          <p id="dtext">Dark</p>
+          <p id="themetop" class="themetext">Theme</p>
+          <div id="light" onclick=ligdar(this) class="setcirc"></div>
+          <div id="dark" onclick=ligdar(this) class="setcirc"></div>
+          <p id="ltext" class="themetext">Light</p>
+          <p id="dtext" class="themetext">Dark</p>
         </div>
         <div id="setbar">
           <p id="colorhead">Headers</p>
@@ -158,35 +158,35 @@
             <option value="activity">Activity</option>
             <option value="setting">Setting</option>
           </select>
-          <p id="colortheme">Color theme</p>
-          <div id="red" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="blue" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="green" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="white" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="purple" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="yellow" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="orange" onclick="markActiveLink(this);" class="setcolor"></div>
-          <div id="pink" onclick="markActiveLink(this);" class="setcolor"></div>
+          <p id="colortheme" class="themetext">Color theme</p>
+          <div id="red" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="blue" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="green" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="white" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="purple" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="yellow" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="orange" onclick="colorswap(this);" class="setcolor"></div>
+          <div id="pink" onclick="colorswap(this);" class="setcolor"></div>
         </div>
-        <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
+        <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
 
       </ul>
     </div>
 
     <a href="#" data-target="slide-2" class="sidenav-trigger show-on-large">
       <div id="set2" class="setting-box">
-        <h3 class="sethead">Account</h3>
-        <p class="setext">Password</p>
+        <h3 class="sethead themetext">Account</h3>
+        <p class="setext themetext">Password</p>
     </a>
 
     <ul id="slide-2" class="sidenav">
       <div id="setreset">
-        <p id="resethead">Reset Password</p>
+        <p id="resethead" class="themetext">Reset Password</p>
         <div id="setconfirm" onclick=settingreset()>Reset</div>
 
       </div>
       <div id="setpicture">
-        <p id="setpicturehead">Profile Picture</p>
+        <p id="setpicturehead" class="themetext">Profile Picture</p>
         <div id="profdiv"><img id="previewprofile">
           <input input type="file" value="upload" id="profchoose"></input></div>
         <div id="profconfirm">
@@ -195,7 +195,7 @@
 
       </div>
 
-      <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
+      <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
     </ul>
   </div>
 
@@ -203,33 +203,36 @@
 
   <a href="#" data-target="slide-3" class="sidenav-trigger show-on-large">
     <div id="set5" class="setting-box">
-      <h3 class="sethead">Help</h3>
-      <p class="setext">How to use the app</p>
+      <h3 class="sethead themetext">Help</h3>
+      <p class="setext themetext">How to use the app</p>
   </a>
 
   <ul id="slide-3" class="sidenav">
     <div class="sethdiv">
-      <p id="sethelp">Help</p>
-      <p class="sethhead">Photos</p>
-      <p class="sethhtext">The main page allows you to scroll through all uploaded images, getting newer as you
+      <p id="sethelp" class="themetext">Help</p>
+      <p class="sethhead themetext">Photos</p>
+      <p class="sethhtext themetext">The main page allows you to scroll through all uploaded images, getting
+        newer as you
         scroll
         left,
         and older as you scroll right. You can upload your own images from the upload page.</p>
-      <p class="sethhead">Activity</p>
-      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When
+      <p class="sethhead themetext">Activity</p>
+      <p class="sethhtext themetext"> You can win prizes by completing the activities outlined on the activities
+        page. When
         the
         claim button next to
         activity is clicked,
         your location will be checked to ensure you have completed the activity.</p>
-      <p class="sethhead">Prizes</p>
-      <p class="sethhtext"> You can win prizes by completing the activities outlined on the activities page. When
+      <p class="sethhead themetext">Prizes</p>
+      <p class="sethhtext themetext"> You can win prizes by completing the activities outlined on the activities
+        page. When
         the
         claim button next to.
         Every activity you compltete will award you points. These points will can be used to claim prizes. These
         prizes
         will be given to you by</p>
 
-      <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
+      <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
 
     </div>
 
@@ -240,21 +243,21 @@
 
   <a href="#" data-target="slide-4" class="sidenav-trigger show-on-large">
     <div id="set6" class="setting-box">
-      <h3 class="sethead">More information</h3>
-      <p class="setext">Canon Website</p>
+      <h3 class="sethead themetext">More information</h3>
+      <p class="setext themetext">Canon Website</p>
   </a>
 
   <ul id="slide-4" class="sidenav">
     <div>
-      <p id="setmorehead">More information</p>
+      <p id="setmorehead" class="themetext">More information</p>
 
-      <p class="setmtext">For information on canon products visit <a
+      <p class="setmtext themetext">For information on canon products visit <a
           href="https://global.canon/en/">https://global.canon/en/</a></p>
 
-      <p class="setmtext">This app uses firebase storage for your files.
+      <p class="setmtext themetext">This app uses firebase storage for your files.
         <a href="http://firebase.google.com/">http://firebase.google.com/</a>
       </p>
-      <a class="sidenav-close setclose" href="#!">Clicking this will close Sidenav</a>
+      <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
     </div>
   </ul>
   </div>

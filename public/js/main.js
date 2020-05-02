@@ -34,6 +34,48 @@ function userstuff() {
         console.log("Document data:", doc.data().setting);
         var setnav = document.querySelector("#setnav")
         setnav.style.backgroundColor = doc.data().setting;
+
+        console.log("Document data:", doc.data().theme)
+        const words = document.getElementsByClassName("themetext")
+
+        const setbord = document.getElementsByClassName("setting-box")
+
+        const sidenav = document.getElementsByClassName("sidenav")
+
+        console.log(words)
+        const display = doc.data().theme
+        switch (display) {
+          case "dark":
+            console.log("dark theme")
+            for (var i = 0; i < words.length; i++) {
+              words[i].style.color = "white";
+            }
+            for (var i = 0; i < setbord.length; i++) {
+              setbord[i].style.border = "1px solid white";
+              setbord[i].style.backgroundColor = "black";
+            }
+            for (var i = 0; i < sidenav.length; i++) {
+              sidenav[i].style.backgroundColor = "black";
+              sidenav[i].style.border = "1px solid white";
+            }
+            document.querySelector("#setting").style.backgroundColor = "black"
+            break;
+          case "light":
+            console.log("light theme")
+            for (var i = 0; i < words.length; i++) {
+              words[i].style.color = "black";
+            }
+            for (var i = 0; i < setbord.length; i++) {
+              setbord[i].style.border = "1px solid black";
+              setbord[i].style.backgroundColor = "white";
+            }
+            for (var i = 0; i < sidenav.length; i++) {
+              sidenav[i].style.backgroundColor = "white";
+              sidenav[i].style.border = "1px solid black";
+            }
+            document.querySelector("#setting").style.backgroundColor = "white"
+            break;
+        }
       });
 
     } else {
@@ -264,8 +306,8 @@ function settingreset() {
   });
 
 }
-
-function markActiveLink(e) {
+//----------------color select--------------------
+function colorswap(e) {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -302,11 +344,25 @@ function markActiveLink(e) {
       }
     }
   }
-  )
-}
+  )//------------------------------------------------------------------------
+}//-------------------------------------------------------------------
+//---------------------------------------------------------------------
 
+//-------------------light and dark---------------------------------------
+function ligdar(e) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(user)
+      var docRef = db.collection("users").doc(user.email)
 
+      const choice = e.id
 
+      return docRef.update({
+        theme: choice
+      })
+    }
+  })
+};
 
 
 

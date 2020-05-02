@@ -522,21 +522,21 @@ grid-area:setinput;
 }
 .logout {
   grid-area: retu;
-  margin: auto;
+  text-align:center;
   font-size: 10vw;
     color: rgb(202, 0, 0);
 }
 #actnav {
-  background-color: green;
+  background-color: rgb(5, 150, 5);
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
 }
 
 #prinav {
-  background-color:red;
+  background-color:#B82525;
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
 }
 
 #setnav {
-  background-color: blue;
+  background-color: rgb(69, 136, 169);
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
 }
