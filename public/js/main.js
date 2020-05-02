@@ -51,7 +51,7 @@ function userstuff() {
               words[i].style.color = "white";
             }
             for (var i = 0; i < setbord.length; i++) {
-              setbord[i].style.border = "1px solid white";
+              setbord[i].style.borderBottom = "1px solid white";
               setbord[i].style.backgroundColor = "black";
             }
             for (var i = 0; i < sidenav.length; i++) {
@@ -59,6 +59,19 @@ function userstuff() {
               sidenav[i].style.border = "1px solid white";
             }
             document.querySelector("#setting").style.backgroundColor = "black"
+            document.querySelector("#cicon").src = "pic/whitecamera.png"
+            document.querySelector("#picon").src = "pic/whitetrophy.png"
+            document.querySelector("#aicon").src = "pic/whitefeet.png"
+            document.querySelector("#sicon").src = "pic/whitecog.png"
+            document.querySelector(".navbar").style.backgroundColor = "black"
+            document.querySelector("#picture").style.backgroundColor = "black"
+            document.querySelector("#prize").style.backgroundColor = "black"
+            document.querySelector("#activity").style.backgroundColor = "black"
+            document.querySelector("#setting").style.backgroundColor = "black"
+            document.querySelector("#prinav").style.boxShadow = " 0px 6px 3px rgba(255, 255, 255, 0.25)"
+            document.querySelector(".navbar").style.boxShadow = "0px 0 10px rgba(255, 255, 255, 0.4)"
+            document.querySelector("#actnav").style.boxShadow = " 0px 6px 3px rgba(255, 255, 255, 0.25)"
+            document.querySelector("#setnav").style.boxShadow = " 0px 6px 3px rgba(255, 255, 255, 0.25)"
             break;
           case "light":
             console.log("light theme")
@@ -66,7 +79,7 @@ function userstuff() {
               words[i].style.color = "black";
             }
             for (var i = 0; i < setbord.length; i++) {
-              setbord[i].style.border = "1px solid black";
+              setbord[i].style.borderBottom = "1px solid black";
               setbord[i].style.backgroundColor = "white";
             }
             for (var i = 0; i < sidenav.length; i++) {
@@ -74,6 +87,19 @@ function userstuff() {
               sidenav[i].style.border = "1px solid black";
             }
             document.querySelector("#setting").style.backgroundColor = "white"
+            document.querySelector("#cicon").src = "pic/camera.png"
+            document.querySelector("#picon").src = "pic/Trophy.png"
+            document.querySelector("#aicon").src = "pic/feet.png"
+            document.querySelector("#sicon").src = "pic/cog.png"
+            document.querySelector(".navbar").style.backgroundColor = "white"
+            document.querySelector("#picture").style.backgroundColor = "white"
+            document.querySelector("#prize").style.backgroundColor = "white"
+            document.querySelector("#activity").style.backgroundColor = "white"
+            document.querySelector("#setting").style.backgroundColor = "white"
+            document.querySelector("#prinav").style.boxShadow = " 0px 6px 3px rgba(0, 0, 0, 0.35)"
+            document.querySelector(".navbar").style.boxShadow = "0px 0 10px rgba(0, 0, 0, 0.8)"
+            document.querySelector("#actnav").style.boxShadow = " 0px 6px 3px rgba(0, 0, 0, 0.35)"
+            document.querySelector("#setnav").style.boxShadow = " 0px 6px 3px rgba(0, 0, 0, 0.35)"
             break;
         }
       });

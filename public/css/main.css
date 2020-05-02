@@ -247,6 +247,7 @@ input[type=file]{
 }
 #picture {
   width:100vw;
+  height:90vh;
 }
 #fullslides {
   height:80vw;
@@ -539,4 +540,17 @@ grid-area:setinput;
 #setnav {
   background-color: rgb(69, 136, 169);
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+}
+
+#prize {
+  width:100vw;
+  height:90vh;
+}
+#activity {
+  width:100vw;
+  height:90vh;
+}
+#setting {
+  width:100vw;
+  height:90vh;
 }
