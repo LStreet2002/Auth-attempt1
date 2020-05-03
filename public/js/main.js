@@ -8,8 +8,18 @@ firebase.auth().onAuthStateChanged(function (user) {
 function logOut() {
   firebase.auth().signOut();
 }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
   userstuff()
+  sleep(2000).then(() => {
+    document.querySelector("#fillerpage").style.display = "none"
+    document.querySelector("#picture").style.display = "block"
+    document.querySelector(".navbar").style.display = "block"
+  });
 });
 
 

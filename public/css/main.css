@@ -571,3 +571,14 @@ grid-area:setinput;
   background-color:white;
   padding:0.5vw;
 }
+#fillerpage {
+  height:100vh;
+  background-color:#F10F0F;
+  width:100vw;
+}
+#fillerimage {
+  width:80vw;
+  margin-left:10vw;
+  margin-right:10vw;
+  margin-top:45vh;
+}

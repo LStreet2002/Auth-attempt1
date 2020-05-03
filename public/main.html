@@ -23,7 +23,7 @@
 
 
 
-  <div class="navbar">
+  <div class="navbar" style="display:none">
     <a href="#home" id="home"
       style="border-left: 1px solid grey; border-right:0.5px solid grey;border-bottom: 2px solid red;"
       onclick=picture()><img id="cicon" style="width: 3rem;height:3.4rem" src="pic/camera.png"></a>
@@ -35,7 +35,11 @@
       onclick=settings()><img id="sicon" style="width: 3rem;height:3.4rem;" src="pic/cog.png"></a>
   </div>
 
-  <div id="picture" style="display:block">
+  <div id="fillerpage" style="display:block">
+    <img src="pic/whitecanonlo.png" id="fillerimage">
+  </div>
+
+  <div id="picture" style="display:none">
     <div class="navbar-fixed">
       <nav>
         <div id="topper" class="nav-wrapper">
