@@ -554,3 +554,20 @@ grid-area:setinput;
   width:100vw;
   height:90vh;
 }
+#upload {
+  width:100vw;
+  height:90vh;
+}
+#logor {
+  width:28vw;
+}
+#logow {
+  width:28vw;
+  background-color:black;
+  padding:0.5vw;
+}
+#logob {
+  width:28vw;
+  background-color:white;
+  padding:0.5vw;
+}

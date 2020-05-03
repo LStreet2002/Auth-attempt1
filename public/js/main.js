@@ -31,6 +31,63 @@ function userstuff() {
         var actnav = document.querySelector("#actnav")
         actnav.style.backgroundColor = doc.data().activity;
 
+
+        const logomain = doc.data().logomain
+
+        const logoactivity = doc.data().logoactivity
+
+        const logoprize = doc.data().logoprize
+
+        const logosetting = doc.data().logosetting
+
+
+
+        switch (logomain) {
+          case "logor":
+            document.querySelector("#logomain").src = "pic/canonlo.png";
+            break;
+          case "logob":
+            document.querySelector("#logomain").src = "pic/blackcanonlo.png"
+            break;
+          case "logow":
+            document.querySelector("#logomain").src = "pic/whitecanonlo.png"
+            break;
+        }
+
+        switch (logoactivity) {
+          case "logor":
+            document.querySelector("#logoactivity").src = "pic/canonlo.png";
+            break;
+          case "logob":
+            document.querySelector("#logoactivity").src = "pic/blackcanonlo.png"
+            break;
+          case "logow":
+            document.querySelector("#logoactivity").src = "pic/whitecanonlo.png"
+            break;
+        }
+        switch (logoprize) {
+          case "logor":
+            document.querySelector("#logoprize").src = "pic/canonlo.png";
+            break;
+          case "logob":
+            document.querySelector("#logoprize").src = "pic/blackcanonlo.png"
+            break;
+          case "logow":
+            document.querySelector("#logoprize").src = "pic/whitecanonlo.png"
+            break;
+        }
+        switch (logosetting) {
+          case "logor":
+            document.querySelector("#logosetting").src = "pic/canonlo.png";
+            break;
+          case "logob":
+            document.querySelector("#logosetting").src = "pic/blackcanonlo.png"
+            break;
+          case "logow":
+            document.querySelector("#logosetting").src = "pic/whitecanonlo.png"
+            break;
+        }
+
         console.log("Document data:", doc.data().setting);
         var setnav = document.querySelector("#setnav")
         setnav.style.backgroundColor = doc.data().setting;
@@ -72,6 +129,8 @@ function userstuff() {
             document.querySelector(".navbar").style.boxShadow = "0px 0 10px rgba(255, 255, 255, 0.4)"
             document.querySelector("#actnav").style.boxShadow = " 0px 6px 3px rgba(255, 255, 255, 0.25)"
             document.querySelector("#setnav").style.boxShadow = " 0px 6px 3px rgba(255, 255, 255, 0.25)"
+            document.querySelector("#upload").style.backgroundColor = "black"
+            document.querySelector("#upborder").style.border = "1px solid white"
             break;
           case "light":
             console.log("light theme")
@@ -100,6 +159,8 @@ function userstuff() {
             document.querySelector(".navbar").style.boxShadow = "0px 0 10px rgba(0, 0, 0, 0.8)"
             document.querySelector("#actnav").style.boxShadow = " 0px 6px 3px rgba(0, 0, 0, 0.35)"
             document.querySelector("#setnav").style.boxShadow = " 0px 6px 3px rgba(0, 0, 0, 0.35)"
+            document.querySelector("#upload").style.backgroundColor = "white"
+            document.querySelector("#upborder").style.border = "1px solid black"
             break;
         }
       });
@@ -390,10 +451,33 @@ function ligdar(e) {
   })
 };
 
+function logoswap(e) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var docRef = db.collection("users").doc(user.email)
+      const dropvalue = document.querySelector("#colorpage").value;
+      switch (dropvalue) {
+        case 'main':
+          return docRef.update({
+            logomain: e.id
+          })
+          break;
+        case "prize":
+          return docRef.update({
+            logoprize: e.id
+          })
+          break;
+        case "activity":
+          return docRef.update({
+            logoactivity: e.id
+          })
+        case "setting":
+          return docRef.update({
+            logosetting: e.id
+          })
 
-
-
-
-
-
-
+      }
+    }
+  }
+  )
+}

@@ -84,10 +84,14 @@ function account() {
                 Username: userName,
                 type: "user",
                 main: "white",
-                activity: "green",
-                prize: "red",
-                setting: "blue",
-                theme: "light"
+                activity: "rgb(5, 150, 5)",
+                prize: "#B82525",
+                setting: " rgb(69, 136, 169);",
+                theme: "light",
+                logomain: "black",
+                logoactivity: "black",
+                logoprize: "black",
+                logosetting: "black",
             })
             main()
         });

@@ -39,7 +39,7 @@
     <div class="navbar-fixed">
       <nav>
         <div id="topper" class="nav-wrapper">
-          <div id="picnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          <div id="picnav" class="logoa"><a><img class="logo" id="logomain" src="pic/canonlo.png" onclick=logOut()></a>
             <a id="upscreen"><img class="uploy" onclick=upscreen() src="pic/upload.png"> </a>
           </div>
 
@@ -92,28 +92,13 @@
     </div>
 
   </div>
-
-
-
-  <div id="activity" style="display:none">
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <div id="actnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-  </div>
-
-  <!--End of Activity page-->
+  <!---------------------------end of upload page------------------>
 
   <div id="prize" style="display:none;">
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div id="prinav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png" onclick=logOut()></a>
           </div>
 
         </div>
@@ -123,12 +108,32 @@
 
   <!--End of Prize page-->
 
+
+
+  <div id="activity" style="display:none">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div id="actnav" class="logoa"><a><img class="logo" id="logoactivity" src="pic/canonlo.png"
+                onclick=logOut()></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+
+  <!--End of Activity page-->
+
+
+
   <!----------------setting sidenavs----------->
   <div id="setting" style="display:none">
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div id="setnav" class="logoa"><a><img class="logo" src="pic/canonlo.png" onclick=logOut()></a>
+          <div id="setnav" class="logoa"><a><img class="logo" id="logosetting" src="pic/canonlo.png"
+                onclick=logOut()></a>
           </div>
 
         </div>
@@ -168,7 +173,11 @@
           <div id="orange" onclick="colorswap(this);" class="setcolor"></div>
           <div id="pink" onclick="colorswap(this);" class="setcolor"></div>
         </div>
-        <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
+        <img id="logor" onclick=logoswap(this) src="pic/canonlo.png">
+        <img id="logob" onclick=logoswap(this) src="pic/blackcanonlo.png">
+        <img id="logow" onclick=logoswap(this) src="pic/whitecanonlo.png">
+        <a class="sidenav-close setclose themetext" href="#!">Clicking this will close
+          Sidenav</a>
 
       </ul>
     </div>
