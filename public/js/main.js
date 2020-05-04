@@ -132,26 +132,26 @@ function userstuff() {
               }
               for (var i = 0; i < setbord.length; i++) {
                 setbord[i].style.borderBottom = "1px solid white";
-                setbord[i].style.backgroundColor = "black";
+                setbord[i].style.backgroundColor = "#1E1C1C";
               }
               for (var i = 0; i < sidenav.length; i++) {
-                sidenav[i].style.backgroundColor = "black";
+                sidenav[i].style.backgroundColor = "#1E1C1C";
                 sidenav[i].style.border = "1px solid white";
               }
               document.querySelector("#setting").style.backgroundColor =
-                "black";
+                "#1E1C1C";
               document.querySelector("#cicon").src = "pic/whitecamera.png";
               document.querySelector("#picon").src = "pic/whitetrophy.png";
               document.querySelector("#aicon").src = "pic/whitefeet.png";
               document.querySelector("#sicon").src = "pic/whitecog.png";
-              document.querySelector(".navbar").style.backgroundColor = "black";
+              document.querySelector(".navbar").style.backgroundColor = "#1B1818";
               document.querySelector("#picture").style.backgroundColor =
-                "black";
-              document.querySelector("#prize").style.backgroundColor = "black";
+                "#1E1C1C";
+              document.querySelector("#prize").style.backgroundColor = "#1E1C1C";
               document.querySelector("#activity").style.backgroundColor =
-                "black";
+                "#1E1C1C";
               document.querySelector("#setting").style.backgroundColor =
-                "black";
+                "#1E1C1C";
               document.querySelector("#prinav").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector(".navbar").style.boxShadow =
@@ -160,7 +160,7 @@ function userstuff() {
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#setnav").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
-              document.querySelector("#upload").style.backgroundColor = "black";
+              document.querySelector("#upload").style.backgroundColor = "#1E1C1C";
               document.querySelector("#upborder").style.border =
                 "1px solid white";
               break;
