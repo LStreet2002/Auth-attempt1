@@ -12,12 +12,11 @@
 grid-area:addition;
 }
 .logo {
-  width: 10rem;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  grid-area:logo;
-
-}
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    width:10rem;
+  }
 
 .nav-wrapper {
   
@@ -232,8 +231,8 @@ margin-top:5rem;
 }
 .uploy {
   position: absolute;
-  top: 10px;
-  right: 25px;
+  top: 11px;
+  right: 22px;
   width:2.4rem;
 }
 input[type=file]{ 
