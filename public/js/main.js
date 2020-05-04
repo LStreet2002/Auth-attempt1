@@ -22,12 +22,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
-
+//------------------------------------------themes and colours----
 function userstuff() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      console.log(user)
       var docRef = db.collection("users").doc(user.email).onSnapshot(function (doc) {
         console.log("Document data:", doc.data().main);
         var picnav = document.querySelector("#picnav")
@@ -109,7 +108,6 @@ function userstuff() {
 
         const sidenav = document.getElementsByClassName("sidenav")
 
-        console.log(words)
         const display = doc.data().theme
         switch (display) {
           case "dark":
@@ -179,7 +177,7 @@ function userstuff() {
       window.location.replace("index.html");
     }
   });
-
+  //-----------------------------------------------------
 
 
 }
@@ -193,10 +191,11 @@ document.addEventListener("DOMContentLoaded", function test() {
       querySnapshot.forEach(function (doc) {
         pic.push(doc.data().src);
       });
+      storageRef.child('pic/' + pic[pic.length - 1]).getDownloadURL().then(function (url) {
 
-
-
-      for (i = 0; i < pic.length; i++) {
+        document.querySelector("#firstcaros").src = url
+      });
+      for (i = pic.length - 2; i > 0; i--) {
         //putting things into carousel 
         var storage = firebase.storage();
         var pathReference = storage.ref('pic/' + pic[i]);
