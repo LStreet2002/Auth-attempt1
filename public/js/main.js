@@ -168,3 +168,126 @@ function upload() {
 
 
 
+<<<<<<< Updated upstream
+=======
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+function settingreset() {
+  var user = firebase.auth().currentUser;
+
+  var emailAddress = user.email;
+
+  auth.sendPasswordResetEmail(emailAddress).then(function () {
+    // Email sent.
+  }).catch(function (error) {
+    // An error happened.
+  });
+
+}
+//----------------color select--------------------
+function colorswap(e) {
+
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(e.id);
+      const colur = window.getComputedStyle(e).backgroundColor
+      console.log(colur)
+      const dropvalue = document.querySelector("#colorpage").value;
+      console.log(dropvalue)
+      var docRef = db.collection("users").doc(user.email)
+
+      switch (dropvalue) {
+        case 'main':
+          return docRef.update({
+            main: colur
+          })
+          break;
+        case 'activity':
+          return docRef.update({
+            activity: colur
+          })
+          break;
+        case 'prize':
+          return docRef.update({
+            prize: colur
+          });
+          break;
+        case 'setting':
+          return docRef.update({
+            setting: colur
+          });
+          break;
+        default:
+          console.log("fail");
+      }
+    }
+  }
+  )//------------------------------------------------------------------------
+}//-------------------------------------------------------------------
+//---------------------------------------------------------------------
+
+//-------------------light and dark---------------------------------------
+function ligdar(e) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(user)
+      var docRef = db.collection("users").doc(user.email)
+
+      const choice = e.id
+
+      return docRef.update({
+        theme: choice
+      })
+    }
+  })
+};
+
+function logoswap(e) {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var docRef = db.collection("users").doc(user.email)
+      const dropvalue = document.querySelector("#colorpage").value;
+      switch (dropvalue) {
+        case 'main':
+          return docRef.update({
+            logomain: e.id
+          })
+          break;
+        case "prize":
+          return docRef.update({
+            logoprize: e.id
+          })
+          break;
+        case "activity":
+          return docRef.update({
+            logoactivity: e.id
+          })
+        case "setting":
+          return docRef.update({
+            logosetting: e.id
+          })
+
+      }
+    }
+  }
+  )
+}
+$("#demo").onSwipe();
+
+$("#demo").onSwipe(function(results){
+
+if(results.right ==true)
+function plusSlides() {
+  showSlides(slideIndex += 1);
+}
+
+if(results.left ==true)
+function plusSlides() {
+  showSlides(slideIndex = -1);
+}
+
+})
+>>>>>>> Stashed changes
