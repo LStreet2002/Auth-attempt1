@@ -12,11 +12,17 @@
 grid-area:addition;
 }
 .logo {
-  width: 10rem;
+  width: 28vh;
   margin-top: 1rem;
-  margin-left: 2rem;
+  margin-left: 4vh;
   grid-area:logo;
 
+}
+.navbar-fixed {
+  height:11.3vh !important;
+}
+.bottom-nav {
+  height:12.5vh;
 }
 
 .nav-wrapper {
@@ -40,6 +46,7 @@ grid-area:addition;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height:12.5vh;
   z-index: 100;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
 }
@@ -234,7 +241,7 @@ margin-top:5rem;
   position: absolute;
   top: 10px;
   right: 25px;
-  width:2.4rem;
+  width:7vh;
 }
 input[type=file]{ 
   color:transparent;
@@ -259,7 +266,7 @@ input[type=file]{
 #setgrid {
   display:block;
   overflow:scroll;
-  height:150vw;
+  height:77.4vh;
   
 }
 #set1 {
@@ -520,26 +527,30 @@ grid-area:setinput;
 #picnav {
   background-color:white;
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+  height:11.5vh !important;
 }
 .logout {
   grid-area: retu;
   text-align:center;
-  font-size: 10vw;
+  font-size: 14vw;
     color: rgb(202, 0, 0);
 }
 #actnav {
   background-color: rgb(5, 150, 5);
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+  height:11.5vh !important;
 }
 
 #prinav {
   background-color:#B82525;
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+  height:11.5vh !important;
 }
 
 #setnav {
   background-color: rgb(69, 136, 169);
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+  height:11.5vh !important;
 }
 
 #prize {
@@ -581,4 +592,33 @@ grid-area:setinput;
   margin-left:10vw;
   margin-right:10vw;
   margin-top:45vh;
+}
+
+#actimain {
+  height:75.4vh;
+  width:100vw;
+}
+#picmain {
+  height:75.4vh;
+  width:100vw;
+}
+#logout-box {
+  height:15vh;
+  text-align:center;
+}
+.correcting {display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.activibox {
+  text-align:centre;
+  border-radius:2vh;
+  width:35vh;
+  height:10vh;
+  margin-left:10vh;
+  margin-right:10vh;
+  background-color:rgb(5, 150, 5, 0.4);
+  margin-top:5vh;
 }

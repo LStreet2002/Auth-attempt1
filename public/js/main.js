@@ -15,7 +15,7 @@ function sleep(ms) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
   userstuff()
-  sleep(2000).then(() => {
+  sleep(4000).then(() => {
     document.querySelector("#fillerpage").style.display = "none"
     document.querySelector("#picture").style.display = "block"
     document.querySelector(".navbar").style.display = "block"
@@ -261,7 +261,7 @@ function picture() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "block"
-  document.querySelector("#home").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#home").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
@@ -274,7 +274,7 @@ function activity() {
   document.querySelector("#upscreen").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
-  document.querySelector("#activities").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#activities").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#settings").style.borderBottom = ""
 }
 function prizes() {
@@ -284,7 +284,7 @@ function prizes() {
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
-  document.querySelector("#prizes").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#prizes").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
 }
@@ -297,7 +297,7 @@ function settings() {
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
-  document.querySelector("#settings").style.borderBottom = "2px solid #FF0000"
+  document.querySelector("#settings").style.borderBottom = "0.4vh solid #FF0000"
 }
 function upscreen() {
   document.querySelector(".navbar").style.display = "none"
