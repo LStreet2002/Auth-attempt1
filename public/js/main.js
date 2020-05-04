@@ -62,6 +62,18 @@ function userstuff() {
               break;
           }
 
+          switch (logomain) {
+            case "logor":
+              document.querySelector("#uploj").src = "pic/upload.png";
+              break;
+            case "logob":
+              document.querySelector("#uploj").src = "pic/blackupload.png";
+              break;
+            case "logow":
+              document.querySelector("#uploj").src = "pic/whiteupload.png";
+              break;
+          }
+
           switch (logoactivity) {
             case "logor":
               document.querySelector("#logoactivity").src = "pic/canonlo.png";
