@@ -163,6 +163,10 @@ function userstuff() {
               document.querySelector("#upload").style.backgroundColor = "#1E1C1C";
               document.querySelector("#upborder").style.border =
                 "1px solid white";
+              document.querySelector("#pulltext").style.backgroundColor = "#1E1C1C"
+              document.querySelector("#pulltext").style.borderBottom = "1px solid white";
+              document.querySelector("#pulltext").style.borderTop = "1px solid white";
+
               break;
             case "light":
               console.log("light theme");
@@ -202,6 +206,9 @@ function userstuff() {
               document.querySelector("#upload").style.backgroundColor = "white";
               document.querySelector("#upborder").style.border =
                 "1px solid black";
+              document.querySelector("#pulltext").style.backgroundColor = "white";
+              document.querySelector("#pulltext").style.borderBottom = "1px solid black";
+              document.querySelector("#pulltext").style.borderTop = "1px solid black";
               break;
           }
         });
@@ -395,15 +402,13 @@ function upload() {
   downscreen();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".sidenav");
-  var instances = M.Sidenav.init(elems);
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
   var instances = M.Sidenav.init(elems);
 });
+
+
 
 function settingreset() {
   var user = firebase.auth().currentUser;

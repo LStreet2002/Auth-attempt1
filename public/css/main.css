@@ -597,6 +597,7 @@ grid-area:setinput;
 #actimain {
   height:75.4vh;
   width:100vw;
+  overflow-y:scroll ;
 }
 #picmain {
   height:75.4vh;
@@ -611,9 +612,10 @@ grid-area:setinput;
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  margin-top:5vh;
 }
 .activibox {
-  text-align:centre;
+  text-align:center;
   border-radius:2vh;
   width:35vh;
   height:10vh;
@@ -621,4 +623,40 @@ grid-area:setinput;
   margin-right:10vh;
   background-color:rgb(5, 150, 5, 0.4);
   margin-top:5vh;
+}
+
+.popout {
+  position: absolute;
+  left: -35vh;
+  transition: 1s;
+  height:40vh;
+  width:40vh;
+  background-color:rgb(5, 150, 5,0.8);
+  display:grid;
+  grid-template-columns:7fr 1fr;
+  grid-template-rows:1fr;
+  grid-template-areas:
+  "pulltext dragout";
+  z-index:30;
+}
+
+.trigger:hover .popout {
+  transition: 1s;
+  left: 0;
+}
+.trigger {
+  position: absolute;
+  overflow: hidden;
+  width: 40vh;
+  height: 40vh; 
+  margin-top:-74vh
+}
+#pulltext {
+  grid-area:pulltext;
+  background-color:white;
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+}
+#dragout {
+  grid-area:dragout;
 }
