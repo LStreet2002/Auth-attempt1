@@ -7,20 +7,31 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-
-
-
-
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/public/js/swipe.js"></script>
+
+  <script>
+
+    window.onload = function() {
+
+        document.addEventListener('swiped-left', function(e) {
+          plusSlides(-1)
+        });
+
+        document.addEventListener('swiped-right', function(e) {
+          plusSlides(1)
+        });
+    }
+</script>
+
   <title>Home</title>
 </head>
 
 
 <body id="themetest">
-
-
 
 
   <div class="navbar" style="display:none">
@@ -85,6 +96,8 @@
 
 
   <!--End of pitcures page-->
+  </div>
+  
   <div id="upload" style="display:none;">
     <div class="navbar-fixed">
       <nav id="reversered">
