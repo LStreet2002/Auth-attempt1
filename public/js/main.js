@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function test() {
 
           document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].user
         });
-      for (i = pic.length - 2; i > 0; i--) {
+      for (i = pic.length - 2; i > -1; i--) {
         //putting things into carousel
         var storage = firebase.storage();
         var pathReference = storage.ref("pic/" + pic[i].src);
