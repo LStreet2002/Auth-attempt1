@@ -191,10 +191,11 @@ margin-top:5rem;
 }
 #reversered {
   background-color:#F10F0F;
+  height: 11.3vh;
 }
 #reverse {
   width: 100vw;
-  height: 5rem;
+  height: 11.3vh;
   grid-area:chevron;
   transform: rotate(180deg);
 }
@@ -404,7 +405,7 @@ grid-template-areas:
 }
 #purple {
   grid-area:colorpu;
-  background-color:#DC06A0;
+  background-color:rgb(179, 16, 165);
 }
 #yellow {
   grid-area:colory;
