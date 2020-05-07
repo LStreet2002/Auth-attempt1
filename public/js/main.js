@@ -33,6 +33,7 @@ function userstuff() {
           console.log("Document data:", doc.data().main);
           var picnav = document.querySelector("#picnav");
           picnav.style.backgroundColor = doc.data().main;
+          document.querySelector("#reversered").style.backgroundColor = doc.data().main
 
           console.log("Document data:", doc.data().prize);
           var prinav = document.querySelector("#prinav");
@@ -41,6 +42,10 @@ function userstuff() {
           console.log("Document data:", doc.data().activity);
           var actnav = document.querySelector("#actnav");
           actnav.style.backgroundColor = doc.data().activity;
+
+          console.log("Document data:", doc.data().setting);
+          var setnav = document.querySelector("#setnav");
+          setnav.style.backgroundColor = doc.data().setting;
 
           const logomain = doc.data().logomain;
 
@@ -64,27 +69,19 @@ function userstuff() {
 
           switch (logomain) {
             case "logor":
-              document.querySelector("#uploj").src = "pic/upload.png";
-              break;
-            case "logob":
-              document.querySelector("#uploj").src = "pic/blackupload.png";
-              break;
-            case "logow":
-              document.querySelector("#uploj").src = "pic/whiteupload.png";
-              break;
-          }
-
-          switch (logomain) {
-            case "logor":
+              document.querySelector("#uploj").src = "pic/upload.png"
               document.querySelector("#reverse").src = "pic/redchevron.png";
               break;
             case "logob":
+              document.querySelector("#uploj").src = "pic/blackupload.png"
               document.querySelector("#reverse").src = "pic/chevron.png";
               break;
             case "logow":
+              document.querySelector("#uploj").src = "pic/whiteupload.png"
               document.querySelector("#reverse").src = "pic/whitechevron.png";
               break;
           }
+
 
           switch (logoactivity) {
             case "logor":
@@ -124,9 +121,7 @@ function userstuff() {
               break;
           }
 
-          console.log("Document data:", doc.data().setting);
-          var setnav = document.querySelector("#setnav");
-          setnav.style.backgroundColor = doc.data().setting;
+
 
           console.log("Document data:", doc.data().theme);
           const words = document.getElementsByClassName("themetext");
@@ -172,6 +167,8 @@ function userstuff() {
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#setnav").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
+              document.querySelector("#reversered").style.boxShadow =
+                " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#upload").style.backgroundColor = "#1E1C1C";
               document.querySelector("#upborder").style.border =
                 "1px solid white";
@@ -214,6 +211,8 @@ function userstuff() {
               document.querySelector("#actnav").style.boxShadow =
                 " 0px 6px 3px rgba(0, 0, 0, 0.35)";
               document.querySelector("#setnav").style.boxShadow =
+                " 0px 6px 3px rgba(0, 0, 0, 0.35)";
+              document.querySelector("#reversered").style.boxShadow =
                 " 0px 6px 3px rgba(0, 0, 0, 0.35)";
               document.querySelector("#upload").style.backgroundColor = "white";
               document.querySelector("#upborder").style.border =
