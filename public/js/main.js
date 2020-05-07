@@ -74,6 +74,18 @@ function userstuff() {
               break;
           }
 
+          switch (logomain) {
+            case "logor":
+              document.querySelector("#reverse").src = "pic/redchevron.png";
+              break;
+            case "logob":
+              document.querySelector("#reverse").src = "pic/chevron.png";
+              break;
+            case "logow":
+              document.querySelector("#reverse").src = "pic/whitechevron.png";
+              break;
+          }
+
           switch (logoactivity) {
             case "logor":
               document.querySelector("#logoactivity").src = "pic/canonlo.png";

@@ -405,7 +405,7 @@ grid-template-areas:
 }
 #purple {
   grid-area:colorpu;
-  background-color:#DC06A0;
+  background-color:rgb(179, 16, 165);
 }
 #yellow {
   grid-area:colory;
