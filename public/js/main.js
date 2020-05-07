@@ -227,33 +227,46 @@ document.addEventListener("DOMContentLoaded", function test() {
     .where("type", "==", "picture")
     .onSnapshot(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
-        pic.push(doc.data().src);
+        pic.push(doc.data());
       });
       storageRef
-        .child("pic/" + pic[pic.length - 1])
+        .child("pic/" + pic[pic.length - 1].src)
         .getDownloadURL()
         .then(function (url) {
           document.querySelector("#firstcaros").src = url;
+
+          document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].user
         });
       for (i = pic.length - 2; i > 0; i--) {
         //putting things into carousel
         var storage = firebase.storage();
-        var pathReference = storage.ref("pic/" + pic[i]);
+        var pathReference = storage.ref("pic/" + pic[i].src);
+
+
 
         storageRef
-          .child("pic/" + pic[i])
+          .child("pic/" + pic[i].src)
           .getDownloadURL()
           .then(function (url) {
-            var carhol = document.createElement("div");
+            carhol = document.createElement("div");
             carhol.classList.add("mySlides");
 
             var carimg = document.createElement("img");
-            carimg.classList.add("carosimg", i);
+            carimg.classList.add("carosimg");
             carimg.src = url;
             carhol.appendChild(carimg);
 
+            cardes = document.createElement("div")
+            cardes.classList.add("picdescrip")
+            cardes.innerHTML = pic[pic.length - 2 - i].user
+
+            carhol.appendChild(cardes)
+
             document.querySelector("#fullslides").appendChild(carhol);
+            i++
+
           });
+
       }
     });
 });
@@ -378,28 +391,40 @@ chooser.addEventListener("change", function (e) {
 });
 
 function upload() {
-  // Create a storage refd
-  var storageRef = firebase.storage().ref("pic/" + file.name);
-  // Upload file
-  var task = storageRef.put(file);
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var docRef = db
+        .collection("users")
+        .doc(user.email)
+        .onSnapshot(function (doc) {
+          // Create a storage refd
+          var storageRef = firebase.storage().ref("pic/" + file.name);
+          // Upload file
+          var task = storageRef.put(file);
 
-  document.querySelector("#uploader").style.backgroundColor = "grey";
+          console.log("Document data:", doc.data().main);
 
-  document.querySelector("#preview").removeAttribute("src"); // free memory
+          document.querySelector("#uploader").style.backgroundColor = "grey";
 
-  db.collection("pic")
-    .add({
-      src: file.name,
-      type: "picture",
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
+          document.querySelector("#preview").removeAttribute("src"); // free memory
 
-  downscreen();
+          db.collection("pic")
+            .add({
+              src: file.name,
+              type: "picture",
+              user: doc.data().Username
+            })
+            .then(function (docRef) {
+              console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+              console.error("Error adding document: ", error);
+            });
+
+          downscreen();
+        })
+    }
+  })
 }
 
 
@@ -508,3 +533,17 @@ function logoswap(e) {
     }
   });
 }
+
+//----------------dailyreset
+var d = new Date();
+var n = d.getHours();
+console.log(n)
+if (n == "18") {
+  console.log("reset!")
+  //select new activities and change innertext
+}
+else {
+  console.log("nothing")
+  //do nothing
+}
+

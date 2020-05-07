@@ -656,7 +656,17 @@ grid-area:setinput;
   background-color:white;
   border-top:1px solid black;
   border-bottom:1px solid black;
+  text-align:center;
+  font-size:3vh;
 }
 #dragout {
   grid-area:dragout;
+}
+.picdescrip {
+  position:absolute;
+  background-color:rgba(255,255,255,0.5);
+  width:20vh;
+  margin-top:-10vh;
+  font-size:2vh;
+  box-shadow:0vh 0.3vh rgb(0,0,0,0.3);
 }
