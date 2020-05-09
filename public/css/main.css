@@ -541,6 +541,9 @@ grid-area:setinput;
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
   height:11.5vh !important;
 }
+#upmap {
+  grid-area:upscreen;
+}
 
 #prinav {
   background-color:#B82525;
@@ -613,7 +616,6 @@ grid-area:setinput;
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  margin-top:5vh;
 }
 .activibox {
   text-align:center;
@@ -624,6 +626,9 @@ grid-area:setinput;
   margin-right:10vh;
   background-color:rgb(5, 150, 5, 0.4);
   margin-top:5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popout {
@@ -634,7 +639,7 @@ grid-area:setinput;
   width:40vh;
   background-color:rgb(5, 150, 5,0.8);
   display:grid;
-  grid-template-columns:7fr 1fr;
+  grid-template-columns:8.6fr 1fr;
   grid-template-rows:1fr;
   grid-template-areas:
   "pulltext dragout";
@@ -648,9 +653,10 @@ grid-area:setinput;
 .trigger {
   position: absolute;
   overflow: hidden;
-  width: 40vh;
+  width: 5vh;
   height: 40vh; 
-  margin-top:-74vh
+  margin-top:-57vh;
+  overflow: visible;
 }
 #pulltext {
   grid-area:pulltext;
@@ -658,7 +664,9 @@ grid-area:setinput;
   border-top:1px solid black;
   border-bottom:1px solid black;
   text-align:center;
-  font-size:3vh;
+  font-size:2.7vh;
+  margin-left:1vh;
+  margin-right:1vh;
 }
 #dragout {
   grid-area:dragout;

@@ -558,3 +558,18 @@ else {
   //do nothing
 }
 
+//-------------------------------text in activity boxes
+function boxxes() {
+  for (i = 1; i < 6; i++) {
+    const assin = i
+    var docRef = db
+      .collection("activitites")
+      .doc("box" + i)
+      .onSnapshot(function (doc) {
+        var randum = Math.floor(Math.random() * 3) + 1
+        console.log(randum)
+        document.querySelector("#box" + assin).innerText = doc.data()[randum]
+
+      })
+  }
+}
