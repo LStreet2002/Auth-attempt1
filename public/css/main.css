@@ -91,16 +91,17 @@ grid-area:addition;
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
-  color: white;
+  color: #F10F0F;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+
 }
 
 /* Position the "next button" to the right */
@@ -241,10 +242,7 @@ border-radius: 0.5rem;
 }
 
 
-.carosimg {
-  width: 100%;
-  height: 26.2rem;
-}
+
 #upscreen {
   grid-area:upscreen;
   width:2.4rem;
@@ -260,16 +258,16 @@ input[type=file]{
 }
 
 .carosimg {
-  height:70vw;
-  height:80vw;
+  height:48vh;
   background-color:grey;
+  width:100%;
 }
 #picture {
   width:100vw;
   height:90vh;
 }
 #fullslides {
-  height:80vw;
+  height:48vh;
 }
 .setting-box {
   border-bottom:1px solid black;
@@ -649,15 +647,14 @@ grid-area:setinput;
   position: absolute;
   left: -35vh;
   transition: 1s;
-  height:40vh;
-  width:40vh;
-  background-color:rgb(5, 150, 5,0.8);
-  display:grid;
-  grid-template-columns:8.6fr 1fr;
-  grid-template-rows:1fr;
-  grid-template-areas:
-  "pulltext dragout";
-  z-index:30;
+  height: 40vh;
+  width: 40vh;
+  background-color: rgb(5, 150, 5,0.8);
+  display: grid;
+  grid-template-columns: 7.1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "pulltext dragout";
+  z-index: 30;
 }
 
 .trigger:hover .popout {
@@ -673,14 +670,11 @@ grid-area:setinput;
   overflow: visible;
 }
 #pulltext {
-  grid-area:pulltext;
-  background-color:white;
-  border-top:1px solid black;
-  border-bottom:1px solid black;
-  text-align:center;
-  font-size:2.7vh;
-  margin-left:1vh;
-  margin-right:1vh;
+  grid-area: pulltext;
+  text-align: center;
+  font-size: 2.7vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
 }
 #dragout {
   grid-area:dragout;
@@ -704,11 +698,34 @@ grid-area:setinput;
   padding-left:3vw;
 }
 #viewpage {
-  display:flex;
-  align-items:center;
+  display:grid;
+  grid-template-rows:1fr 5fr 1fr;
+  grid-template-columns:1fr;
+  grid-template-areas:
+  "userex"
+  "imagex"
+  "exnav";
   width:100vw;
   height:100vh;
 }
+#longscrolluser {
+  grid-area:userex;
+  font-size:3vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
 #viewimage {
   width:100vw;
+  grid-area:imagex;
+}
+#exnav {
+  overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 12.5vh;
+    z-index: 100;
+    grid-area:exnav;
 }

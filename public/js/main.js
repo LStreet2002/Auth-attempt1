@@ -249,7 +249,8 @@ document.addEventListener("DOMContentLoaded", function test() {
         .child("pic/" + pic[pic.length - 1].src)
         .getDownloadURL()
         .then(function (url) {
-          document.querySelector("#firstcaros").src = url;
+          document.querySelector("#firstcaros").src = url
+          document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
 
           document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].userna
         });
@@ -270,7 +271,9 @@ document.addEventListener("DOMContentLoaded", function test() {
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
             carimg.src = url;
-            carhol.appendChild(carimg);
+            carimg.setAttribute("onclick", "view(this)")
+            carhol.appendChild(carimg)
+              ;
 
             cardes = document.createElement("div")
             cardes.classList.add("picdescrip")
@@ -279,6 +282,7 @@ document.addEventListener("DOMContentLoaded", function test() {
             carhol.appendChild(cardes)
 
             document.querySelector("#fullslides").appendChild(carhol);
+
             i++
 
           });
@@ -301,8 +305,11 @@ document.addEventListener("DOMContentLoaded", function test() {
             scrollimg.src = url;
             scrollimg.setAttribute("onclick", "view(this)");
 
+            document.querySelector(".longscroll").appendChild(scrollimg)
 
-            document.querySelector(".longscroll").appendChild(scrollimg);
+            var longuploader = document.querySelector("#longscrolluser")
+            longuploader.innerText = "UPLOADER:" + pic[pic.length - 1 - i].userna;
+
             i++
             console.log(i)
 
@@ -313,9 +320,8 @@ document.addEventListener("DOMContentLoaded", function test() {
 });
 
 function view(e) {
-  console.log(e)
   document.querySelector("#picture").style.display = "none"
-  document.querySelector("#viewpage").style.display = "flex"
+  document.querySelector("#viewpage").style.display = "grid"
   document.querySelector("#viewimage").src = e.src
   document.querySelector(".navbar").style.display = "none";
 }
