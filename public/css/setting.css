@@ -1,0 +1,295 @@
+#setting {
+    width:100vw;
+    height:90vh;
+  }
+  #setnav {
+    background-color: rgb(69, 136, 169);
+    box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+    height:11.5vh !important;
+  }
+  .logout {
+    grid-area: retu;
+    text-align:center;
+    font-size: 14vw;
+      color: rgb(202, 0, 0);
+  }
+
+  .setting-box {
+    border-bottom:1px solid black;
+  }
+  
+  #setgrid {
+    display:block;
+    overflow:scroll;
+    height:77.4vh;
+    
+  }
+  #set1 {
+    grid-area:set1;
+  }
+  #set2 {
+    grid-area:set2;
+  }
+  #set3 {
+    grid-area:set3;
+  }
+  #set4 {
+    grid-area:set4;
+  }
+  #set5 {
+    grid-area:set5;
+  }
+  #set6 {
+    grid-area:set6;
+  }
+  
+  .sethead {
+    margin-left: 2rem;
+    font-size:7.5vw;
+    margin-top:3vh;
+    margin-bottom:3vh;
+    color:black;
+  }
+  .setext {
+    margin-left: 2rem;
+    font-size:3.75vw;
+    color:rgb(99, 97, 97);
+    margin-top:3vh;
+    margin-bottom:3vh;
+  }
+  .sidenav {
+    border:1px solid black;
+    width:90vw !important;
+  }
+  .setcirc {
+   border-radius:20rem;
+   height:2.8rem;
+   width:2.8rem;
+   margin:auto;
+  }
+  #setheme{
+  display:grid;
+  grid-template-columns:1fr 2fr 3fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+  ". Theme Theme Theme ."
+  ". light . dark ."
+  ". ltext . dtext .";
+  }
+  #themetop {
+    grid-area:Theme;
+    margin:auto;
+    font-size:2rem;
+  }
+  #light {
+    grid-area:light;
+    border:solid 1px black;
+    background-color:white;
+  
+  }
+  #dark {
+    grid-area:dark;
+    border:solid 1px white;
+    background-color:black;
+  }
+  #ltext {
+    grid-area:ltext;
+    margin:auto;
+  }
+  #dtext {
+    grid-area:dtext;
+    margin:auto;
+  }
+  #logout-box {
+    height:15vh;
+    text-align:center;
+  }
+  #logor {
+    width:28vw;
+  }
+  #logow {
+    width:28vw;
+    background-color:black;
+    padding:0.5vw;
+  }
+  #logob {
+    width:28vw;
+    background-color:white;
+    padding:0.5vw;
+  }
+
+  
+.setcolor {
+    border:solid black 1px;
+    height:2.8rem;
+    width:2.8rem;
+    border-radius:2rem;
+    margin:auto;
+  }
+  #setbar {
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr 1fr 0.3fr 1fr 1fr;
+    grid-template-columns:0.4fr 1fr 1fr 1fr 1fr 0.4fr;
+    grid-template-areas:
+    ". colorhead colorhead colorhead colorhead ."
+    ". colorpage colorpage colorpage colorpage ."
+    ". colortheme colortheme colortheme colortheme ."
+    ". colorr colorb colorg colorw ."
+    ". . . . . ."
+    ". colorpu colory coloro colorpi ."
+    ". retu retu retu retu .";
+  }
+  #colorhead {
+    grid-area:colorhead;
+    margin:auto;
+    font-size:2rem;
+  }
+  #colorpage {
+    grid-area:colorpage;
+    margin:auto;
+    border:solid 1px black;
+    width:12rem;
+    height:3rem;
+    display:block;
+  }
+  #colortheme {
+    grid-area:colortheme;
+    margin:auto;
+    font-size:2rem;
+  }
+  #red {
+    grid-area:colorr;
+    background-color:#B82525;
+  }
+  #blue {
+    grid-area:colorb;
+    background-color:#4588A9 ;
+  }
+  #green {
+    grid-area:colorg;
+    background-color:rgb(5, 150, 5) ;
+  }
+  #white {
+    grid-area:colorw;
+    background-color:white;
+  }
+  #purple {
+    grid-area:colorpu;
+    background-color:rgb(179, 16, 165);
+  }
+  #yellow {
+    grid-area:colory;
+    background-color:#EAEE18;
+  }
+  #orange {
+    grid-area:coloro;
+    background-color:#F77C0A;
+  }
+  #pink {
+    grid-area:colorpi;
+    background-color:#FF76B8;
+  }
+  .setclose {
+    grid-area:retu;
+    margin:auto;
+    margin-top:7rem;
+    font-size:1.4rem;
+    color:black;
+  }
+  
+  #setreset {
+    display:grid;
+  grid-template-columns:0.4fr 2fr 0.5fr 0.4fr;
+  grid-template-rows:1fr 0.2fr 1.5fr;
+  grid-template-areas:
+  ". . . ."
+  ". resethead resethead ."
+  ". setconfirm setconfirm .";
+  }
+  #resethead {
+    font-size:2rem;
+    margin:auto;
+    grid-area:resethead;
+  }
+  #resetext {
+  grid-area:resetext;
+  }
+  #setinput {
+  grid-area:setinput;
+  }
+  #setconfirm {
+    grid-area:setconfirm;
+    background-color:#F10F0F;
+    height:2rem;
+    width:9rem;
+    color:white;
+    margin:auto;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+  }
+  
+  #setpicture {
+    display:grid;
+    grid-template-rows:1fr 3fr 1fr;
+    grid-template-columns:0.4fr 3fr 0.4fr;
+    grid-template-areas:
+    ". setpicturehead ."
+    ". previewprofile ."
+    ". profconfirm .";
+  
+  }
+  #profdiv {
+    grid-area:previewprofile;
+    
+  }
+  
+  #previewprofile {
+    height:10rem;
+    width:10rem;
+    margin-left:19vw;
+  }
+  #profconfirm {
+    background-color:#4588A9;
+    margin:auto;
+    width:4rem;
+    grid-area:profconfirm;
+    color:white;
+    padding:1rem;
+  }
+  #setpicturehead {
+    font-size:2rem;
+    margin:auto;
+    grid-area:setpicturehead;
+  }
+  #profchoose {
+  }
+  #profset {
+    margin:auto;
+  }
+  .sethhead {
+    font-size:2rem;
+    margin-bottom:1rem;
+   text-align:center;
+  }
+  .sethhtext {
+    font:1.2rem;
+    text-align:center;
+  }
+  .sethhdiv {
+    display:flex;
+    justify-content:center;
+  }
+  #sethelp {
+    font-size:2.3rem;
+    text-align:center;
+    margin-bottom:1rem;
+  }
+  #setmorehead {
+    font-size:2rem
+    ;
+  }
+  .setmtext {
+    font-size:1.4rem;
+    text-decoration:none;
+  }

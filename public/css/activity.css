@@ -1,0 +1,74 @@
+#activity {
+    width:100vw;
+    height:90vh;
+  }
+.correcting {display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size:2.4vh;
+}
+#actimain {
+    height:75.4vh;
+    width:100vw;
+    overflow-y:scroll ;
+  }
+.activibox {
+  text-align:center;
+  border-radius:2vh;
+  width:35vh;
+  height:10vh;
+  margin-left:10vh;
+  margin-right:10vh;
+  background-color:rgb(5, 150, 5, 0.4);
+  margin-top:5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popout {
+  position: absolute;
+  left: -35vh;
+  transition: 1s;
+  height: 40vh;
+  width: 40vh;
+  background-color: rgb(5, 150, 5,0.8);
+  display: grid;
+  grid-template-columns: 7.1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "pulltext dragout";
+  z-index: 30;
+}
+
+.trigger:hover .popout {
+  transition: 1s;
+  left: 0;
+}
+.trigger {
+  position: absolute;
+  overflow: hidden;
+  width: 5vh;
+  height: 40vh; 
+  margin-top:-57vh;
+  overflow: visible;
+}
+#pulltext {
+  grid-area: pulltext;
+  text-align: center;
+  font-size: 2.7vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+#dragout {
+  grid-area:dragout;
+}
+#upmap {
+    grid-area:upscreen;
+  }
+  #actnav {
+    background-color: rgb(5, 150, 5);
+    box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
+    height:11.5vh !important;
+  }
