@@ -15,7 +15,7 @@ function sleep(ms) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
   userstuff()
-  sleep(4000).then(() => {
+  sleep(6000).then(() => {
     document.querySelector("#fillerpage").style.display = "none"
     document.querySelector("#picture").style.display = "block"
     document.querySelector(".navbar").style.display = "block"
@@ -157,6 +157,8 @@ function userstuff() {
               document.querySelector("#prize").style.backgroundColor = "#1E1C1C";
               document.querySelector("#activity").style.backgroundColor =
                 "#1E1C1C";
+              document.querySelector("#viewpage").style.backgroundColor =
+                "#1E1C1C";
               document.querySelector("#setting").style.backgroundColor =
                 "#1E1C1C";
               document.querySelector("#prinav").style.boxShadow =
@@ -202,6 +204,8 @@ function userstuff() {
               document.querySelector("#prize").style.backgroundColor = "white";
               document.querySelector("#activity").style.backgroundColor =
                 "white";
+              document.querySelector("#viewpage").style.backgroundColor =
+                "white";
               document.querySelector("#setting").style.backgroundColor =
                 "white";
               document.querySelector("#prinav").style.boxShadow =
@@ -232,8 +236,9 @@ function userstuff() {
 //--------------------------------------------------------------------------------
 //This is the carousel------------------------------------------------------------
 //--------------------------------------------------------------------------------
+pic = [];
 document.addEventListener("DOMContentLoaded", function test() {
-  pic = [];
+
   db.collection("pic")
     .where("type", "==", "picture")
     .onSnapshot(function (querySnapshot) {
@@ -246,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function test() {
         .then(function (url) {
           document.querySelector("#firstcaros").src = url;
 
-          document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].user
+          document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].userna
         });
       for (i = pic.length - 2; i > -1; i--) {
         //putting things into carousel
@@ -269,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function test() {
 
             cardes = document.createElement("div")
             cardes.classList.add("picdescrip")
-            cardes.innerHTML = pic[pic.length - 2 - i].user
+            cardes.innerHTML = pic[pic.length - 2 - i].userna
 
             carhol.appendChild(cardes)
 
@@ -279,8 +284,47 @@ document.addEventListener("DOMContentLoaded", function test() {
           });
 
       }
+
+      for (i = pic.length - 1; i > -1; i--) {
+        //putting things into carousel
+        var storage = firebase.storage();
+        var pathReference = storage.ref("pic/" + pic[i].src);
+
+
+
+        storageRef
+          .child("pic/" + pic[i].src)
+          .getDownloadURL()
+          .then(function (url) {
+            var scrollimg = document.createElement("img");
+            scrollimg.classList.add("longscrollimg");
+            scrollimg.src = url;
+            scrollimg.setAttribute("onclick", "view(this)");
+
+
+            document.querySelector(".longscroll").appendChild(scrollimg);
+            i++
+            console.log(i)
+
+          });
+
+      }
     });
 });
+
+function view(e) {
+  console.log(e)
+  document.querySelector("#picture").style.display = "none"
+  document.querySelector("#viewpage").style.display = "flex"
+  document.querySelector("#viewimage").src = e.src
+  document.querySelector(".navbar").style.display = "none";
+}
+
+
+
+
+
+
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
@@ -325,10 +369,12 @@ function picture() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "block"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function activity() {
   document.querySelector("#picture").style.display = "none"
@@ -336,10 +382,12 @@ function activity() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function prizes() {
   document.querySelector("#picture").style.display = "none"
@@ -347,10 +395,12 @@ function prizes() {
   document.querySelector("#prize").style.display = "block"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function settings() {
   document.querySelector("#picture").style.display = "none"
@@ -358,24 +408,29 @@ function settings() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "block"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = "0.4vh solid #FF0000"
+  document.querySelector(".navbar").style.display = "block";
 }
 function upscreen() {
   document.querySelector(".navbar").style.display = "none";
   document.querySelector("#picture").style.display = "none";
-  document.querySelector("#upload").style.display = "grid";
+  document.querySelector("#upload").style.display = "block";
   document.querySelector("#upscreen").style.display = "none";
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "none";
   document.querySelector(".reversea").style.display = "inline";
+  document.querySelector(".navbar").style.display = "block";
 }
 function downscreen() {
   document.querySelector(".navbar").style.display = "block";
   document.querySelector("#picture").style.display = "block";
   document.querySelector("#upload").style.display = "none";
   document.querySelector("#upscreen").style.display = "";
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "grid";
   document.querySelector(".reversea").style.display = "none";
   document.querySelector("#uploader").style.backgroundColor = "grey";
@@ -423,7 +478,7 @@ function upload() {
             .add({
               src: file.name,
               type: "picture",
-              user: doc.data().Username
+              userna: doc.data().Username
             })
             .then(function (docRef) {
               console.log("Document written with ID: ", docRef.id);
@@ -572,4 +627,8 @@ function boxxes() {
 
       })
   }
+}
+
+function choosecl() {
+  document.getElementById("chooser").click(); // Click on the checkbox
 }

@@ -158,7 +158,7 @@ grid-area:addition;
 
 #upborder {
   border:solid 1px black;
-  height: 80vw;
+  height: 86vw;
   width: 80vw;
   margin: auto;
   display:grid;
@@ -178,7 +178,7 @@ margin-top:5rem;
   background-color:grey;
   border: none;
   margin:auto;
-  margin-top: 1.4rem;
+  margin-top: 8.4vh;
   grid-area:up;
 }
 .reversea {
@@ -215,8 +215,19 @@ margin-top:5rem;
   height: 50vw;
 }
 
-#chooser {
+#chooserplace {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+margin-top:2vh;
+margin-bottom:3vh;
+color:white;
 
+font-size:2vh;
+font-family: 'Work Sans', sans-serif !important;
+background: #4588A9;
+height: 5vh;
+border-radius: 0.5rem;
 }
 
 
@@ -572,6 +583,7 @@ grid-area:setinput;
 #upload {
   width:100vw;
   height:90vh;
+  display:block;
 }
 #logor {
   width:28vw;
@@ -606,6 +618,7 @@ grid-area:setinput;
 #picmain {
   height:75.4vh;
   width:100vw;
+  overflow-y:scroll
 }
 #logout-box {
   height:15vh;
@@ -616,6 +629,7 @@ grid-area:setinput;
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  font-size:2.4vh;
 }
 .activibox {
   text-align:center;
@@ -679,4 +693,22 @@ grid-area:setinput;
   font-size:2vh;
   box-shadow:0vh 0.3vh rgb(0,0,0,0.3);
   padding-left:2vh;
+}
+.longscroll {
+  display:inline;
+  width:100vw;
+}
+.longscrollimg {
+  width:32vw;
+  height:30vw;
+  padding-left:3vw;
+}
+#viewpage {
+  display:flex;
+  align-items:center;
+  width:100vw;
+  height:100vh;
+}
+#viewimage {
+  width:100vw;
 }

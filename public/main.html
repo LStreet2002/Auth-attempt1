@@ -12,6 +12,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/js/swipe.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
 
   <script>
 
@@ -91,12 +92,15 @@
 
 
       </div>
-      <a href="javascript:location.reload(true)">Refresh Page</a>
+      <div><a href="javascript:location.reload(true)">Refresh Page</a></div>
+      <div class="longscroll"></div>
     </div>
   </div>
 
-
   <!--End of pitcures page-->
+  </div>
+
+  <div id="viewpage" style="display:none"><img onclick=picture() id="viewimage">
   </div>
 
   <div id="upload" style="display:none;">
@@ -109,7 +113,12 @@
     </div>
     <div id="upborder">
       <div id="previewholder"><img id="preview">
-        <input input type="file" value="upload" id="chooser"></input></div>
+        <div id="chooserplace" onclick=choosecl()>
+          <p>CHOOSE FILE</p>
+        </div>
+        <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
+          id="chooser"></input>
+      </div>
 
       <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
     </div>
