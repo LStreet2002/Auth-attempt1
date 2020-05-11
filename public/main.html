@@ -7,11 +7,15 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/activity.css">
+  <link rel="stylesheet" type="text/css" href="css/prize.css">
+  <link rel="stylesheet" type="text/css" href="css/setting.css">
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/public/js/swipe.js"></script>
+  <script src="/js/swipe.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
 
   <script>
 
@@ -31,7 +35,7 @@
 </head>
 
 
-<body id="themetest">
+<body onload=boxxes() id="themetest">
 
 
   <div class="navbar" style="display:none">
@@ -57,7 +61,7 @@
     <div class="navbar-fixed">
       <nav>
         <div id="topper" class="nav-wrapper">
-          <div id="picnav" class="logoa"><a><img class="logo" id="logomain" src="pic/canonlo.png" onclick=logOut()></a>
+          <div id="picnav" class="logoa"><a><img class="logo" id="logomain" src="pic/canonlo.png"></a>
             <a id="upscreen"><img class="uploy" id="uploj" onclick=upscreen() src="pic/upload.png"> </a>
           </div>
 
@@ -74,6 +78,7 @@
         <div id="fullslides">
           <div class="mySlides">
             <img src="" id="firstcaros" class="carosimg" style="width:100%">
+            <div id="firstdescrip" class="picdescrip">Username</div>
           </div>
 
 
@@ -90,14 +95,19 @@
 
 
       </div>
-      <a href="javascript:location.reload(true)">Refresh Page</a>
+      <div><a href="javascript:location.reload(true)">Refresh Page</a></div>
+      <div class="longscroll"></div>
     </div>
   </div>
-
 
   <!--End of pitcures page-->
   </div>
 
+  <div id="viewpage" style="display:none">
+    <div id="longscrolluser">UPLOADER:</div><img id="viewimage">
+    <div id="exnav" onclick=picture()>Return</div>
+  </div>
+  <!---------------------------------->
   <div id="upload" style="display:none;">
     <div class="navbar-fixed">
       <nav id="reversered">
@@ -108,7 +118,12 @@
     </div>
     <div id="upborder">
       <div id="previewholder"><img id="preview">
-        <input input type="file" value="upload" id="chooser"></input></div>
+        <div id="chooserplace" onclick=choosecl()>
+          <p>CHOOSE FILE</p>
+        </div>
+        <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
+          id="chooser"></input>
+      </div>
 
       <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
     </div>
@@ -120,7 +135,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png" onclick=logOut()></a>
+          <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png"></a>
           </div>
 
         </div>
@@ -136,41 +151,39 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div id="actnav" class="logoa"><a><img class="logo" id="logoactivity" src="pic/canonlo.png"
-                onclick=logOut()></a>
+          <div id="actnav" class="logoa"><a><img class="logo" id="logoactivity" src="pic/canonlo.png"></a>
+            <a href="https://www.google.co.uk/maps" target="_blank" id="upmap"><img class="uploy"
+                src="pic/map-iconwhite.png"> </a>
           </div>
         </div>
       </nav>
     </div>
     <div id="actimain">
       <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
+        <p class="correcting themetext" id="box1">Activity goes here</p>
       </div>
 
       <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
+        <p class="correcting themetext" id="box2">Activity goes here</p>
       </div>
 
       <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
+        <p class="correcting themetext" id="box3">Activity goes here</p>
       </div>
 
       <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
+        <p class="correcting themetext" id="box4">Activity goes here</p>
       </div>
 
       <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
-      </div>
-
-      <div class="activibox">
-        <p class="correcting themetext">Activity goes here</p>
+        <p class="correcting themetext" id="box5">Activity goes here</p>
       </div>
 
       <div class="trigger">
         <div class="popout">
           <div id="pulltext">
-            <p class="themetext">doop</p>
+            <p class="themetext">These activities will provide you with possible 'Journeys'. They will reset every week
+              so you always have something to do. Make sure to share your journeys with others.</p>
           </div>
           <div id="dragout"></div>
         </div>
@@ -189,8 +202,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div id="setnav" class="logoa"><a><img class="logo" id="logosetting" src="pic/canonlo.png"
-                onclick=logOut()></a>
+          <div id="setnav" class="logoa"><a><img class="logo" id="logosetting" src="pic/canonlo.png"></a>
           </div>
 
         </div>
@@ -283,20 +295,8 @@
         left,
         and older as you scroll right. You can upload your own images from the upload page.</p>
       <p class="sethhead themetext">Activity</p>
-      <p class="sethhtext themetext"> You can win prizes by completing the activities outlined on the activities
-        page. When
-        the
-        claim button next to
-        activity is clicked,
-        your location will be checked to ensure you have completed the activity.</p>
-      <p class="sethhead themetext">Prizes</p>
-      <p class="sethhtext themetext"> You can win prizes by completing the activities outlined on the activities
-        page. When
-        the
-        claim button next to.
-        Every activity you compltete will award you points. These points will can be used to claim prizes. These
-        prizes
-        will be given to you by</p>
+      <p class="sethhtext themetext"> The activities page will give you inspiration for your owm journeys.The activities
+        will reset weekly to make sure you always have something to do.</p>
 
       <a class="sidenav-close setclose themetext" href="#!">Clicking this will close Sidenav</a>
 

@@ -15,7 +15,7 @@ function sleep(ms) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
   userstuff()
-  sleep(4000).then(() => {
+  sleep(6000).then(() => {
     document.querySelector("#fillerpage").style.display = "none"
     document.querySelector("#picture").style.display = "block"
     document.querySelector(".navbar").style.display = "block"
@@ -33,6 +33,7 @@ function userstuff() {
           console.log("Document data:", doc.data().main);
           var picnav = document.querySelector("#picnav");
           picnav.style.backgroundColor = doc.data().main;
+          document.querySelector("#reversered").style.backgroundColor = doc.data().main
 
           console.log("Document data:", doc.data().prize);
           var prinav = document.querySelector("#prinav");
@@ -41,6 +42,10 @@ function userstuff() {
           console.log("Document data:", doc.data().activity);
           var actnav = document.querySelector("#actnav");
           actnav.style.backgroundColor = doc.data().activity;
+
+          console.log("Document data:", doc.data().setting);
+          var setnav = document.querySelector("#setnav");
+          setnav.style.backgroundColor = doc.data().setting;
 
           const logomain = doc.data().logomain;
 
@@ -64,15 +69,19 @@ function userstuff() {
 
           switch (logomain) {
             case "logor":
-              document.querySelector("#uploj").src = "pic/upload.png";
+              document.querySelector("#uploj").src = "pic/upload.png"
+              document.querySelector("#reverse").src = "pic/redchevron.png";
               break;
             case "logob":
-              document.querySelector("#uploj").src = "pic/blackupload.png";
+              document.querySelector("#uploj").src = "pic/blackupload.png"
+              document.querySelector("#reverse").src = "pic/chevron.png";
               break;
             case "logow":
-              document.querySelector("#uploj").src = "pic/whiteupload.png";
+              document.querySelector("#uploj").src = "pic/whiteupload.png"
+              document.querySelector("#reverse").src = "pic/whitechevron.png";
               break;
           }
+
 
           switch (logoactivity) {
             case "logor":
@@ -112,9 +121,7 @@ function userstuff() {
               break;
           }
 
-          console.log("Document data:", doc.data().setting);
-          var setnav = document.querySelector("#setnav");
-          setnav.style.backgroundColor = doc.data().setting;
+
 
           console.log("Document data:", doc.data().theme);
           const words = document.getElementsByClassName("themetext");
@@ -150,6 +157,8 @@ function userstuff() {
               document.querySelector("#prize").style.backgroundColor = "#1E1C1C";
               document.querySelector("#activity").style.backgroundColor =
                 "#1E1C1C";
+              document.querySelector("#viewpage").style.backgroundColor =
+                "#1E1C1C";
               document.querySelector("#setting").style.backgroundColor =
                 "#1E1C1C";
               document.querySelector("#prinav").style.boxShadow =
@@ -159,6 +168,8 @@ function userstuff() {
               document.querySelector("#actnav").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#setnav").style.boxShadow =
+                " 0px 6px 3px rgba(255, 255, 255, 0.25)";
+              document.querySelector("#reversered").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#upload").style.backgroundColor = "#1E1C1C";
               document.querySelector("#upborder").style.border =
@@ -193,6 +204,8 @@ function userstuff() {
               document.querySelector("#prize").style.backgroundColor = "white";
               document.querySelector("#activity").style.backgroundColor =
                 "white";
+              document.querySelector("#viewpage").style.backgroundColor =
+                "white";
               document.querySelector("#setting").style.backgroundColor =
                 "white";
               document.querySelector("#prinav").style.boxShadow =
@@ -202,6 +215,8 @@ function userstuff() {
               document.querySelector("#actnav").style.boxShadow =
                 " 0px 6px 3px rgba(0, 0, 0, 0.35)";
               document.querySelector("#setnav").style.boxShadow =
+                " 0px 6px 3px rgba(0, 0, 0, 0.35)";
+              document.querySelector("#reversered").style.boxShadow =
                 " 0px 6px 3px rgba(0, 0, 0, 0.35)";
               document.querySelector("#upload").style.backgroundColor = "white";
               document.querySelector("#upborder").style.border =
@@ -221,42 +236,101 @@ function userstuff() {
 //--------------------------------------------------------------------------------
 //This is the carousel------------------------------------------------------------
 //--------------------------------------------------------------------------------
+pic = [];
 document.addEventListener("DOMContentLoaded", function test() {
-  pic = [];
+
   db.collection("pic")
     .where("type", "==", "picture")
     .onSnapshot(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
-        pic.push(doc.data().src);
+        pic.push(doc.data());
       });
       storageRef
-        .child("pic/" + pic[pic.length - 1])
+        .child("pic/" + pic[pic.length - 1].src)
         .getDownloadURL()
         .then(function (url) {
-          document.querySelector("#firstcaros").src = url;
+          document.querySelector("#firstcaros").src = url
+          document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
+
+          document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].userna
         });
-      for (i = pic.length - 2; i > 0; i--) {
+      for (i = pic.length - 2; i > -1; i--) {
         //putting things into carousel
         var storage = firebase.storage();
-        var pathReference = storage.ref("pic/" + pic[i]);
+        var pathReference = storage.ref("pic/" + pic[i].src);
+
+
 
         storageRef
-          .child("pic/" + pic[i])
+          .child("pic/" + pic[i].src)
           .getDownloadURL()
           .then(function (url) {
-            var carhol = document.createElement("div");
+            carhol = document.createElement("div");
             carhol.classList.add("mySlides");
 
             var carimg = document.createElement("img");
-            carimg.classList.add("carosimg", i);
+            carimg.classList.add("carosimg");
             carimg.src = url;
-            carhol.appendChild(carimg);
+            carimg.setAttribute("onclick", "view(this)")
+            carhol.appendChild(carimg)
+              ;
+
+            cardes = document.createElement("div")
+            cardes.classList.add("picdescrip")
+            cardes.innerHTML = pic[pic.length - 2 - i].userna
+
+            carhol.appendChild(cardes)
 
             document.querySelector("#fullslides").appendChild(carhol);
+
+            i++
+
           });
+
+      }
+
+      for (i = pic.length - 1; i > -1; i--) {
+        //putting things into carousel
+        var storage = firebase.storage();
+        var pathReference = storage.ref("pic/" + pic[i].src);
+
+
+
+        storageRef
+          .child("pic/" + pic[i].src)
+          .getDownloadURL()
+          .then(function (url) {
+            var scrollimg = document.createElement("img");
+            scrollimg.classList.add("longscrollimg");
+            scrollimg.src = url;
+            scrollimg.setAttribute("onclick", "view(this)");
+
+            document.querySelector(".longscroll").appendChild(scrollimg)
+
+            var longuploader = document.querySelector("#longscrolluser")
+            longuploader.innerText = "UPLOADER:" + pic[pic.length - 1 - i].userna;
+
+            i++
+            console.log(i)
+
+          });
+
       }
     });
 });
+
+function view(e) {
+  document.querySelector("#picture").style.display = "none"
+  document.querySelector("#viewpage").style.display = "grid"
+  document.querySelector("#viewimage").src = e.src
+  document.querySelector(".navbar").style.display = "none";
+}
+
+
+
+
+
+
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
@@ -301,10 +375,12 @@ function picture() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "block"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function activity() {
   document.querySelector("#picture").style.display = "none"
@@ -312,10 +388,12 @@ function activity() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function prizes() {
   document.querySelector("#picture").style.display = "none"
@@ -323,10 +401,12 @@ function prizes() {
   document.querySelector("#prize").style.display = "block"
   document.querySelector("#setting").style.display = "none"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = "0.4vh solid #FF0000"
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = ""
+  document.querySelector(".navbar").style.display = "block";
 }
 function settings() {
   document.querySelector("#picture").style.display = "none"
@@ -334,24 +414,29 @@ function settings() {
   document.querySelector("#prize").style.display = "none"
   document.querySelector("#setting").style.display = "block"
   document.querySelector("#upscreen").style.display = "none"
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector("#home").style.borderBottom = ""
   document.querySelector("#prizes").style.borderBottom = ""
   document.querySelector("#activities").style.borderBottom = ""
   document.querySelector("#settings").style.borderBottom = "0.4vh solid #FF0000"
+  document.querySelector(".navbar").style.display = "block";
 }
 function upscreen() {
   document.querySelector(".navbar").style.display = "none";
   document.querySelector("#picture").style.display = "none";
-  document.querySelector("#upload").style.display = "grid";
+  document.querySelector("#upload").style.display = "block";
   document.querySelector("#upscreen").style.display = "none";
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "none";
   document.querySelector(".reversea").style.display = "inline";
+  document.querySelector(".navbar").style.display = "block";
 }
 function downscreen() {
   document.querySelector(".navbar").style.display = "block";
   document.querySelector("#picture").style.display = "block";
   document.querySelector("#upload").style.display = "none";
   document.querySelector("#upscreen").style.display = "";
+  document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "grid";
   document.querySelector(".reversea").style.display = "none";
   document.querySelector("#uploader").style.backgroundColor = "grey";
@@ -378,28 +463,40 @@ chooser.addEventListener("change", function (e) {
 });
 
 function upload() {
-  // Create a storage refd
-  var storageRef = firebase.storage().ref("pic/" + file.name);
-  // Upload file
-  var task = storageRef.put(file);
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var docRef = db
+        .collection("users")
+        .doc(user.email)
+        .onSnapshot(function (doc) {
+          // Create a storage refd
+          var storageRef = firebase.storage().ref("pic/" + file.name);
+          // Upload file
+          var task = storageRef.put(file);
 
-  document.querySelector("#uploader").style.backgroundColor = "grey";
+          console.log("Document data:", doc.data().main);
 
-  document.querySelector("#preview").removeAttribute("src"); // free memory
+          document.querySelector("#uploader").style.backgroundColor = "grey";
 
-  db.collection("pic")
-    .add({
-      src: file.name,
-      type: "picture",
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
+          document.querySelector("#preview").removeAttribute("src"); // free memory
 
-  downscreen();
+          db.collection("pic")
+            .add({
+              src: file.name,
+              type: "picture",
+              userna: doc.data().Username
+            })
+            .then(function (docRef) {
+              console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+              console.error("Error adding document: ", error);
+            });
+
+          downscreen();
+        })
+    }
+  })
 }
 
 
@@ -507,4 +604,37 @@ function logoswap(e) {
       }
     }
   });
+}
+
+//----------------dailyreset
+var d = new Date();
+var n = d.getHours();
+console.log(n)
+if (n == "18") {
+  console.log("reset!")
+  //select new activities and change innertext
+}
+else {
+  console.log("nothing")
+  //do nothing
+}
+
+//-------------------------------text in activity boxes
+function boxxes() {
+  for (i = 1; i < 6; i++) {
+    const assin = i
+    var docRef = db
+      .collection("activitites")
+      .doc("box" + i)
+      .onSnapshot(function (doc) {
+        var randum = Math.floor(Math.random() * 3) + 1
+        console.log(randum)
+        document.querySelector("#box" + assin).innerText = doc.data()[randum]
+
+      })
+  }
+}
+
+function choosecl() {
+  document.getElementById("chooser").click(); // Click on the checkbox
 }
