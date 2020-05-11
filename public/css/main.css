@@ -73,7 +73,7 @@ grid-area:addition;
 .container {
   position: relative;
   width:100vw !important;
-  height:90vw
+  height:auto
 }
 
 /* Hide the images by default */
