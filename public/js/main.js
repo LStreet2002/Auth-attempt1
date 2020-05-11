@@ -246,23 +246,23 @@ document.addEventListener("DOMContentLoaded", function test() {
         pic.push(doc.data());
       });
       storageRef
-        .child("pic/" + pic[pic.length - 1].src)
+        .child("pic/" + pic[0].src)
         .getDownloadURL()
         .then(function (url) {
           document.querySelector("#firstcaros").src = url
           document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
 
-          document.querySelector("#firstdescrip").innerHTML = pic[pic.length - 1].userna
+          document.querySelector("#firstdescrip").innerHTML = pic[0].userna
         });
-      for (i = pic.length - 2; i > -1; i--) {
+      for (i = 1; i < pic.length; i++) {
         //putting things into carousel
         var storage = firebase.storage();
         var pathReference = storage.ref("pic/" + pic[i].src);
 
-
+        assix = i
 
         storageRef
-          .child("pic/" + pic[i].src)
+          .child("pic/" + pic[assix].src)
           .getDownloadURL()
           .then(function (url) {
             carhol = document.createElement("div");
@@ -277,41 +277,40 @@ document.addEventListener("DOMContentLoaded", function test() {
 
             cardes = document.createElement("div")
             cardes.classList.add("picdescrip")
-            cardes.innerHTML = pic[pic.length - 2 - i].userna
+            cardes.innerHTML = pic[assix].userna
 
             carhol.appendChild(cardes)
 
             document.querySelector("#fullslides").appendChild(carhol);
 
-            i++
-
           });
 
       }
 
-      for (i = pic.length - 1; i > -1; i--) {
+      for (i = 0; i < pic.length; i++) {
         //putting things into carousel
         var storage = firebase.storage();
         var pathReference = storage.ref("pic/" + pic[i].src);
 
-
+        assiw = i
 
         storageRef
           .child("pic/" + pic[i].src)
           .getDownloadURL()
           .then(function (url) {
+            sleep(4000)
             var scrollimg = document.createElement("img");
             scrollimg.classList.add("longscrollimg");
             scrollimg.src = url;
             scrollimg.setAttribute("onclick", "view(this)");
+            var usert = pic[assiw].userna
+            sleep(4000)
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
             var longuploader = document.querySelector("#longscrolluser")
-            longuploader.innerText = "UPLOADER:" + pic[pic.length - 1 - i].userna;
+            longuploader.innerText = "UPLOADER:" + pic[assiw].userna;
 
-            i++
-            console.log(i)
 
           });
 
@@ -429,7 +428,6 @@ function upscreen() {
   document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "none";
   document.querySelector(".reversea").style.display = "inline";
-  document.querySelector(".navbar").style.display = "block";
 }
 function downscreen() {
   document.querySelector(".navbar").style.display = "block";
@@ -628,7 +626,6 @@ function boxxes() {
       .doc("box" + i)
       .onSnapshot(function (doc) {
         var randum = Math.floor(Math.random() * 3) + 1
-        console.log(randum)
         document.querySelector("#box" + assin).innerText = doc.data()[randum]
 
       })
