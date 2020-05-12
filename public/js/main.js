@@ -258,8 +258,6 @@ document.addEventListener("DOMContentLoaded", function test() {
         var storage = firebase.storage();
 
         assix = i
-        console.log(pic[assix].src)
-
         storageRef
           .child("pic/" + pic[assix].src)
           .getDownloadURL()
@@ -287,8 +285,6 @@ document.addEventListener("DOMContentLoaded", function test() {
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
-            var longuploader = document.querySelector("#longscrolluser")
-
 
             console.log(i)
             i++
@@ -299,6 +295,40 @@ document.addEventListener("DOMContentLoaded", function test() {
 
     });
 });
+yourpics = []
+
+firebase.auth().onAuthStateChanged(function (user) {
+  db.collection("pic").where("userna", "==", user.displayName)
+    .onSnapshot(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        yourpics.push(doc.data());
+      });
+      for (i = 1; i < yourpics.length; i++) {
+        //putting things into carousel
+        var storage = firebase.storage();
+
+        storageRef
+          .child("pic/" + yourpics[i].src)
+          .getDownloadURL()
+          .then(function (url) {
+            var yourscrollimg = document.createElement("img");
+            yourscrollimg.classList.add("yourscrollimg");
+            yourscrollimg.src = url;
+            yourscrollimg.setAttribute("onclick", "view(this)");
+
+
+            document.querySelector("#userscroll").appendChild(yourscrollimg)
+
+            console.log(yourpics)
+            console.log(user.displayName)
+          })
+      }
+    });
+});
+
+
+
+
 
 function view(e) {
   document.querySelector("#picture").style.display = "none"
