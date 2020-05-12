@@ -355,6 +355,7 @@ input[type=file]{
 }
 #viewimage {
   width:100vw;
+  height: 100vh;
   grid-area:imagex;
 }
 #exnav {
