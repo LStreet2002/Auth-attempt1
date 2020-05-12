@@ -303,7 +303,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       querySnapshot.forEach(function (doc) {
         yourpics.push(doc.data());
       });
-      for (i = 1; i < yourpics.length; i++) {
+      for (i = 0; i < yourpics.length; i++) {
         //putting things into carousel
         var storage = firebase.storage();
 
