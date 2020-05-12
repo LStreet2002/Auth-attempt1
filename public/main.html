@@ -14,7 +14,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/public/js/swipe.js"></script>
+  <script src="/js/swipe.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
 
   <script>
@@ -96,7 +96,11 @@
 
       </div>
       <div><a href="javascript:location.reload(true)">Refresh Page</a></div>
-      <div class="longscroll"></div>
+      <div class="longscroll">
+        <img class="longscrollimg" id="firstlongscroll"
+          src="https://firebasestorage.googleapis.com/v0/b/canon-1auth.appspot.com/o/pic%2Fhanco's%20cat.jpeg?alt=media&amp;token=e128c731-3a34-41b6-a2e3-d247c379adb1"
+          onclick="view(this)">
+      </div>
     </div>
   </div>
 
@@ -137,6 +141,7 @@
         <div class="nav-wrapper">
           <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png"></a>
           </div>
+          <div id="groob"></div>
 
         </div>
       </nav>
