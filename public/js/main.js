@@ -269,8 +269,6 @@ document.addEventListener("DOMContentLoaded", function test() {
             uarl = String(url)
             sorces.push(uarl)
 
-            document.querySelector("#groob").innerHTML = url
-
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
             carimg.src = uarl;
