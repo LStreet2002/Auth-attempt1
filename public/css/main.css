@@ -336,23 +336,14 @@ input[type=file]{
 }
 #viewpage {
   display:grid;
-  grid-template-rows:1fr 5fr 1fr;
+  grid-template-rows: 5fr;
   grid-template-columns:1fr;
   grid-template-areas:
-  "userex"
-  "imagex"
-  "exnav";
+  "imagex";
   width:100vw;
   height:100vh;
 }
-#longscrolluser {
-  grid-area:userex;
-  font-size:3vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-}
+
 #viewimage {
   width:100vw;
   height: 100vh;

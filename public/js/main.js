@@ -30,20 +30,16 @@ function userstuff() {
         .collection("users")
         .doc(user.email)
         .onSnapshot(function (doc) {
-          console.log("Document data:", doc.data().main);
           var picnav = document.querySelector("#picnav");
           picnav.style.backgroundColor = doc.data().main;
           document.querySelector("#reversered").style.backgroundColor = doc.data().main
 
-          console.log("Document data:", doc.data().prize);
           var prinav = document.querySelector("#prinav");
           prinav.style.backgroundColor = doc.data().prize;
 
-          console.log("Document data:", doc.data().activity);
           var actnav = document.querySelector("#actnav");
           actnav.style.backgroundColor = doc.data().activity;
 
-          console.log("Document data:", doc.data().setting);
           var setnav = document.querySelector("#setnav");
           setnav.style.backgroundColor = doc.data().setting;
 
@@ -237,10 +233,10 @@ function userstuff() {
 //This is the carousel------------------------------------------------------------
 //--------------------------------------------------------------------------------
 pic = [];
+sorces = []
 document.addEventListener("DOMContentLoaded", function test() {
 
   db.collection("pic")
-    .where("type", "==", "picture")
     .onSnapshot(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         pic.push(doc.data());
@@ -252,71 +248,87 @@ document.addEventListener("DOMContentLoaded", function test() {
           document.querySelector("#firstcaros").src = url
           document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
 
+          document.querySelector("#firstlongscroll").src = url
+          document.querySelector("#firstlongscroll").setAttribute("onclick", "view(this)");
+
           document.querySelector("#firstdescrip").innerHTML = pic[0].userna
         });
       for (i = 1; i < pic.length; i++) {
         //putting things into carousel
         var storage = firebase.storage();
-        var pathReference = storage.ref("pic/" + pic[i].src);
 
         assix = i
-
         storageRef
           .child("pic/" + pic[assix].src)
           .getDownloadURL()
           .then(function (url) {
             carhol = document.createElement("div");
-            carhol.classList.add("mySlides");
+            carhol.classList.add("mySlides")
+            uarl = String(url)
+            sorces.push(uarl)
 
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
-            carimg.src = url;
+            carimg.src = uarl;
             carimg.setAttribute("onclick", "view(this)")
             carhol.appendChild(carimg)
               ;
 
-            cardes = document.createElement("div")
-            cardes.classList.add("picdescrip")
-            cardes.innerHTML = pic[assix].userna
-
-            carhol.appendChild(cardes)
 
             document.querySelector("#fullslides").appendChild(carhol);
 
-          });
-
-      }
-
-      for (i = 0; i < pic.length; i++) {
-        //putting things into carousel
-        var storage = firebase.storage();
-        var pathReference = storage.ref("pic/" + pic[i].src);
-
-        assiw = i
-
-        storageRef
-          .child("pic/" + pic[i].src)
-          .getDownloadURL()
-          .then(function (url) {
-            sleep(4000)
             var scrollimg = document.createElement("img");
             scrollimg.classList.add("longscrollimg");
             scrollimg.src = url;
             scrollimg.setAttribute("onclick", "view(this)");
-            var usert = pic[assiw].userna
-            sleep(4000)
+
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
-            var longuploader = document.querySelector("#longscrolluser")
-            longuploader.innerText = "UPLOADER:" + pic[assiw].userna;
+
+            console.log(i)
+            i++
+          })
+
+      }
 
 
-          });
+    });
+});
+yourpics = []
 
+firebase.auth().onAuthStateChanged(function (user) {
+  db.collection("pic").where("userna", "==", user.displayName)
+    .onSnapshot(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        yourpics.push(doc.data());
+      });
+      for (i = 1; i < yourpics.length; i++) {
+        //putting things into carousel
+        var storage = firebase.storage();
+
+        storageRef
+          .child("pic/" + yourpics[i].src)
+          .getDownloadURL()
+          .then(function (url) {
+            var yourscrollimg = document.createElement("img");
+            yourscrollimg.classList.add("yourscrollimg");
+            yourscrollimg.src = url;
+            yourscrollimg.setAttribute("onclick", "view(this)");
+
+
+            document.querySelector("#userscroll").appendChild(yourscrollimg)
+
+            console.log(yourpics)
+            console.log(user.displayName)
+          })
       }
     });
 });
+
+
+
+
 
 function view(e) {
   document.querySelector("#picture").style.display = "none"
@@ -635,3 +647,5 @@ function boxxes() {
 function choosecl() {
   document.getElementById("chooser").click(); // Click on the checkbox
 }
+console.log(sorces)
+

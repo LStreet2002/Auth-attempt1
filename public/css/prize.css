@@ -7,3 +7,16 @@
     box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
     height:11.5vh !important;
   }
+  #usersbio {
+    height:25vh;
+    border-bottom:1px solid orange;
+  }
+  #userscroll {
+    margin-top:2vh;
+    height:51vh
+  }
+  .yourscrollimg {
+    width:32vw;
+    height:30vw;
+    padding-left:3vw; 
+  }
