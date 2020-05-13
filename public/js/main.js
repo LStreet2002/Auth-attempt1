@@ -32,7 +32,6 @@ function userstuff() {
         .onSnapshot(function (doc) {
           var picnav = document.querySelector("#picnav");
           picnav.style.backgroundColor = doc.data().main;
-          document.querySelector("#reversered").style.backgroundColor = doc.data().main
 
           var prinav = document.querySelector("#prinav");
           prinav.style.backgroundColor = doc.data().prize;
@@ -66,15 +65,15 @@ function userstuff() {
           switch (logomain) {
             case "logor":
               document.querySelector("#uploj").src = "pic/upload.png"
-              document.querySelector("#reverse").src = "pic/redchevron.png";
+              document.querySelector("#reverse").src = "pic/redcross.png";
               break;
             case "logob":
               document.querySelector("#uploj").src = "pic/blackupload.png"
-              document.querySelector("#reverse").src = "pic/chevron.png";
+              document.querySelector("#reverse").src = "pic/blackcross.png";
               break;
             case "logow":
               document.querySelector("#uploj").src = "pic/whiteupload.png"
-              document.querySelector("#reverse").src = "pic/whitechevron.png";
+              document.querySelector("#reverse").src = "pic/whitecross.png";
               break;
           }
 
@@ -219,6 +218,7 @@ function userstuff() {
               document.querySelector("#pulltext").style.borderTop = "1px solid black";
               break;
           }
+          boxxes()
         });
     } else {
       window.location.replace("index.html");
@@ -312,9 +312,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
             document.querySelector("#userscroll").appendChild(yourscrollimg)
-
-            console.log(yourpics)
-            console.log(user.displayName)
           })
       }
     });
@@ -447,6 +444,9 @@ function downscreen() {
   document.querySelector("#preview").src = "pic/fileselect.png";
   document.querySelector("#uploader").removeAttribute("onclick")
   document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)"
+  document.querySelector("#preview").style.width = "17vh"
+  document.querySelector("#preview").style.height = "17vh"
+  document.querySelector("#preview").style.margin = "5.8vh"
 }
 //upload
 var uploader = document.getElementById("uploader");
@@ -459,6 +459,9 @@ chooser.addEventListener("change", function (e) {
 
   console.log(file.name);
 
+  document.querySelector("#preview").style.width = " 28.8vh"
+  document.querySelector("#preview").style.height = "28.8vh"
+  document.querySelector("#preview").style.margin = "0vh"
   output = document.getElementById("preview");
   preview.src = URL.createObjectURL(event.target.files[0]);
   output.onload = function () {
@@ -489,6 +492,11 @@ function upload() {
           document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)";
 
           document.querySelector("#preview").src = "pic/fileselect.png"; // free memory
+
+          document.querySelector("#preview").style.width = "17vh"
+          document.querySelector("#preview").style.height = "17vh"
+          document.querySelector("#preview").style.margin = "5.8vh"
+
 
           db.collection("pic")
             .add({
@@ -632,14 +640,17 @@ else {
 //-------------------------------text in activity boxes
 function boxxes() {
   for (i = 1; i < 6; i++) {
-    i
+    assil = i
     var docRef = db
       .collection("activitites")
       .doc("box" + i)
       .onSnapshot(function (doc) {
         var randum = Math.floor(Math.random() * 3) + 1
-        document.querySelector("#box" + i).innerText = doc.data()[randum]
+        console.log("#box" + (i - 5))
+        console.log(i - 5)
+        document.querySelector("#box" + (i - 5)).innerText = doc.data()[randum]
 
+        i++
       })
   }
 }
