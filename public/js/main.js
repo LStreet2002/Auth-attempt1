@@ -279,8 +279,6 @@ document.addEventListener("DOMContentLoaded", function test() {
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
-
-            console.log(i)
             i++
           })
 
@@ -647,7 +645,6 @@ function boxxes() {
       .onSnapshot(function (doc) {
         var randum = Math.floor(Math.random() * 3) + 1
         console.log("#box" + (i - 5))
-        console.log(i - 5)
         document.querySelector("#box" + (i - 5)).innerText = doc.data()[randum]
 
         i++
