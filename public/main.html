@@ -14,29 +14,26 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/js/swipe.js"></script>
+  <script src="/public/js/swipe.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
-
-  <script>
-
-    window.onload = function () {
-
-      document.addEventListener('swiped-left', function (e) {
-        plusSlides(-1)
-      });
-
-      document.addEventListener('swiped-right', function (e) {
-        plusSlides(1)
-      });
-    }
-  </script>
-
   <title>Home</title>
 </head>
 
-
 <body onload=boxxes() id="themetest">
+ 
+<script>
 
+  window.onload = function () {
+
+    fullslides.addEventListener('swiped-left', function (e) {
+      plusSlides(-1)
+    });
+
+    fullslides.addEventListener('swiped-right', function (e) {
+      plusSlides(1)
+    });
+  }
+</script>
 
   <div class="navbar" style="display:none">
     <a href="#home" id="home" class="bottom-nav"
