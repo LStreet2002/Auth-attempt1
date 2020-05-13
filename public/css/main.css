@@ -158,6 +158,7 @@ grid-area:addition;
 
 
 #upborder {
+
   height: 86vw;
   width: 80vw;
   margin: auto;
@@ -172,14 +173,17 @@ background-color: #F67C0A;
 }
 
 #uploader {
-  height: 10vw;
-  border-radius: 0.8rem;
-  width: 30vw;
-  background-color:grey;
-  border: none;
-  margin:auto;
-  margin-top: 8.4vh;
-  grid-area:up;
+  width: 22.5vh;
+height: 5vh;
+
+margin-top: 5vh;
+    margin-left: 16.8vh;
+
+border:none;
+
+background: rgba(255, 255, 255, 0.28);
+color:rgba(0, 0, 0, 0.28);
+border-radius: 20px;
 }
 .reversea {
   display:grid;
@@ -201,18 +205,13 @@ background-color: #F67C0A;
 }
   
 
-#uploa {
-  transform: rotate(90deg);
-  width: 9vw;
-  height: 30vw;
-  margin-left: auto;
-  margin-top:-10.6vw;
-}
 
 #preview {
 
-  width: 50vw;
-  height: 50vw;
+  width: 17vh;
+  height: 17vh;
+  align-self: center;
+  margin: 5.8vh;
 }
 
 #chooserplace {
@@ -233,11 +232,12 @@ border-radius: 0.5rem;
 
 #previewholder {
   background-color: #F67C0A;
-  width: 50vw;
-  height: 50vw;
+  width: 28.8vh;
+  height: 28.8vh;
   margin-top: 2rem;
   grid-area:preview;
   margin:auto;
+  border:0.6px solid black;
 }
 
 

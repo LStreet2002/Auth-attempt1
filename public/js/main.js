@@ -443,8 +443,10 @@ function downscreen() {
   document.querySelector("#viewpage").style.display = "none"
   document.querySelector(".logoa").style.display = "grid";
   document.querySelector(".reversea").style.display = "none";
-  document.querySelector("#uploader").style.backgroundColor = "grey";
-  document.querySelector("#preview").removeAttribute("src"); // free memory
+  document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)";
+  document.querySelector("#preview").src = "pic/fileselect.png";
+  document.querySelector("#uploader").removeAttribute("onclick")
+  document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)"
 }
 //upload
 var uploader = document.getElementById("uploader");
@@ -462,8 +464,10 @@ chooser.addEventListener("change", function (e) {
   output.onload = function () {
     URL.revokeObjectURL(output.src); // free memory
   };
+  document.querySelector("#uploader").setAttribute("onclick", "upload()")
 
-  document.querySelector("#uploader").style.backgroundColor = "#F10F0F";
+  document.querySelector("#uploader").style.background = "rgba(95, 191, 95, 0.8)"
+  document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.8)";
 });
 
 function upload() {
@@ -480,9 +484,11 @@ function upload() {
 
           console.log("Document data:", doc.data().main);
 
-          document.querySelector("#uploader").style.backgroundColor = "grey";
+          document.querySelector("#uploader").removeAttribute("onclick");
+          document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)"
+          document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)";
 
-          document.querySelector("#preview").removeAttribute("src"); // free memory
+          document.querySelector("#preview").src = "pic/fileselect.png"; // free memory
 
           db.collection("pic")
             .add({
@@ -626,13 +632,13 @@ else {
 //-------------------------------text in activity boxes
 function boxxes() {
   for (i = 1; i < 6; i++) {
-    const assin = i
+    i
     var docRef = db
       .collection("activitites")
       .doc("box" + i)
       .onSnapshot(function (doc) {
         var randum = Math.floor(Math.random() * 3) + 1
-        document.querySelector("#box" + assin).innerText = doc.data()[randum]
+        document.querySelector("#box" + i).innerText = doc.data()[randum]
 
       })
   }
