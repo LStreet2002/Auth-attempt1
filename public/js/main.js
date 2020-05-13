@@ -144,7 +144,7 @@ function userstuff() {
               document.querySelector("#setting").style.backgroundColor =
                 "#1E1C1C";
               document.querySelector("#cicon").src = "pic/whitecamera.png";
-              document.querySelector("#picon").src = "pic/whitetrophy.png";
+              document.querySelector("#picon").src = "pic/whitepfp.png";
               document.querySelector("#aicon").src = "pic/whitefeet.png";
               document.querySelector("#sicon").src = "pic/whitecog.png";
               document.querySelector(".navbar").style.backgroundColor = "#1B1818";
@@ -168,8 +168,7 @@ function userstuff() {
               document.querySelector("#reversered").style.boxShadow =
                 " 0px 6px 3px rgba(255, 255, 255, 0.25)";
               document.querySelector("#upload").style.backgroundColor = "#1E1C1C";
-              document.querySelector("#upborder").style.border =
-                "1px solid white";
+
               document.querySelector("#pulltext").style.backgroundColor = "#1E1C1C"
               document.querySelector("#pulltext").style.borderBottom = "1px solid white";
               document.querySelector("#pulltext").style.borderTop = "1px solid white";
@@ -191,7 +190,7 @@ function userstuff() {
               document.querySelector("#setting").style.backgroundColor =
                 "white";
               document.querySelector("#cicon").src = "pic/camera.png";
-              document.querySelector("#picon").src = "pic/Trophy.png";
+              document.querySelector("#picon").src = "pic/blackpfp.png";
               document.querySelector("#aicon").src = "pic/feet.png";
               document.querySelector("#sicon").src = "pic/cog.png";
               document.querySelector(".navbar").style.backgroundColor = "white";
@@ -215,8 +214,6 @@ function userstuff() {
               document.querySelector("#reversered").style.boxShadow =
                 " 0px 6px 3px rgba(0, 0, 0, 0.35)";
               document.querySelector("#upload").style.backgroundColor = "white";
-              document.querySelector("#upborder").style.border =
-                "1px solid black";
               document.querySelector("#pulltext").style.backgroundColor = "white";
               document.querySelector("#pulltext").style.borderBottom = "1px solid black";
               document.querySelector("#pulltext").style.borderTop = "1px solid black";
@@ -250,8 +247,6 @@ document.addEventListener("DOMContentLoaded", function test() {
 
           document.querySelector("#firstlongscroll").src = url
           document.querySelector("#firstlongscroll").setAttribute("onclick", "view(this)");
-
-          document.querySelector("#firstdescrip").innerHTML = pic[0].userna
         });
       for (i = 1; i < pic.length; i++) {
         //putting things into carousel
@@ -272,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function test() {
             carimg.src = uarl;
             carimg.setAttribute("onclick", "view(this)")
             carhol.appendChild(carimg)
-              ;
 
 
             document.querySelector("#fullslides").appendChild(carhol);

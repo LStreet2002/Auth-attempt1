@@ -14,26 +14,26 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/public/js/swipe.js"></script>
+  <script src="js/swipe.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
   <title>Home</title>
 </head>
 
 <body onload=boxxes() id="themetest">
- 
-<script>
 
-  window.onload = function () {
+  <script>
 
-    fullslides.addEventListener('swiped-left', function (e) {
-      plusSlides(-1)
-    });
+    window.onload = function () {
 
-    fullslides.addEventListener('swiped-right', function (e) {
-      plusSlides(1)
-    });
-  }
-</script>
+      fullslides.addEventListener('swiped-left', function (e) {
+        plusSlides(-1)
+      });
+
+      fullslides.addEventListener('swiped-right', function (e) {
+        plusSlides(1)
+      });
+    }
+  </script>
 
   <div class="navbar" style="display:none">
     <a href="#home" id="home" class="bottom-nav"
@@ -41,7 +41,7 @@
       onclick=picture()><img id="cicon" style="width: 8vh" src="pic/camera.png"></a>
     <a href="#prizes" id="prizes" class="bottom-nav"
       style="border-left: 0.5px solid grey; border-right:0.5px solid grey;" onclick=prizes()><img id="picon"
-        style="width: 7vh" src="pic/Trophy.png"></a>
+        style="width: 8vh" src="pic/blackpfp.png"></a>
     <a href="#activities" id="activities" class="bottom-nav"
       style="border-left: 0.5px solid grey; border-right:0.5px solid grey;" onclick=activity()><img id="aicon"
         style="width: 4.5vh" src="pic/feet.png"></a>
@@ -75,7 +75,6 @@
         <div id="fullslides">
           <div class="mySlides">
             <img src="" id="firstcaros" class="carosimg" style="width:100%">
-            <div id="firstdescrip" class="picdescrip">Username</div>
           </div>
 
 
@@ -105,6 +104,7 @@
   </div>
 
   <div id="viewpage" onclick=picture() style="display:none">
+    <div id="exnav"><img id="exitview" src="pic/redcross.png"></div>
     <img id="viewimage">
 
   </div>
@@ -118,16 +118,14 @@
       </nav>
     </div>
     <div id="upborder">
-      <div id="previewholder"><img id="preview">
-        <div id="chooserplace" onclick=choosecl()>
-          <p>CHOOSE FILE</p>
-        </div>
-        <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
-          id="chooser"></input>
+      <div id="previewholder"><img id="preview" onclick=choosecl()>
       </div>
-
-      <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
+      <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
+        id="chooser"></input>
     </div>
+
+    <button onclick=upload() id="uploader"><img id="uploa" src="pic/back-arrow.png"></button>
+  </div>
 
   </div>
   <!---------------------------end of upload page------------------>
