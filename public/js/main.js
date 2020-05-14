@@ -33,6 +33,12 @@ function userstuff() {
           var picnav = document.querySelector("#picnav");
           picnav.style.backgroundColor = doc.data().main;
 
+          var upborder = document.querySelector("#upborder");
+          upborder.style.backgroundColor = doc.data().main;
+
+          var previewholder = document.querySelector("#previewholder");
+          previewholder.style.backgroundColor = doc.data().main;
+
           var prinav = document.querySelector("#prinav");
           prinav.style.backgroundColor = doc.data().main;
 
