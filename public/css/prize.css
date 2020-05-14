@@ -10,6 +10,8 @@
   #usersbio {
     height:25vh;
     border-bottom:1px solid orange;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
   #userscroll {
     margin-top:2vh;
@@ -19,4 +21,13 @@
     width:32vw;
     height:30vw;
     padding-left:3vw; 
+  }
+  .info{
+    justify-content: center;
+    text-align: center;
+    font-size: 4.5vw;
+    color: mediumaquamarine;
+  }
+  .name{
+    font-weight: bold;
   }
