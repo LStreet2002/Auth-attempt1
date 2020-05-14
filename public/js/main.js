@@ -34,21 +34,29 @@ function userstuff() {
           picnav.style.backgroundColor = doc.data().main;
 
           var prinav = document.querySelector("#prinav");
-          prinav.style.backgroundColor = doc.data().prize;
+          prinav.style.backgroundColor = doc.data().main;
 
           var actnav = document.querySelector("#actnav");
-          actnav.style.backgroundColor = doc.data().activity;
+          actnav.style.backgroundColor = doc.data().main;
 
           var setnav = document.querySelector("#setnav");
-          setnav.style.backgroundColor = doc.data().setting;
+          setnav.style.backgroundColor = doc.data().main;
+
+          var upnav = document.querySelector("#reversered")
+          upnav.style.backgroundColor = doc.data().main;
+
+          var usersbio = document.querySelector("#usersbio")
+          usersbio.style.borderBottom = "0.6vh solid " + doc.data().main;
+
+
 
           const logomain = doc.data().logomain;
 
-          const logoactivity = doc.data().logoactivity;
+          const logoactivity = doc.data().logomain;
 
-          const logoprize = doc.data().logoprize;
+          const logoprize = doc.data().logomain;
 
-          const logosetting = doc.data().logosetting;
+          const logosetting = doc.data().logomain;
 
           switch (logomain) {
             case "logor":
@@ -311,6 +319,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             document.querySelector("#userscroll").appendChild(yourscrollimg)
           })
       }
+      prof()
     });
 });
 
@@ -543,34 +552,13 @@ function colorswap(e) {
       console.log(e.id);
       const colur = window.getComputedStyle(e).backgroundColor;
       console.log(colur);
-      const dropvalue = document.querySelector("#colorpage").value;
-      console.log(dropvalue);
+
       var docRef = db.collection("users").doc(user.email);
 
-      switch (dropvalue) {
-        case "main":
-          return docRef.update({
-            main: colur,
-          });
-          break;
-        case "activity":
-          return docRef.update({
-            activity: colur,
-          });
-          break;
-        case "prize":
-          return docRef.update({
-            prize: colur,
-          });
-          break;
-        case "setting":
-          return docRef.update({
-            setting: colur,
-          });
-          break;
-        default:
-          console.log("fail");
-      }
+      docRef.update({
+        main: colur,
+      });
+
     }
   }); //------------------------------------------------------------------------
 } //-------------------------------------------------------------------
@@ -596,27 +584,12 @@ function logoswap(e) {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       var docRef = db.collection("users").doc(user.email);
-      const dropvalue = document.querySelector("#colorpage").value;
-      switch (dropvalue) {
-        case "main":
-          return docRef.update({
-            logomain: e.id,
-          });
-          break;
-        case "prize":
-          return docRef.update({
-            logoprize: e.id,
-          });
-          break;
-        case "activity":
-          return docRef.update({
-            logoactivity: e.id,
-          });
-        case "setting":
-          return docRef.update({
-            logosetting: e.id,
-          });
-      }
+
+
+      docRef.update({
+        logomain: e.id,
+      });
+
     }
   });
 }
@@ -654,5 +627,13 @@ window.addEventListener("DOMContentLoaded", function boxxes() {
 function choosecl() {
   document.getElementById("chooser").click(); // Click on the checkbox
 }
-console.log(sorces)
 
+function prof() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      document.querySelector(".nameprof").innerText = user.displayName
+      document.querySelector(".emailprof").innerText = user.email
+      document.querySelector("#imagecount").innerText = "Images: " + yourpics.length
+    }
+  })
+}
