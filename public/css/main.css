@@ -362,3 +362,18 @@ input[type=file]{
 #exitview {
   width:10vh;
 }
+.refresh{
+  color: black;
+}
+.refreshb{
+  border-radius: 20px;
+  padding: 1vh;
+  width: 30vw;
+  border: white;
+  background-color: lightgray;
+}
+.refreshdiv{
+  display: flex;
+  justify-content: center;
+  margin: 1vh;
+}
