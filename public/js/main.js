@@ -539,7 +539,11 @@ function settingreset() {
   auth
     .sendPasswordResetEmail(emailAddress)
     .then(function () {
-      // Email sent.
+      document.querySelector("#setconfirm").style.backgroundColor = "rgb(5, 150, 5)"
+      sleep(4000).then(() => {
+        document.querySelector("#setconfirm").style.backgroundColor = "#F10F0F"
+      })
+
     })
     .catch(function (error) {
       // An error happened.
@@ -616,8 +620,8 @@ window.addEventListener("DOMContentLoaded", function boxxes() {
       .doc("box" + i)
       .onSnapshot(function (doc) {
         var randum = Math.floor(Math.random() * 3) + 1
-        console.log("#box" + (i - 5))
-        document.querySelector("#box" + (i - 5)).innerText = doc.data()[randum]
+        console.log("#box" + (i - 6))
+        document.querySelector("#box" + (i - 6)).innerText = doc.data()[randum]
 
         i++
       })
