@@ -158,7 +158,6 @@ grid-area:addition;
 
 
 #upborder {
-
   height: 86vw;
   width: 80vw;
   margin: auto;
@@ -176,8 +175,7 @@ background-color: #F67C0A;
   width: 28.5vh;
   height: 6vh;
   margin-top: 5vh;
-  margin-left: 13.8vh;
-
+grid-area:upbutt;
 border:none;
 
 background: rgba(255, 255, 255, 0.28);
@@ -203,7 +201,14 @@ border-radius: 20px;
   margin-left: 80vw;
   transform: rotate(180deg);
 }
-  
+  #uploaderh {
+    margin:auto;
+    display:grid;
+    grid-template-columns:2.5fr 5fr 2fr;
+    grid-template-rows:1fr;
+    grid-template-areas:
+    ". upbutt .";
+  }
 
 
 #preview {

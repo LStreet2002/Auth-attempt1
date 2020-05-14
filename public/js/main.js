@@ -218,7 +218,6 @@ function userstuff() {
               document.querySelector("#pulltext").style.borderTop = "1px solid black";
               break;
           }
-          boxxes()
         });
     } else {
       window.location.replace("index.html");
@@ -636,7 +635,7 @@ else {
 }
 
 //-------------------------------text in activity boxes
-function boxxes() {
+window.addEventListener("DOMContentLoaded", function boxxes() {
   for (i = 1; i < 6; i++) {
     assil = i
     var docRef = db
@@ -650,7 +649,7 @@ function boxxes() {
         i++
       })
   }
-}
+});
 
 function choosecl() {
   document.getElementById("chooser").click(); // Click on the checkbox
