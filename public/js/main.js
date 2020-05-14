@@ -77,6 +77,18 @@ function userstuff() {
           }
 
           switch (logomain) {
+            case "filer":
+              document.querySelector("#preview").src = "pic/redfileselect.png";
+              break;
+            case "fileb":
+              document.querySelector("#preview").src = "pic/fileselect.png";
+              break;
+            case "filew":
+              document.querySelector("#preview").src = "pic/whitefileselect.png";
+              break;
+          }
+
+          switch (logomain) {
             case "logor":
               document.querySelector("#uploj").src = "pic/upload.png"
               document.querySelector("#reverse").src = "pic/redcross.png";
@@ -90,7 +102,6 @@ function userstuff() {
               document.querySelector("#reverse").src = "pic/whitecross.png";
               break;
           }
-
 
           switch (logoactivity) {
             case "logor":
