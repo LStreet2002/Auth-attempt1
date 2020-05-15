@@ -77,13 +77,13 @@ function userstuff() {
           }
 
           switch (logomain) {
-            case "filer":
+            case "logor":
               document.querySelector("#preview").src = "pic/redfileselect.png";
               break;
-            case "fileb":
+            case "logob":
               document.querySelector("#preview").src = "pic/fileselect.png";
               break;
-            case "filew":
+            case "logow":
               document.querySelector("#preview").src = "pic/whitefileselect.png";
               break;
           }
@@ -464,7 +464,29 @@ function downscreen() {
   document.querySelector(".logoa").style.display = "grid";
   document.querySelector(".reversea").style.display = "none";
   document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)";
-  document.querySelector("#preview").src = "pic/fileselect.png";
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      var docRef = db
+        .collection("users")
+        .doc(user.email)
+        .onSnapshot(function (doc) {
+          logomain = doc.data().main
+          switch (logomain) {
+            case "logor":
+              document.querySelector("#preview").src = "pic/redfileselect.png";
+              break;
+            case "logob":
+              document.querySelector("#preview").src = "pic/fileselect.png";
+              break;
+            case "logow":
+              document.querySelector("#preview").src = "pic/whitefileselect.png";
+              break;
+          }
+
+        })
+    }
+  });
+
   document.querySelector("#uploader").removeAttribute("onclick")
   document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)"
   document.querySelector("#preview").style.width = "17vh"
@@ -514,7 +536,28 @@ function upload() {
           document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)"
           document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)";
 
-          document.querySelector("#preview").src = "pic/fileselect.png"; // free memory
+          firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+              var docRef = db
+                .collection("users")
+                .doc(user.email)
+                .onSnapshot(function (doc) {
+                  logomain = doc.data().main
+                  switch (logomain) {
+                    case "logor":
+                      document.querySelector("#preview").src = "pic/redfileselect.png";
+                      break;
+                    case "logob":
+                      document.querySelector("#preview").src = "pic/fileselect.png";
+                      break;
+                    case "logow":
+                      document.querySelector("#preview").src = "pic/whitefileselect.png";
+                      break;
+                  }
+
+                })
+            }
+          });// free memory
 
           document.querySelector("#preview").style.width = "17vh"
           document.querySelector("#preview").style.height = "17vh"
