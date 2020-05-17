@@ -51,7 +51,7 @@ function userstuff() {
           var upnav = document.querySelector("#reversered")
           upnav.style.backgroundColor = doc.data().main;
 
-          var usersbio = document.querySelector("#usersbio")
+          var usersbio = document.querySelector(".info")
           usersbio.style.borderBottom = "0.6vh solid " + doc.data().main;
 
 
@@ -670,23 +670,25 @@ else {
   console.log("nothing")
   //do nothing
 }
-
+activs = []
 //-------------------------------text in activity boxes
 window.addEventListener("DOMContentLoaded", function boxxes() {
-  for (i = 1; i < 6; i++) {
-    assil = i
+  for (assil = 1; assil < 6; assil++) {
+    console.log("#box" + (assil))
     var docRef = db
       .collection("activitites")
-      .doc("box" + i)
+      .doc("box" + assil)
       .onSnapshot(function (doc) {
-        var randum = Math.floor(Math.random() * 3) + 1
-        console.log("#box" + (i - 6))
-        document.querySelector("#box" + (i - 6)).innerText = doc.data()[randum]
-
-        i++
+        for (asst = 1; asst < 6; asst++) {
+          var randum = Math.floor(Math.random() * 3) + 1
+          doc.data()[randum]
+          document.querySelector("#box" + (asst)).innerText = doc.data()[randum]
+        }
       })
   }
 });
+
+
 
 function choosecl() {
   document.getElementById("chooser").click(); // Click on the checkbox

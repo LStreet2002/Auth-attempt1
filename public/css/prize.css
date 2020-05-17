@@ -9,7 +9,6 @@
   }
   #usersbio {
     height:21vh;
-    border-bottom:1px solid orange;
     padding-left: 2vw;
     padding-right: 2vw;
   }
@@ -26,6 +25,7 @@
     justify-content: center;
     text-align: center;
     font-size: 4.5vw;
+    line-height: 7vh !important;
   }
   .nameprof {
     font-weight: bold;
