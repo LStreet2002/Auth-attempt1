@@ -470,7 +470,7 @@ function downscreen() {
         .collection("users")
         .doc(user.email)
         .onSnapshot(function (doc) {
-          logomain = doc.data().main
+          logomain = doc.data().logomain
           switch (logomain) {
             case "logor":
               document.querySelector("#preview").src = "pic/redfileselect.png";
