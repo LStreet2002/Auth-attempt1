@@ -208,6 +208,21 @@ border-radius: 20px;
     grid-template-areas:
     ". upbutt .";
   }
+progress  {
+  display: inline-block;
+    vertical-align: baseline;
+    -webkit-appearance: none;
+    width: 28.7vh;
+  
+}
+progress::-webkit-progress-value {
+  background-color:#F10F0F;
+  border-radius:10vh;
+}
+progress::-webkit-progress-bar  {
+background-color:rgba(241, 15, 15, 0.555);
+    border-radius:10vh;
+}
 
 
 #preview {

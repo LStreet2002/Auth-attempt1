@@ -464,6 +464,8 @@ function downscreen() {
   document.querySelector(".logoa").style.display = "grid";
   document.querySelector(".reversea").style.display = "none";
   document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)";
+  document.querySelector("#uploaderbar").value = "0"
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       var docRef = db
@@ -530,58 +532,71 @@ function upload() {
           // Upload file
           var task = storageRef.put(file);
 
-          console.log("Document data:", doc.data().main);
+          task.on('state_changed',
+            function progress(snapshot) {
+              var prog = document.querySelector("#uploaderbar")
+              var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              prog.value = percentage
 
-          document.querySelector("#uploader").removeAttribute("onclick");
-          document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)"
-          document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)";
+              if (prog.value == "100") {
+                document.querySelector("#uploader").removeAttribute("onclick");
+                document.querySelector("#uploader").style.background = " rgba(255, 255, 255, 0.28)"
+                document.querySelector("#uploader").style.color = "rgba(0, 0, 0, 0.2)";
 
-          firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-              var docRef = db
-                .collection("users")
-                .doc(user.email)
-                .onSnapshot(function (doc) {
-                  logomain = doc.data().main
-                  switch (logomain) {
-                    case "logor":
-                      document.querySelector("#preview").src = "pic/redfileselect.png";
-                      break;
-                    case "logob":
-                      document.querySelector("#preview").src = "pic/fileselect.png";
-                      break;
-                    case "logow":
-                      document.querySelector("#preview").src = "pic/whitefileselect.png";
-                      break;
+                firebase.auth().onAuthStateChanged(function (user) {
+                  if (user) {
+                    var docRef = db
+                      .collection("users")
+                      .doc(user.email)
+                      .onSnapshot(function (doc) {
+                        logomain = doc.data().main
+                        switch (logomain) {
+                          case "logor":
+                            document.querySelector("#preview").src = "pic/redfileselect.png";
+                            break;
+                          case "logob":
+                            document.querySelector("#preview").src = "pic/fileselect.png";
+                            break;
+                          case "logow":
+                            document.querySelector("#preview").src = "pic/whitefileselect.png";
+                            break;
+                        }
+
+
+                        document.querySelector("#preview").style.width = "17vh"
+                        document.querySelector("#preview").style.height = "17vh"
+                        document.querySelector("#preview").style.margin = "5.8vh"
+
+
+                        db.collection("pic")
+                          .add({
+                            src: file.name,
+                            type: "picture",
+                            userna: doc.data().Username
+                          })
+                          .then(function (docRef) {
+                            console.log("Document written with ID: ", docRef.id);
+
+                          })
+                          .catch(function (error) {
+                            console.error("Error adding document: ", error);
+                          });
+
+                        downscreen();
+                      })
                   }
+                  else {
 
+                  }
                 })
-            }
-          });// free memory
-
-          document.querySelector("#preview").style.width = "17vh"
-          document.querySelector("#preview").style.height = "17vh"
-          document.querySelector("#preview").style.margin = "5.8vh"
-
-
-          db.collection("pic")
-            .add({
-              src: file.name,
-              type: "picture",
-              userna: doc.data().Username
+              }
             })
-            .then(function (docRef) {
-              console.log("Document written with ID: ", docRef.id);
-            })
-            .catch(function (error) {
-              console.error("Error adding document: ", error);
-            });
-
-          downscreen();
         })
     }
   })
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
