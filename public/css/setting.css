@@ -1,6 +1,6 @@
 #setting {
     width:100vw;
-    height:90vh;
+    height:88vh;
   }
   #setnav {
     background-color: rgb(69, 136, 169);
@@ -10,7 +10,7 @@
   .logout {
     grid-area: retu;
     text-align:center;
-    font-size: 14vw;
+    font-size: 7vh;
       color: rgb(202, 0, 0);
   }
 
@@ -19,9 +19,17 @@
   }
   
   #setgrid {
-    display:block;
-    overflow:scroll;
-    height:77.4vh;
+    display: grid;
+    overflow: scroll;
+   
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "set1"
+    "set2"
+    "set3"
+    "set4"
+    "set5";
     
   }
   #set1 {
@@ -39,20 +47,18 @@
   #set5 {
     grid-area:set5;
   }
-  #set6 {
-    grid-area:set6;
-  }
+
   
   .sethead {
     margin-left: 2rem;
-    font-size:7.5vw;
+    font-size:4.5vh;
     margin-top:3vh;
     margin-bottom:3vh;
     color:black;
   }
   .setext {
     margin-left: 2rem;
-    font-size:3.75vw;
+    font-size:2vh;
     color:rgb(99, 97, 97);
     margin-top:3vh;
     margin-bottom:3vh;
@@ -100,8 +106,7 @@
     grid-area:dtext;
     margin:auto;
   }
-  #logout-box {
-    height:15vh;
+  .tlogout-box {
     text-align:center;
   }
   #logor {

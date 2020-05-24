@@ -674,7 +674,7 @@ function logoswap(e) {
 }
 
 //----------------dailyreset
-var d = new Date();
+/*var d = new Date();
 var n = d.getHours();
 console.log(n)
 if (n == "18") {
@@ -684,21 +684,23 @@ if (n == "18") {
 else {
   console.log("nothing")
   //do nothing
-}
+}*/
 activs = []
 //-------------------------------text in activity boxes
 window.addEventListener("DOMContentLoaded", function boxxes() {
   for (assil = 1; assil < 6; assil++) {
     console.log("#box" + (assil))
-    var docRef = db
+    db
       .collection("activitites")
       .doc("box" + assil)
-      .onSnapshot(function (doc) {
-        for (asst = 1; asst < 6; asst++) {
-          var randum = Math.floor(Math.random() * 3) + 1
-          doc.data()[randum]
-          document.querySelector("#box" + (asst)).innerText = doc.data()[randum]
-        }
+      .onSnapshot(function (doc, assil) {
+
+        var randum = Math.floor(Math.random() * 3) + 1
+        console.log(doc.data()[randum])
+        document.querySelector("#box" + (i - 9)).innerText = doc.data()[randum]
+        console.log(i - 9)
+        i++
+
       })
   }
 });
