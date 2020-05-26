@@ -36,15 +36,15 @@
   </script>
 
   <div class="navbar" style="display:none">
-    <a href="#home" id="home" class="bottom-nav"
-      style="border-left: 1px solid grey; border-right:0.5px solid grey;border-bottom: 0.4vh solid red;"
-      onclick=picture()><img id="cicon" style="width: 8vh" src="pic/camera.png"></a>
+
+    <a href="#activities" id="activities" class="bottom-nav"
+      style="border-left: 0.5px solid grey; border-right:0.5px solid grey;border-bottom: 0.4vh solid red;"
+      onclick=activity()><img id="aicon" style="width: 4.5vh" src="pic/feet.png"></a>
     <a href="#prizes" id="prizes" class="bottom-nav"
       style="border-left: 0.5px solid grey; border-right:0.5px solid grey;" onclick=prizes()><img id="picon"
         style="width: 8vh" src="pic/blackpfp.png"></a>
-    <a href="#activities" id="activities" class="bottom-nav"
-      style="border-left: 0.5px solid grey; border-right:0.5px solid grey;" onclick=activity()><img id="aicon"
-        style="width: 4.5vh" src="pic/feet.png"></a>
+    <a href="#home" id="home" class="bottom-nav" style="border-left: 1px solid grey; border-right:0.5px solid grey;"
+      onclick=picture()><img id="cicon" style="width: 8vh" src="pic/camera.png"></a>
     <a href="#settings" id="settings" class="bottom-nav"
       style="border-left: 0.5px solid grey; border-right:1px solid grey;" onclick=settings()><img id="sicon"
         style="width: 7vh" src="pic/cog.png"></a>
@@ -53,113 +53,6 @@
   <div id="fillerpage" style="display:block">
     <img src="pic/whitecanonlo.png" id="fillerimage">
   </div>
-
-  <div id="picture" style="display:none">
-    <div class="navbar-fixed">
-      <nav>
-        <div id="topper" class="nav-wrapper">
-          <div id="picnav" class="logoa"><a><img class="logo" id="logomain" src="pic/canonlo.png"></a>
-            <a id="upscreen"><img class="uploy" id="uploj" onclick=upscreen() src="pic/upload.png"> </a>
-          </div>
-
-        </div>
-      </nav>
-    </div>
-
-    <div id="picmain">
-      <!-- Container for the image gallery -->
-      <div class="container">
-
-
-        <!-- Full-width images with number text -->
-        <div id="fullslides">
-          <div class="mySlides">
-            <img src="" id="firstcaros" class="carosimg" style="width:100%">
-          </div>
-
-
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <!-- Image text -->
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
-
-
-      </div>
-      <div class="refreshdiv">
-        <button class="refreshb">
-          <a class="refresh" href="javascript:location.reload(true)">Refresh Page</a>
-        </button>
-      </div>
-      <div class="longscroll">
-        <img class="longscrollimg" id="firstlongscroll"
-          src="https://firebasestorage.googleapis.com/v0/b/canon-1auth.appspot.com/o/pic%2Fhanco's%20cat.jpeg?alt=media&amp;token=e128c731-3a34-41b6-a2e3-d247c379adb1"
-          onclick="view(this)">
-      </div>
-    </div>
-  </div>
-
-  <!--End of pitcures page-->
-  </div>
-
-  <div id="viewpage" onclick=picture() style="display:none">
-    <div id="exnav"><img id="exitview" src="pic/redcross.png"></div>
-    <img id="viewimage">
-
-  </div>
-  <!---------------------------------->
-  <div id="upload" style="display:none;">
-    <div class="navbar-fixed">
-      <nav id="reversered">
-        <a class="reversea">
-          <img onclick=downscreen() id="reverse" src="pic/blackcross.png">
-        </a>
-      </nav>
-    </div>
-    <div id="upborder">
-      <div id="previewholder"><img src="pic/fileselect.png" id="preview" onclick=choosecl()>
-        <progress value="0" max="100" id="uploaderbar">0%</progress>
-      </div>
-      <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
-        id="chooser"></input>
-    </div>
-    <div id="uploaderh">
-      <button onclick=upload() id="uploader">Upload Image</button>
-    </div>
-  </div>
-
-  </div>
-  <!---------------------------end of upload page------------------>
-
-  <div id="prize" style="display:none;">
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png"></a>
-          </div>
-          <div id="usersbio">
-            <!--put the  top content up here-->
-            <div class="info">
-              <div class="nameprof themetext">Username</div>
-              <div class="emailprof themetext">Email</div>
-              <div id="imagecount" class="themetext">Your images:</div>
-            </div>
-          </div>
-          <div id="userscroll"></div>
-
-        </div>
-      </nav>
-    </div>
-  </div>
-
-  <!--End of Prize page-->
-
-
 
   <div id="activity" style="display:none">
     <div class="navbar-fixed">
@@ -208,6 +101,115 @@
   </div>
 
   <!--End of Activity page-->
+
+
+  <div id="prize" style="display:none;">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div id="prinav" class="logoa"><a><img class="logo" id="logoprize" src="pic/canonlo.png"></a>
+          </div>
+          <div id="usersbio">
+            <!--put the  top content up here-->
+            <div class="info">
+              <div class="nameprof themetext">Username</div>
+              <div class="emailprof themetext">Email</div>
+              <div id="imagecount" class="themetext">Your images:</div>
+            </div>
+          </div>
+          <div id="userscroll"></div>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!--End of Prize page-->
+
+  <div id="picture" style="display:none">
+    <div class="navbar-fixed">
+      <nav>
+        <div id="topper" class="nav-wrapper">
+          <div id="picnav" class="logoa"><a><img class="logo" id="logomain" src="pic/canonlo.png"></a>
+            <a id="upscreen"><img class="uploy" id="uploj" onclick=upscreen() src="pic/upload.png"> </a>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
+    <div id="picmain">
+      <!-- Container for the image gallery -->
+      <div class="container">
+
+
+        <!-- Full-width images with number text -->
+        <div id="fullslides">
+          <div class="mySlides">
+            <img src="" id="firstcaros" class="carosimg" style="width:100%">
+          </div>
+
+
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Image text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+
+      </div>
+      <div class="refreshdiv">
+        <button class="refreshb">
+          <a class="refresh" href="javascript:location.reload(true)">Refresh Page</a>
+        </button>
+      </div>
+      <div class="longscroll">
+        <img class="longscrollimg" id="firstlongscroll" onclick="view(this)">
+      </div>
+    </div>
+  </div>
+
+  <!--End of pitcures page-->
+  </div>
+
+  <div id="viewpage" onclick=picture() style="display:none">
+    <div id="exnav"><img id="exitview" src="pic/redcross.png"></div>
+    <img id="viewimage">
+
+  </div>
+  <!---------------------------------->
+  <div id="upload" style="display:none;">
+    <div class="navbar-fixed">
+      <nav id="reversered">
+        <a class="reversea">
+          <img onclick=downscreen() id="reverse" src="pic/blackcross.png">
+        </a>
+      </nav>
+    </div>
+    <div id="upborder">
+      <div id="previewholder"><img src="pic/fileselect.png" id="preview" onclick=choosecl()>
+        <progress value="0" max="100" id="uploaderbar">0%</progress>
+      </div>
+      <input input type="file" style="display:none" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser"
+        id="chooser"></input>
+    </div>
+    <div id="uploaderh">
+      <button onclick=upload() id="uploader">Upload Image</button>
+    </div>
+  </div>
+
+  </div>
+  <!---------------------------end of upload page------------------>
+
+
+
+
+
 
 
 

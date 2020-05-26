@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   userstuff()
   sleep(6000).then(() => {
     document.querySelector("#fillerpage").style.display = "none"
-    document.querySelector("#picture").style.display = "block"
+    document.querySelector("#activity").style.display = "block"
     document.querySelector(".navbar").style.display = "block"
   });
 });
@@ -572,7 +572,8 @@ function upload() {
                           .add({
                             src: file.name,
                             type: "picture",
-                            userna: doc.data().Username
+                            userna: doc.data().Username,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
                           })
                           .then(function (docRef) {
                             console.log("Document written with ID: ", docRef.id);
@@ -693,15 +694,13 @@ window.addEventListener("DOMContentLoaded", function boxxes() {
     db
       .collection("activitites")
       .doc("box" + assil)
-      .onSnapshot(function (doc, assil) {
+      .onSnapshot(function (doc) {
 
         var randum = Math.floor(Math.random() * 3) + 1
-        console.log(doc.data()[randum])
-        document.querySelector("#box" + (i - 9)).innerText = doc.data()[randum]
-        console.log(i - 9)
-        i++
-
+        console.log(assil)
+        // document.querySelector("#box" + (i - 9)).innerText = doc.data()[randum]
       })
+    console.log(assil)
   }
 });
 
