@@ -257,11 +257,19 @@ pic = [];
 sorces = []
 document.addEventListener("DOMContentLoaded", function test() {
 
-  db.collection("pic")
-    .onSnapshot(function (querySnapshot) {
+  db.collection("pic").where("type", "==", "picture")
+    .get()
+    .then(function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
-        pic.push(doc.data());
+        // doc.data() is never undefined for query doc snapshots
+        pic.push(doc.data())
       });
+
+      /*db.collection("pic")
+        .onSnapshot(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            pic.push(doc.data());
+          });*/
       storageRef
         .child("pic/" + pic[0].src)
         .getDownloadURL()
@@ -273,10 +281,11 @@ document.addEventListener("DOMContentLoaded", function test() {
           document.querySelector("#firstlongscroll").setAttribute("onclick", "view(this)");
         });
       for (i = 1; i < pic.length; i++) {
+
         //putting things into carousel
         var storage = firebase.storage();
 
-        assix = i
+        const assix = i
         storageRef
           .child("pic/" + pic[assix].src)
           .getDownloadURL()
@@ -285,6 +294,7 @@ document.addEventListener("DOMContentLoaded", function test() {
             carhol.classList.add("mySlides")
             uarl = String(url)
             sorces.push(uarl)
+
 
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
@@ -319,7 +329,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       querySnapshot.forEach(function (doc) {
         yourpics.push(doc.data());
       });
-      for (i = 0; i < yourpics.length; i++) {
+      for (var i = 0; i < yourpics.length; i++) {
         //putting things into carousel
         var storage = firebase.storage();
 
@@ -689,19 +699,14 @@ else {
 activs = []
 //-------------------------------text in activity boxes
 window.addEventListener("DOMContentLoaded", function boxxes() {
-  for (assil = 1; assil < 6; assil++) {
-    console.log("#box" + (assil))
-    db
-      .collection("activitites")
-      .doc("box" + assil)
-      .onSnapshot(function (doc) {
+  db.collection("activitites").get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      var randum = Math.floor(Math.random() * 3) + 1
+      document.querySelector("#" + doc.id).innerHTML = doc.data()[randum]
 
-        var randum = Math.floor(Math.random() * 3) + 1
-        console.log(assil)
-        // document.querySelector("#box" + (i - 9)).innerText = doc.data()[randum]
-      })
-    console.log(assil)
-  }
+    });
+  });
+
 });
 
 
