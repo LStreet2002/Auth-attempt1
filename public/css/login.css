@@ -1,5 +1,6 @@
 body {
     font-family: "Roboto", sans-serif;
+    width:100vw;
 }
 
 #login-holder {
@@ -15,8 +16,7 @@ body {
         "forgot";
     background-image: url("/pic/dandyop.png");
     background-size: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    
     height: 100%;
     background-repeat: no-repeat;
 }

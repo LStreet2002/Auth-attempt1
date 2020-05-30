@@ -343,12 +343,23 @@ input[type=file]{
 }
 #viewpage {
   display:grid;
-  grid-template-rows:  5fr;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-template-areas:
-  "imagex imagex imagex";
-  width:100vw;
-  height:100vh;
+  grid-template-rows: 1fr 0.5fr 5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". tex ."
+        "imagex imagex imagex";
+    height: 100vh;
+
+}
+
+.longdescrip {
+  grid-area:tex;
+  font-size:3vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
 }
 
 #viewimage {

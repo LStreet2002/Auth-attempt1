@@ -257,9 +257,9 @@ pic = [];
 sorces = []
 document.addEventListener("DOMContentLoaded", function test() {
 
-  db.collection("pic").where("type", "==", "picture")
+  db.collection("pic").where("type", "==", "picture").orderBy("timestamp", "desc")
     .get()
-    .then(function (querySnapshot) {
+    .then(async function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         // doc.data() is never undefined for query doc snapshots
         pic.push(doc.data())
@@ -277,31 +277,46 @@ document.addEventListener("DOMContentLoaded", function test() {
           document.querySelector("#firstcaros").src = url
           document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
 
+          document.querySelector("#firsttext").innerText = pic[0].userna
+
           document.querySelector("#firstlongscroll").src = url
           document.querySelector("#firstlongscroll").setAttribute("onclick", "view(this)");
+
+          var longuploader = document.querySelector("#longscrolluser")
+          longuploader.innerText = "UPLOADER:" + pic[0].userna;
         });
-      for (i = 1; i < pic.length; i++) {
+      for (var i = 1; i < pic.length; i++) {
 
         //putting things into carousel
         var storage = firebase.storage();
-
+        console.log(pic)
         const assix = i
-        storageRef
+        await storageRef
           .child("pic/" + pic[assix].src)
           .getDownloadURL()
           .then(function (url) {
+            //await fetch(url)
             carhol = document.createElement("div");
             carhol.classList.add("mySlides")
             uarl = String(url)
             sorces.push(uarl)
+
+            console.log(pic[assix])
 
 
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
             carimg.src = uarl;
             carimg.setAttribute("onclick", "view(this)")
-            carhol.appendChild(carimg)
 
+
+
+            var cartext = document.createElement("div")
+            cartext.classList.add("picdescrip")
+            cartext.innerText = pic[assix].userna
+
+            carhol.appendChild(carimg)
+            carhol.appendChild(cartext)
 
             document.querySelector("#fullslides").appendChild(carhol);
 
@@ -310,10 +325,16 @@ document.addEventListener("DOMContentLoaded", function test() {
             scrollimg.src = url;
             scrollimg.setAttribute("onclick", "view(this)");
 
+            var scrolltext = document.createElement("div")
+            scrolltext.classList.add("longdescrip")
+            scrolltext.innerText = pic[assix].userna
+
+
+
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
-            i++
+
           })
 
       }
