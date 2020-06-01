@@ -1,6 +1,7 @@
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
+
   } else {
     window.location.replace("index.html");
   }
@@ -8,6 +9,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 function logOut() {
   firebase.auth().signOut();
 }
+//window.addEventListener('DOMContentLoaded', openFullscreen())
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -253,6 +255,30 @@ function userstuff() {
 //--------------------------------------------------------------------------------
 //This is the carousel------------------------------------------------------------
 //--------------------------------------------------------------------------------
+var elem = document.documentElement;
+function fullit() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
 pic = [];
 sorces = []
 document.addEventListener("DOMContentLoaded", function test() {

@@ -14,7 +14,8 @@
   }
   #userscroll {
     margin-top:2vh;
-    height:51vh
+    height:51vh;
+    overflow:scroll;
   }
   .yourscrollimg {
     width:32vw;
