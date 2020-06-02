@@ -16,6 +16,7 @@ function sleep(ms) {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
+  //orientation.lock("portrait")
   userstuff()
   sleep(6000).then(() => {
     document.querySelector("#fillerpage").style.display = "none"
@@ -315,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function test() {
 
         //putting things into carousel
         var storage = firebase.storage();
-        console.log(pic)
         const assix = i
         await storageRef
           .child("pic/" + pic[assix].src)
@@ -326,9 +326,6 @@ document.addEventListener("DOMContentLoaded", function test() {
             carhol.classList.add("mySlides")
             uarl = String(url)
             sorces.push(uarl)
-
-            console.log(pic[assix])
-
 
             var carimg = document.createElement("img");
             carimg.classList.add("carosimg");
@@ -730,31 +727,44 @@ function logoswap(e) {
     }
   });
 }
-
 //----------------dailyreset
-/*var d = new Date();
-var n = d.getHours();
-console.log(n)
-if (n == "18") {
-  console.log("reset!")
-  //select new activities and change innertext
+window.addEventListener("DOMContentLoaded", timer())
+
+function timer() {
+  var d = new Date();
+  var n = "'" + d.getHours() + "'"
+  var m = "'" + d.getMinutes() + "'"
+  var s = "'" + d.getSeconds() + "'"
+  var thtim = (n + m + s)
+  if (thtim == "'12'" + "'0'" + "'0'") {
+    console.log("we did it")
+    db.collection("activitites").get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        var randum = Math.floor(Math.random() * 3) + 1
+        document.querySelector("#" + doc.id).innerHTML = doc.data()[randum]
+        db.collection("tactivties").doc(doc.id).update({
+          today: doc.data()[randum]
+        })
+
+      });
+    });
+
+  }
+  else {
+
+  }
+  sleep(1000).then(() => { timer() })
 }
-else {
-  console.log("nothing")
-  //do nothing
-}*/
 activs = []
 //-------------------------------text in activity boxes
 window.addEventListener("DOMContentLoaded", function boxxes() {
-  db.collection("activitites").get().then(function (querySnapshot) {
+  db.collection("tactivties").get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-      var randum = Math.floor(Math.random() * 3) + 1
-      document.querySelector("#" + doc.id).innerHTML = doc.data()[randum]
+      document.querySelector("#" + doc.id).innerHTML = doc.data().today
+    })
+  })
+})
 
-    });
-  });
-
-});
 
 
 
