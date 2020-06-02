@@ -25,6 +25,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
+
+
 //------------------------------------------themes and colours----
 function userstuff() {
   firebase.auth().onAuthStateChanged(function (user) {
@@ -304,13 +306,11 @@ document.addEventListener("DOMContentLoaded", function test() {
           document.querySelector("#firstcaros").src = url
           document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
 
-          document.querySelector("#firsttext").innerText = pic[0].userna
+
 
           document.querySelector("#firstlongscroll").src = url
+          document.querySelector("#firstlongscroll").value = pic[0].userna
           document.querySelector("#firstlongscroll").setAttribute("onclick", "view(this)");
-
-          var longuploader = document.querySelector("#longscrolluser")
-          longuploader.innerText = "UPLOADER:" + pic[0].userna;
         });
       for (var i = 1; i < pic.length; i++) {
 
@@ -347,13 +347,7 @@ document.addEventListener("DOMContentLoaded", function test() {
             scrollimg.classList.add("longscrollimg");
             scrollimg.src = url;
             scrollimg.setAttribute("onclick", "view(this)");
-
-            var scrolltext = document.createElement("div")
-            scrolltext.classList.add("longdescrip")
-            scrolltext.innerText = pic[assix].userna
-
-
-
+            scrollimg.value = pic[assix].userna
 
             document.querySelector(".longscroll").appendChild(scrollimg)
 
@@ -384,7 +378,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var yourscrollimg = document.createElement("img");
             yourscrollimg.classList.add("yourscrollimg");
             yourscrollimg.src = url;
-            yourscrollimg.setAttribute("onclick", "view(this)");
+            yourscrollimg.setAttribute("onclick", "viewp(this)");
 
 
             document.querySelector("#userscroll").appendChild(yourscrollimg)
@@ -403,6 +397,17 @@ function view(e) {
   document.querySelector("#viewpage").style.display = "grid"
   document.querySelector("#viewimage").src = e.src
   document.querySelector(".navbar").style.display = "none";
+  document.querySelector("#exitview").setAttribute("onclick", "picture()");
+  document.querySelector("#longscrolluser").innerText = "UPLOADER:" + e.value
+}
+
+function viewp(e) {
+  document.querySelector("#prize").style.display = "none"
+  document.querySelector("#viewpage").style.display = "grid"
+  document.querySelector("#viewimage").src = e.src
+  document.querySelector(".navbar").style.display = "none";
+  document.querySelector("#exitview").setAttribute("onclick", "prizes()");
+  document.querySelector("#longscrolluser").innerText = "UPLOADER:" + e.value
 }
 
 
@@ -631,7 +636,43 @@ function upload() {
                           })
                           .then(function (docRef) {
                             console.log("Document written with ID: ", docRef.id);
-
+                            /* storageRef
+                               .child("pic/" + file.name)
+                               .getDownloadURL()
+                               .then(function (url) {
+                                 carhol = document.createElement("div");
+                                 carhol.classList.add("mySlides")
+                                 uarl = String(url)
+ 
+                                 var carimg = document.createElement("img");
+                                 carimg.classList.add("carosimg");
+                                 carimg.src = uarl;
+                                 carimg.setAttribute("onclick", "view(this)")
+ 
+ 
+ 
+                                 var cartext = document.createElement("div")
+                                 cartext.classList.add("picdescrip")
+                                 cartext.innerText = pic[assix].userna
+ 
+                                 carhol.appendChild(carimg)
+                                 //carhol.appendChild(cartext)
+ 
+                                 document.querySelector("#fullslides").insertBefore(carhol, document.querySelector("#fullslides").childNodes[0]);
+ 
+                                 var scrollimg = document.createElement("img");
+                                 scrollimg.classList.add("longscrollimg");
+                                 scrollimg.src = url;
+                                 scrollimg.setAttribute("onclick", "view(this)");
+ 
+                                  var scrolltext = document.createElement("div")
+                                  scrolltext.classList.add("longdescrip")
+                                  scrolltext.innerText = pic[assix].userna
+ 
+ 
+ 
+                                 document.querySelector(".longscroll").insertBefore(scrollimg, document.querySelector(".longscroll").childNodes[0]);
+ */
                           })
                           .catch(function (error) {
                             console.error("Error adding document: ", error);
@@ -639,6 +680,7 @@ function upload() {
 
                         downscreen();
                       })
+                    //})
                   }
                   else {
 
