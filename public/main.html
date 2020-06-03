@@ -26,11 +26,11 @@
     window.onload = function () {
 
       fullslides.addEventListener('swiped-left', function (e) {
-        plusSlides(-1)
+        plusSlides(1)
       });
 
       fullslides.addEventListener('swiped-right', function (e) {
-        plusSlides(1)
+        plusSlides(-1)
       });
     }
   </script>
@@ -189,7 +189,7 @@
     <div class="navbar-fixed">
       <nav id="reversered">
         <a class="reversea">
-          <img onclick=downscreen() id="reverse" src="pic/blackcross.png">
+          <img onclick=downscreen(),fullit() id="reverse" src="pic/blackcross.png">
         </a>
       </nav>
     </div>

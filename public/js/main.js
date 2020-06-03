@@ -56,6 +56,9 @@ function userstuff() {
           var upnav = document.querySelector("#reversered")
           upnav.style.backgroundColor = doc.data().main;
 
+          var fill = document.querySelector("#fillerpage")
+          fill.style.backgroundColor = doc.data().main
+
           var usersbio = document.querySelector(".info")
           usersbio.style.borderBottom = "0.6vh solid " + doc.data().main;
 
@@ -72,12 +75,15 @@ function userstuff() {
           switch (logomain) {
             case "logor":
               document.querySelector("#logomain").src = "pic/canonlo.png";
+              document.querySelector("#fillerimage").src = "pic/canonlo.png";
               break;
             case "logob":
               document.querySelector("#logomain").src = "pic/blackcanonlo.png";
+              document.querySelector("#fillerimage").src = "pic/blackcanonlo.png";
               break;
             case "logow":
               document.querySelector("#logomain").src = "pic/whitecanonlo.png";
+              document.querySelector("#fillerimage").src = "pic/whitecanonlo.png";
               break;
           }
 
@@ -305,7 +311,8 @@ document.addEventListener("DOMContentLoaded", function test() {
         .then(function (url) {
           document.querySelector("#firstcaros").src = url
           document.querySelector("#firstcaros").setAttribute("onclick", "view(this)");
-
+          document.querySelector("#firsttext").innerText = pic[0].userna
+          document.querySelector("#firstcaros").value = pic[0].userna
 
 
           document.querySelector("#firstlongscroll").src = url
@@ -331,6 +338,7 @@ document.addEventListener("DOMContentLoaded", function test() {
             carimg.classList.add("carosimg");
             carimg.src = uarl;
             carimg.setAttribute("onclick", "view(this)")
+            carimg.value = pic[assix].userna
 
 
 
@@ -559,6 +567,8 @@ function downscreen() {
 var uploader = document.getElementById("uploader");
 var chooser = document.getElementById("chooser");
 
+var tempimage =
+  console.log(tempimage)
 // Listen for file selection
 chooser.addEventListener("change", function (e) {
   // Get file
@@ -570,9 +580,10 @@ chooser.addEventListener("change", function (e) {
   document.querySelector("#preview").style.height = "28.8vh"
   document.querySelector("#preview").style.margin = "0vh"
   output = document.getElementById("preview");
-  preview.src = URL.createObjectURL(event.target.files[0]);
-  output.onload = function () {
-    URL.revokeObjectURL(output.src); // free memory
+  var tempurl = URL.createObjectURL(event.target.files[0]);
+  preview.src = tempurl
+  tempimage = tempurl
+  output.onload = function () { // free memory
   };
   document.querySelector("#uploader").setAttribute("onclick", "upload()")
 
@@ -637,49 +648,43 @@ function upload() {
                           })
                           .then(function (docRef) {
                             console.log("Document written with ID: ", docRef.id);
-                            /* storageRef
-                               .child("pic/" + file.name)
-                               .getDownloadURL()
-                               .then(function (url) {
-                                 carhol = document.createElement("div");
-                                 carhol.classList.add("mySlides")
-                                 uarl = String(url)
- 
-                                 var carimg = document.createElement("img");
-                                 carimg.classList.add("carosimg");
-                                 carimg.src = uarl;
-                                 carimg.setAttribute("onclick", "view(this)")
- 
- 
- 
-                                 var cartext = document.createElement("div")
-                                 cartext.classList.add("picdescrip")
-                                 cartext.innerText = pic[assix].userna
- 
-                                 carhol.appendChild(carimg)
-                                 //carhol.appendChild(cartext)
- 
-                                 document.querySelector("#fullslides").insertBefore(carhol, document.querySelector("#fullslides").childNodes[0]);
- 
-                                 var scrollimg = document.createElement("img");
-                                 scrollimg.classList.add("longscrollimg");
-                                 scrollimg.src = url;
-                                 scrollimg.setAttribute("onclick", "view(this)");
- 
-                                  var scrolltext = document.createElement("div")
-                                  scrolltext.classList.add("longdescrip")
-                                  scrolltext.innerText = pic[assix].userna
- 
- 
- 
-                                 document.querySelector(".longscroll").insertBefore(scrollimg, document.querySelector(".longscroll").childNodes[0]);
- */
+
+                            carhol = document.createElement("div");
+                            carhol.classList.add("mySlides")
+
+                            var carimg = document.createElement("img");
+                            carimg.classList.add("carosimg");
+                            carimg.src = tempimage;
+                            carimg.setAttribute("onclick", "view(this)")
+
+
+
+                            var cartext = document.createElement("div")
+                            cartext.classList.add("picdescrip")
+                            cartext.innerText = user.displayName
+
+                            carhol.appendChild(carimg)
+                            carhol.appendChild(cartext)
+
+                            document.querySelector("#fullslides").insertBefore(carhol, document.querySelector("#fullslides").childNodes[0]);
+
+                            var scrollimg = document.createElement("img");
+                            scrollimg.classList.add("longscrollimg");
+                            scrollimg.src = tempimage;
+                            scrollimg.setAttribute("onclick", "view(this)");
+                            scrollimg.value = user.displayName
+
+
+
+                            document.querySelector(".longscroll").insertBefore(scrollimg, document.querySelector(".longscroll").childNodes[0]);
+
                           })
                           .catch(function (error) {
                             console.error("Error adding document: ", error);
                           });
 
-                        downscreen();
+                        downscreen()
+                        fullit();
                       })
                     //})
                   }
