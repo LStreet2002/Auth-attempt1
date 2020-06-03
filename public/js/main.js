@@ -362,24 +362,25 @@ document.addEventListener("DOMContentLoaded", function test() {
 yourpics = []
 
 firebase.auth().onAuthStateChanged(function (user) {
-  db.collection("pic").where("userna", "==", user.displayName)
-    .onSnapshot(function (querySnapshot) {
+  db.collection("pic").where("userna", "==", user.displayName).orderBy("timestamp", "desc")
+    .get()
+    .then(async function (querySnapshot) {
       querySnapshot.forEach(function (doc) {
         yourpics.push(doc.data());
       });
-      for (var i = 0; i < yourpics.length; i++) {
+      for (arble = 0; arble < yourpics.length; arble++) {
         //putting things into carousel
         var storage = firebase.storage();
 
-        storageRef
-          .child("pic/" + yourpics[i].src)
+        await storageRef
+          .child("pic/" + yourpics[arble].src)
           .getDownloadURL()
           .then(function (url) {
             var yourscrollimg = document.createElement("img");
             yourscrollimg.classList.add("yourscrollimg");
             yourscrollimg.src = url;
             yourscrollimg.setAttribute("onclick", "viewp(this)");
-
+            yourscrollimg.value = yourpics[arble].userna
 
             document.querySelector("#userscroll").appendChild(yourscrollimg)
           })
