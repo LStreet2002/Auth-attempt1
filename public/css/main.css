@@ -4,37 +4,38 @@
 }
 
 .logoa {
-  display:grid;
-  grid-template-columns:2fr 4fr 2fr;
-  grid-template-rows:1fr;
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  "logo . upscreen";
-grid-area:addition;
+    "logo . upscreen";
+  grid-area: addition;
 }
+
 .logo {
   width: 28vh;
   margin-top: 1rem;
   margin-left: 4vh;
-  grid-area:logo;
+  grid-area: logo;
 
 }
+
 .navbar-fixed {
-  height:11.3vh !important;
+  height: 11.3vh !important;
 }
+
 .bottom-nav {
-  height:12.5vh;
+  height: 12.5vh;
 }
 
-.nav-wrapper {
-  
+.nav-wrapper {}
 
-}
 #topper {
-  display:grid;
-  grid-template-columns:5fr 5fr;
-  grid-template-rows:1fr;
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  "addition addition"
+    "addition addition"
 }
 
 
@@ -46,7 +47,7 @@ grid-area:addition;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height:12.5vh;
+  height: 12.5vh;
   z-index: 100;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
 }
@@ -72,8 +73,8 @@ grid-area:addition;
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
-  width:100vw !important;
-  height:auto
+  width: 100vw !important;
+  height: auto
 }
 
 /* Hide the images by default */
@@ -161,13 +162,13 @@ grid-area:addition;
   height: 86vw;
   width: 80vw;
   margin: auto;
-  display:grid;
-  grid-template-columns:0.5fr 5fr 0.5fr;
-grid-template-rows:4fr;
-grid-template-areas:
-" . preview . ";
-margin-top:5rem;
-background-color: #F67C0A;
+  display: grid;
+  grid-template-columns: 0.5fr 5fr 0.5fr;
+  grid-template-rows: 4fr;
+  grid-template-areas:
+    " . preview . ";
+  margin-top: 5rem;
+  background-color: #F67C0A;
 
 }
 
@@ -175,24 +176,27 @@ background-color: #F67C0A;
   width: 28.5vh;
   height: 6vh;
   margin-top: 5vh;
-grid-area:upbutt;
-border:none;
+  grid-area: upbutt;
+  border: none;
 
-background: rgba(255, 255, 255, 0.28);
-color:rgba(0, 0, 0, 0.28);
-border-radius: 20px;
+  background: rgba(255, 255, 255, 0.28);
+  color: rgba(0, 0, 0, 0.28);
+  border-radius: 20px;
 }
+
 .reversea {
-  display:grid;
-  grid-area:addition;
-  grid-template-columns:1fr 3fr 1fr;
-  grid-template-rows:1fr;
+  display: grid;
+  grid-area: addition;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  ". chevron ."
+    ". chevron ."
 }
+
 #reversered {
   height: 11.3vh;
 }
+
 #reverse {
   width: 15vw;
   height: 8.3vh;
@@ -200,28 +204,32 @@ border-radius: 20px;
   margin-left: 80vw;
   transform: rotate(180deg);
 }
-  #uploaderh {
-    margin:auto;
-    display:grid;
-    grid-template-columns:2.5fr 5fr 2fr;
-    grid-template-rows:1fr;
-    grid-template-areas:
+
+#uploaderh {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2.5fr 5fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
     ". upbutt .";
-  }
-progress  {
+}
+
+progress {
   display: inline-block;
-    vertical-align: baseline;
-    -webkit-appearance: none;
-    width: 28.7vh;
-  
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  width: 28.7vh;
+
 }
+
 progress::-webkit-progress-value {
-  background-color:#F10F0F;
-  border-radius:10vh;
+  background-color: #F10F0F;
+  border-radius: 10vh;
 }
-progress::-webkit-progress-bar  {
-background-color:rgba(241, 15, 15, 0.555);
-    border-radius:10vh;
+
+progress::-webkit-progress-bar {
+  background-color: rgba(241, 15, 15, 0.555);
+  border-radius: 10vh;
 }
 
 
@@ -233,18 +241,18 @@ background-color:rgba(241, 15, 15, 0.555);
 }
 
 #chooserplace {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-margin-top:2vh;
-margin-bottom:3vh;
-color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  color: white;
 
-font-size:2vh;
-font-family: 'Work Sans', sans-serif !important;
-background: #4588A9;
-height: 5vh;
-border-radius: 0.5rem;
+  font-size: 2vh;
+  font-family: 'Work Sans', sans-serif !important;
+  background: #4588A9;
+  height: 5vh;
+  border-radius: 0.5rem;
 }
 
 
@@ -253,38 +261,42 @@ border-radius: 0.5rem;
   width: 28.8vh;
   height: 28.8vh;
   margin-top: 2rem;
-  grid-area:preview;
-  margin:auto;
-  border:0.6px solid black;
+  grid-area: preview;
+  margin: auto;
+  border: 0.6px solid black;
 }
 
 
 
 #upscreen {
-  grid-area:upscreen;
-  width:2.4rem;
+  grid-area: upscreen;
+  width: 2.4rem;
 }
+
 .uploy {
   position: absolute;
   top: 10px;
   right: 25px;
-  width:7vh;
+  width: 7vh;
 }
-input[type=file]{ 
-  color:transparent;
+
+input[type=file] {
+  color: transparent;
 }
 
 .carosimg {
-  height:48vh;
-  background-color:grey;
-  width:100%;
+  height: 48vh;
+  background-color: grey;
+  width: 100%;
 }
+
 #picture {
-  width:100vw;
-  height:90vh;
+  width: 100vw;
+  height: 90vh;
 }
+
 #fullslides {
-  height:48vh;
+  height: 48vh;
 }
 
 
@@ -293,112 +305,121 @@ input[type=file]{
 
 /*home nav */
 #picnav {
-  background-color:white;
+  background-color: white;
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.35);
-  height:11.5vh !important;
+  height: 11.5vh !important;
 }
 
 #upload {
-  width:100vw;
-  height:100vh;
-  display:block;
+  width: 100vw;
+  height: 100vh;
+  display: block;
 }
 
 #fillerpage {
-  height:100vh;
-  background-color:#F10F0F;
-  width:100vw;
+  height: 100vh;
+  background-color: #F10F0F;
+  width: 100vw;
 }
+
 #fillerimage {
-  width:80vw;
-  margin-left:10vw;
-  margin-right:10vw;
-  margin-top:45vh;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 45vh;
 }
 
 
 #picmain {
-  height:75.4vh;
-  width:100vw;
-  overflow-y:scroll
+  height: 75.4vh;
+  width: 100vw;
+  overflow-y: scroll
 }
 
 .picdescrip {
   position: absolute;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 20vh;
   margin-top: -10vh;
   font-size: 2.4vh;
-  box-shadow: 0vh 0.4vh rgb(0,0,0,0.3);
+  box-shadow: 0vh 0.4vh rgb(0, 0, 0, 0.3);
   padding-left: 2vh;
 }
+
 .longscroll {
-  display:inline;
-  width:100vw;
+  display: inline;
+  width: 100vw;
 }
+
 .longscrollimg {
-  width:32vw;
-  height:30vw;
-  padding-left:3vw;
+  width: 32vw;
+  height: 30vw;
+  padding-left: 3vw;
 }
+
 #viewpage {
-  display:grid;
+  display: grid;
   grid-template-rows: 1fr 0.5fr 5fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        ". . ."
-        ". tex ."
-        "imagex imagex imagex";
-    height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". . ."
+    ". tex ."
+    "imagex imagex imagex";
+  height: 100vh;
 
 }
 
 .longdescrip {
-  grid-area:tex;
-  font-size:3vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
+  grid-area: tex;
+  font-size: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 #viewimage {
- width: 100vw;
+  width: 100vw;
 
-    /*dont change height, it stretches it */
+  /*dont change height, it stretches it */
 
-    grid-area: imagex;
-    align-self: center;
+  grid-area: imagex;
+  align-self: center;
 }
+
 #exnav {
-    position:absolute;
-    margin-left: 75vw;
-    margin-top: 4vh;
+  position: absolute;
+  margin-left: 75vw;
+  margin-top: 4vh;
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #exitview {
-  width:10vh;
+  width: 10vh;
 }
-.refresh{
+
+.refresh {
   color: black;
-    font-size: 1.8vh;
-    align-self: center;
-    margin: auto;
+  font-size: 1.8vh;
+  align-self: center;
+  margin: auto;
 }
-.refreshb{
+
+.refreshb {
   border-radius: 2vh;
   padding: 1vh;
   width: 30vw;
   height: 3vh;
-  display:flex;
+  display: flex;
   border: white;
   background-color: lightgray;
 
 }
-.refreshdiv{
+
+.refreshdiv {
   display: flex;
   justify-content: center;
   margin: 1vh;
