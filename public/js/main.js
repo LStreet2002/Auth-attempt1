@@ -567,8 +567,8 @@ function downscreen() {
 var uploader = document.getElementById("uploader");
 var chooser = document.getElementById("chooser");
 
-var tempimage =
-  console.log(tempimage)
+var tempimage = ""
+
 // Listen for file selection
 chooser.addEventListener("change", function (e) {
   // Get file
@@ -677,6 +677,14 @@ function upload() {
 
 
                             document.querySelector(".longscroll").insertBefore(scrollimg, document.querySelector(".longscroll").childNodes[0]);
+
+                            var yourscrollimg = document.createElement("img");
+                            yourscrollimg.classList.add("yourscrollimg");
+                            yourscrollimg.src = tempimage;
+                            yourscrollimg.setAttribute("onclick", "viewp(this)");
+                            yourscrollimg.value = user.displayName
+
+                            document.querySelector("#userscroll").insertBefore(yourscrollimg, document.querySelector("#userscroll").childNodes[0]);
 
                           })
                           .catch(function (error) {
